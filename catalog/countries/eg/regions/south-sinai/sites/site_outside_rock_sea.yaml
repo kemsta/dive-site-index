@@ -1,0 +1,48 @@
+schema_version: '1.1'
+id: site_outside_rock_sea
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Outside Rock Sea
+  ru: Аутсайд-Рок-Си
+aliases:
+- Outside Rock Seas
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 29.1379181927527
+    longitude: 34.7188138961792
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- slope
+- pinnacle
+access:
+- shore
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A rocky-entry site descending over sand from 3–4 m past a pinnacle to two reef profiles, both continuing beyond
+      40 m.
+    access: Short rocky shore entry followed by a sandy descent.
+    hazards: Rocky entry and depth beyond 40 m for qualified divers; stay within certification limits.
+    marine_life: Glassfish, a green anemone, shrimp, octopus, moray eels, occasional lobster, hunting fish and hawksbill turtles
+      are reported.
+  ru:
+    summary: Маршрут с каменистым входом, спуском по песку с 3–4 м мимо пинакля и двумя рифовыми профилями, оба уходят глубже
+      40 м.
+    access: Короткий каменистый вход с берега, затем спуск по песку.
+    hazards: Каменистый вход и глубины свыше 40 м для подготовленных дайверов; необходимо соблюдать пределы сертификации.
+    marine_life: Упоминаются стеклянные рыбки, зелёная актиния, креветки, осьминоги, мурены, иногда лобстеры, охотящиеся рыбы
+      и биссы.
+source_refs:
+- src-97717d191786
+- src-58a26ecb41c8
+- src-3b590cf22603
+observations: []

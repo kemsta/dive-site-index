@@ -17,7 +17,7 @@ from scripts.build import TYPE_RU, build_all, load_catalog, validate_catalog, va
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 CATALOG = ROOT / "catalog"
-EXPECTED_SITE_COUNT = 75
+EXPECTED_SITE_COUNT = 94
 EXPECTED_HTML_COUNT = EXPECTED_SITE_COUNT + 3
 UDDF_XSD = ROOT / "schemas" / "vendor" / "uddf-3.2.3.xsd"
 NODE = shutil.which("node")
@@ -57,8 +57,8 @@ class CanonicalCatalogTests(unittest.TestCase):
             for site in region["sites"]
         }
         for item in resolutions:
-            self.assertIn(item["resolution"], {"site", "alias", "pending"}, item["candidate_key"])
-            if item["resolution"] == "pending":
+            self.assertIn(item["resolution"], {"site", "alias", "pending", "unresolved"}, item["candidate_key"])
+            if item["resolution"] in {"pending", "unresolved"}:
                 self.assertIsNone(item["target_site_id"], item["candidate_key"])
                 continue
             target = sites[item["target_site_id"]]
@@ -221,6 +221,75 @@ class CanonicalCatalogTests(unittest.TestCase):
         garden_ids = ["site_far_garden", "site_fiddle_garden", "site_middle_garden", "site_near_garden"]
         garden_points = {(sites[site_id]["geography"]["coordinates"]["latitude"], sites[site_id]["geography"]["coordinates"]["longitude"]) for site_id in garden_ids}
         self.assertEqual(len(garden_points), 4)
+
+    def test_nuweiba_expansion_resolves_all_twenty_nine_candidates(self):
+        expected_sites = {
+            "abu-lou-lou-nuweiba": ("site_abu_lou_lou", 28.971666666666664, 34.67333333333333, "src-9db3ce3b9e04"),
+            "al-ma-agana-nuweiba": ("site_al_ma_agana", 29.104444444444447, 34.672777777777775, "src-9db3ce3b9e04"),
+            "bawaki-nuweiba": ("site_bawaki", 29.056, 34.6655, "src-1d039d741f6d"),
+            "ras-el-shetan-nuweiba": ("site_ras_el_shetan", 29.12, 34.68527777777778, "src-9db3ce3b9e04"),
+            "swisscare-house-reef-nuweiba": ("site_swisscare_house_reef", 28.990833333333335, 34.68611111111111, "src-9db3ce3b9e04"),
+            "the-labyrinth-nuweiba": ("site_the_labyrinth", 29.0805, 34.668, "src-eae8b7d1ed97"),
+            "um-um-raicher-nuweiba": ("site_um_um_raicher", 29.0925, 34.67611111111111, "src-9db3ce3b9e04"),
+            "el-hibeq-north-nuweiba-el-hibeq-area": ("site_el_hibeq_north", 28.7676591056913, 34.6369743347168, "src-90d833eb721c"),
+            "el-hibeq-south-nuweiba-el-hibeq-area": ("site_el_hibeq_south", 28.747192544786, 34.6376609802246, "src-5903279d2b14"),
+            "mfo-nuweiba-mfo-area": ("site_mfo", 28.9438662106958, 34.7076988220215, "src-fe6a3ff38030"),
+            "mfo-pipeline-nuweiba-mfo-area": ("site_mfo_pipeline", 28.97472222222222, 34.69888888888889, "src-abd93aabb873"),
+            "mfo-pipeline-coral-garden-nuweiba-mfo-area": ("site_mfo_pipeline_coral_garden", 28.9366554052411, 34.7070121765137, "src-663a8e2d0e3f"),
+            "mfo-sinkers-nuweiba-mfo-area": ("site_mfo_sinkers", 28.973055555555554, 34.683611111111105, "src-abd93aabb873"),
+            "farrah-shore-nuweiba-myserique-el-mazeriq-area": ("site_farrah_shore", 28.8464780269477, 34.6534538269043, "src-6d51ee310cf6"),
+            "myserique-north-nuweiba-myserique-el-mazeriq-area": ("site_myserique_north", 28.8151982639471, 34.6596336364746, "src-50df4d43d5c4"),
+            "myserique-south-nuweiba-myserique-el-mazeriq-area": ("site_myserique_south", 28.8055718307182, 34.6598052978516, "src-ed48704fa245"),
+            "outside-rock-sea-nuweiba-rock-sea-area": ("site_outside_rock_sea", 29.1379181927527, 34.7188138961792, "src-97717d191786"),
+            "rock-sea-nuweiba-rock-sea-area": ("site_rock_sea", 29.1305709848407, 34.7114324569702, "src-c32981774339"),
+            "the-valley-nuweiba-rock-sea-area": ("site_the_valley", 29.148863059072, 34.7314739227295, "src-3c437b5d61d4"),
+        }
+        deferred = {
+            "angelfish-coral-garden-nuweiba", "angelfish-north-nuweiba", "angelfish-south-nuweiba",
+            "castle-beach-nuweiba", "dolphin-bay-nuweiba", "el-huwei-nuweiba", "ray-hole-nuweiba",
+            "sha-ab-elaria-nuweiba", "t-reef-nuweiba", "ray-s-place-nuweiba-myserique-el-mazeriq-area",
+        }
+        expected_keys = set(expected_sites) | deferred
+        self.assertEqual(len(expected_keys), 29)
+        manifest = yaml.safe_load((ROOT / "research" / "south-sinai-expansion.yaml").read_text(encoding="utf-8"))
+        resolutions = {item["candidate_key"]: item for item in manifest["resolutions"] if item["candidate_key"] in expected_keys}
+        self.assertEqual(set(resolutions), expected_keys)
+        catalog = load_catalog(CATALOG)
+        sites = {site["id"]: site for country in catalog["countries"].values() for region in country["regions"].values() for site in region["sites"]}
+        sources = {source["id"]: source for source in yaml.safe_load((CATALOG / "sources.yaml").read_text(encoding="utf-8"))["sources"]}
+        for candidate_key, (site_id, latitude, longitude, coordinate_source_ref) in expected_sites.items():
+            self.assertEqual(resolutions[candidate_key]["resolution"], "site")
+            self.assertEqual(resolutions[candidate_key]["target_site_id"], site_id)
+            site = sites[site_id]
+            self.assertIn(coordinate_source_ref, site["source_refs"])
+            self.assertAlmostEqual(site["geography"]["coordinates"]["latitude"], latitude, places=6)
+            self.assertAlmostEqual(site["geography"]["coordinates"]["longitude"], longitude, places=6)
+            for source_ref in site["source_refs"]:
+                self.assertNotIn(urlsplit(sources[source_ref]["url"]).hostname, {"www.openstreetmap.org", "openstreetmap.org"})
+            self.assertIsNone(site["depth"]["minimum_m"])
+            self.assertIsNone(site["depth"]["maximum_m"])
+            self.assertIsNone(site["difficulty"])
+            self.assertNotIn("current", site)
+            self.assertNotIn("visibility", site)
+        for candidate_key in deferred:
+            self.assertEqual(resolutions[candidate_key]["resolution"], "unresolved")
+            self.assertIsNone(resolutions[candidate_key]["target_site_id"])
+        self.assertNotEqual(sites["site_bawaki"]["geography"]["coordinates"], sites["site_the_labyrinth"]["geography"]["coordinates"])
+        self.assertNotEqual(sites["site_el_hibeq_north"]["geography"]["coordinates"], sites["site_el_hibeq_south"]["geography"]["coordinates"])
+        mfo_ids = ["site_mfo", "site_mfo_pipeline", "site_mfo_pipeline_coral_garden", "site_mfo_sinkers"]
+        self.assertEqual(len({(sites[x]["geography"]["coordinates"]["latitude"], sites[x]["geography"]["coordinates"]["longitude"]) for x in mfo_ids}), 4)
+        self.assertNotIn("site_dolphin_bay", sites)
+        self.assertNotIn("site_ray_hole", sites)
+        self.assertNotIn("site_t_reef", sites)
+        unsupported_prose = {
+            "site_el_hibeq_south": ("visibility between the pinnacles", "видимость может быть ограничена"),
+            "site_mfo_pipeline": ("wind can reduce visibility", "ветер может ухудшать видимость"),
+            "site_bawaki": ("seagrass habitats", "участках морской травы"),
+        }
+        for site_id, forbidden in unsupported_prose.items():
+            text = " ".join([*sites[site_id]["content"]["en"].values(), *sites[site_id]["content"]["ru"].values()]).casefold()
+            for phrase in forbidden:
+                self.assertNotIn(phrase, text)
 
     def test_first_south_sinai_expansion_adds_five_grounded_sites(self):
         catalog = load_catalog(CATALOG)

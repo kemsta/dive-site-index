@@ -1,0 +1,47 @@
+schema_version: '1.1'
+id: site_mfo_pipeline_coral_garden
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: MFO Pipeline Coral Garden
+  ru: MFO Пайплайн-Корал-Гарден
+aliases:
+- Pipeline Coral Garden
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 28.9366554052411
+    longitude: 34.7070121765137
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- pinnacle
+access:
+- shore
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A coral garden adjacent to the Pipeline structure, with a central cracked pinnacle at 17–19 m and a maximum reported
+      depth of 23 m.
+    access: Shore diving in the Pipeline area; the exact entry is not separately documented.
+    hazards: Current is occasional and rarely strong; scorpionfish, stonefish and lionfish may be camouflaged around the pinnacle.
+    marine_life: Nudibranchs, moray eels, feathertail rays, barracuda, green turtles, glassfish and occasional frogfish are
+      reported.
+  ru:
+    summary: Коралловый сад рядом с трубами Pipeline; в центре находится пинакль с трещиной на 17–19 м, заявленная максимальная
+      глубина — 23 м.
+    access: Береговое погружение в районе Pipeline; отдельная точка входа не указана.
+    hazards: Течение бывает эпизодически и редко усиливается; у пинакля могут маскироваться скорпены, бородавчатки и крылатки.
+    marine_life: Упоминаются голожаберные моллюски, мурены, перьехвостые скаты, барракуды, зелёные черепахи, стеклянные рыбки
+      и иногда рыбы-лягушки.
+source_refs:
+- src-663a8e2d0e3f
+- src-58a26ecb41c8
+- src-83aa233bf2a0
+observations: []

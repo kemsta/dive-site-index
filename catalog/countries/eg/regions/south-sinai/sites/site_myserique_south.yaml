@@ -1,0 +1,43 @@
+schema_version: '1.1'
+id: site_myserique_south
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Myserique South
+  ru: Мизерик-Саут
+aliases: []
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 28.8055718307182
+    longitude: 34.6598052978516
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- slope
+access:
+- shore
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A southern Myserique dive over a gradual coral-covered slope to 20 m, with intact table, brain and fan corals.
+    access: Shore access is consistent with the local Myserique area description; the exact entry is not separately detailed.
+    hazards: Current is reported as rare; avoid contact with the intact coral slope.
+    marine_life: Octopus, blue-spotted rays, moray eels, Red Sea walkman and occasional eagle rays are reported.
+  ru:
+    summary: Южный маршрут Myserique по пологому коралловому склону до 20 м с сохранившимися столовыми, мозговыми и веерными
+      кораллами.
+    access: Береговой доступ соответствует описанию района Myserique; отдельная точка входа подробно не указана.
+    hazards: Течение отмечается редко; следует избегать контакта с неповреждённым коралловым склоном.
+    marine_life: Упоминаются осьминоги, синепятнистые хвостоколы, мурены, красноморский уокман и иногда орляки.
+source_refs:
+- src-ed48704fa245
+- src-58a26ecb41c8
+- src-83aa233bf2a0
+observations: []

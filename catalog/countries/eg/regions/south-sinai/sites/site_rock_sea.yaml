@@ -1,0 +1,46 @@
+schema_version: '1.1'
+id: site_rock_sea
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Rock Sea
+  ru: Рок-Си
+aliases: []
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 29.1305709848407
+    longitude: 34.7114324569702
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- drop-off
+- canyon
+access:
+- shore
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A Rock Sea camp shore reef with a coral garden, an initial drop-off from about 18 to 45 m and a second slope
+      and drop-off into technical depths beyond 100 m.
+    access: Enter from Rock Sea camp through a natural break in the reef table.
+    hazards: Deep drop-offs and a technical canyon; only the shallow coral garden is appropriate for entry-level divers.
+    marine_life: Cleaner shrimp, partner gobies, nudibranchs and seahorses in shallow seagrass are reported.
+  ru:
+    summary: 'Береговой риф у лагеря Rock Sea: коралловый сад, первый свал примерно с 18 до 45 м, затем второй склон и свал
+      на технические глубины свыше 100 м.'
+    access: Вход из лагеря Rock Sea через естественный разрыв в рифовой платформе.
+    hazards: Глубокие свалы и технический каньон; для начинающих подходит только мелководный коралловый сад.
+    marine_life: Упоминаются креветки-чистильщики, бычки с креветками, голожаберные моллюски и морские коньки на мелководье
+      с морской травой.
+source_refs:
+- src-c32981774339
+- src-58a26ecb41c8
+- src-3b590cf22603
+observations: []
