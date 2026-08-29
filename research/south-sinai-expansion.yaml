@@ -83,33 +83,33 @@ resolutions:
   target_site_id: site_dahab_moray_garden
 - candidate_key: baby-blue-hole-gabr-el-bint
   canonical_name: Baby Blue Hole
-  area: Gabr el Bint
-  resolution: pending
+  area: Gabr el Bint, Nabq Protected Area
+  resolution: unresolved
   target_site_id: null
 - candidate_key: gabr-el-bint-canyon-gabr-el-bint
   canonical_name: Gabr el Bint Canyon
-  area: Gabr el Bint
-  resolution: pending
+  area: Gabr el Bint, Nabq Protected Area
+  resolution: unresolved
   target_site_id: null
 - candidate_key: gabr-el-bint-gabr-el-bint-nabq-protected-area-south-of-dahab
   canonical_name: Gabr el Bint
-  area: Gabr el Bint / Nabq Protected Area, south of Dahab
-  resolution: pending
-  target_site_id: null
+  area: Gabr el Bint, Nabq Protected Area, south of Dahab
+  resolution: site
+  target_site_id: site_gabr_el_bint
 - candidate_key: el-shugurat-gabr-el-bint-boat-diving-corridor
   canonical_name: El Shugurat
-  area: Gabr el Bint boat-diving corridor
-  resolution: pending
-  target_site_id: null
+  area: Gabr el Bint boat-diving corridor, south of Dahab
+  resolution: site
+  target_site_id: site_el_shugurat
 - candidate_key: shaab-said-gabr-el-bint-boat-diving-corridor
   canonical_name: Shaab Said
-  area: Gabr el Bint boat-diving corridor
-  resolution: pending
+  area: Gabr el Bint boat-diving corridor, north of the principal Gabr el Bint site
+  resolution: unresolved
   target_site_id: null
 - candidate_key: shaira-gabr-el-bint-boat-diving-corridor
   canonical_name: Shaira
-  area: Gabr el Bint boat-diving corridor
-  resolution: pending
+  area: Boat-diving corridor just south of The Caves and before Gabr el Bint
+  resolution: unresolved
   target_site_id: null
 - candidate_key: rosalie-moller-gubal-gulf-of-suez
   canonical_name: Rosalie Moller
@@ -282,88 +282,88 @@ resolutions:
   target_site_id: site_the_valley
 - candidate_key: north-ras-abu-galum-nuweiba-ras-abu-galum-protected-area
   canonical_name: North Ras Abu Galum
-  area: Nuweiba / Ras Abu Galum Protected Area / Ras Abu Galum Protected Area
-  resolution: pending
-  target_site_id: null
+  area: Northern sector of Ras Abu Galum Protected Area
+  resolution: site
+  target_site_id: site_north_ras_abu_galum
 - candidate_key: ras-abu-galum-alternatives-nuweiba-ras-abu-galum-protected-area
   canonical_name: Ras Abu Galum Alternatives
-  area: Nuweiba / Ras Abu Galum Protected Area
-  resolution: pending
+  area: Ras Abu Galum Protected Area, Nuweiba-side listing
+  resolution: unresolved
   target_site_id: null
 - candidate_key: ras-abu-galum-coral-garden-nuweiba-ras-abu-galum-protected-area
   canonical_name: Ras Abu Galum Coral Garden
-  area: Nuweiba / Ras Abu Galum Protected Area
-  resolution: pending
+  area: Ras Abu Galum Protected Area, Nuweiba-side listing
+  resolution: unresolved
   target_site_id: null
 - candidate_key: ras-mumlah-coral-garden-nuweiba-ras-abu-galum-protected-area
   canonical_name: Ras Mumlah Coral Garden
-  area: Nuweiba / Ras Abu Galum Protected Area
-  resolution: pending
+  area: Ras Mumlah (Ras Mamlah), northern Ras Abu Galum Protected Area corridor
+  resolution: unresolved
   target_site_id: null
 - candidate_key: ras-mumlah-north-nuweiba-ras-abu-galum-protected-area
   canonical_name: Ras Mumlah North
-  area: Nuweiba / Ras Abu Galum Protected Area
-  resolution: pending
+  area: Northern sector of Ras Mumlah (Ras Mamlah), northern protected-area corridor
+  resolution: unresolved
   target_site_id: null
 - candidate_key: ras-mumlah-south-nuweiba-ras-abu-galum-protected-area
   canonical_name: Ras Mumlah South
-  area: Nuweiba / Ras Abu Galum Protected Area
-  resolution: pending
+  area: Southern sector of Ras Mumlah (Ras Mamlah), northern protected-area corridor
+  resolution: unresolved
   target_site_id: null
 - candidate_key: south-ras-abu-galum-nuweiba-ras-abu-galum-protected-area
   canonical_name: South Ras Abu Galum
-  area: Nuweiba / Ras Abu Galum Protected Area / Ras Abu Galum Protected Area
-  resolution: pending
-  target_site_id: null
+  area: Southern sector of Ras Abu Galum Protected Area near the Bedouin settlement
+  resolution: site
+  target_site_id: site_south_ras_abu_galum
 - candidate_key: a-maeid-ras-abu-galum-protected-area
   canonical_name: A'Maeid
   area: Ras Abu Galum Protected Area
-  resolution: pending
+  resolution: unresolved
   target_site_id: null
 - candidate_key: big-stone-ras-abu-galum-protected-area
   canonical_name: Big Stone
-  area: Ras Abu Galum Protected Area
-  resolution: pending
+  area: Ras Abu Galum Protected Area, on the way to A’Maeid
+  resolution: unresolved
   target_site_id: null
 - candidate_key: dheyla-drift-ras-abu-galum-protected-area
   canonical_name: Dheyla Drift
-  area: Ras Abu Galum Protected Area
-  resolution: pending
+  area: Dheyla sector, Ras Abu Galum Protected Area
+  resolution: unresolved
   target_site_id: null
 - candidate_key: dheyla-pinnacle-ras-abu-galum-protected-area
   canonical_name: Dheyla Pinnacle
-  area: Ras Abu Galum Protected Area
-  resolution: pending
+  area: Dheyla sector, Ras Abu Galum Protected Area
+  resolution: unresolved
   target_site_id: null
 - candidate_key: khoramat-ras-abu-galum-protected-area
   canonical_name: Khoramat
-  area: Ras Abu Galum Protected Area
-  resolution: pending
+  area: Between Ras Abu Galum village and the Blue Lagoon
+  resolution: unresolved
   target_site_id: null
 - candidate_key: ras-abu-galum-ras-abu-galum-protected-area
   canonical_name: Ras Abu Galum
-  area: Ras Abu Galum Protected Area
-  resolution: pending
+  area: Ras Abu Galum Protected Area, north of Dahab
+  resolution: unresolved
   target_site_id: null
 - candidate_key: sabah-house-reef-ras-abu-galum-protected-area
   canonical_name: Sabah House Reef
-  area: Ras Abu Galum Protected Area
-  resolution: pending
+  area: Dheyla sector, Ras Abu Galum Protected Area
+  resolution: unresolved
   target_site_id: null
 - candidate_key: sand-canyon-ras-abu-galum-protected-area
   canonical_name: Sand Canyon
-  area: Ras Abu Galum Protected Area
-  resolution: pending
+  area: Between Dheyla and A’Maeid, Ras Abu Galum Protected Area
+  resolution: unresolved
   target_site_id: null
 - candidate_key: the-rocks-ras-abu-galum-protected-area
   canonical_name: The Rocks
   area: Ras Abu Galum Protected Area
-  resolution: pending
+  resolution: unresolved
   target_site_id: null
 - candidate_key: tonsils-ras-abu-galum-protected-area
   canonical_name: Tonsils
-  area: Ras Abu Galum Protected Area
-  resolution: pending
+  area: A’Maeid sector, Ras Abu Galum Protected Area
+  resolution: unresolved
   target_site_id: null
 - candidate_key: anemone-city-ras-mohammed
   canonical_name: Anemone City

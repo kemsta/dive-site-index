@@ -1,0 +1,49 @@
+schema_version: '1.1'
+id: site_north_ras_abu_galum
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: North Ras Abu Galum
+  ru: Северный Рас-Абу-Галум
+aliases:
+- Ras Abu Galum North
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 28.615000000000002
+    longitude: 34.559444444444445
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+access:
+- boat
+- shore
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: North Ras Abu Galum is the northern named dive sector, distinguished from the southern site and characterised
+      by large coral blocks and reef growth.
+    access: Reached by boat or by a remote coastal approach followed by shore entry; local transport and the entry route must
+      be arranged in advance.
+    hazards: Remote access, shore-entry conditions, navigation and fragile coral require a conservative guided plan within
+      training limits.
+    marine_life: Hard and soft corals and ordinary Red Sea reef fish are described; specific animal encounters vary.
+  ru:
+    summary: Северный Рас-Абу-Галум — именованный северный сектор погружений, отдельный от южного сайта и отличающийся крупными
+      коралловыми блоками и рифовыми образованиями.
+    access: Доступ с лодки либо после удалённого перехода вдоль берега с входом с берега; транспорт и маршрут входа необходимо
+      согласовать заранее.
+    hazards: Удалённый доступ, условия берегового входа, навигация и хрупкие кораллы требуют консервативного маршрута с гидом
+      в пределах подготовки.
+    marine_life: Описаны твёрдые и мягкие кораллы и обычные рифовые рыбы Красного моря; конкретные встречи различаются.
+source_refs:
+- src-9db3ce3b9e04
+- src-35db53adc3ed
+- src-4a6950696fc6
+observations: []

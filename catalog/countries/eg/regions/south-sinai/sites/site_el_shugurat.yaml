@@ -1,0 +1,51 @@
+schema_version: '1.1'
+id: site_el_shugurat
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: El Shugurat
+  ru: Эль-Шугурат
+aliases:
+- El Shugarat
+- Shogharat
+- Little Trees
+- Many Trees
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 28.355833333333333
+    longitude: 34.439722222222215
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- drift
+- canyon
+access:
+- boat
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: El Shugurat is a separate boat dive in the Gabr el Bint corridor, with an open canyon leading to a reef wall
+      and a field of gorgonian fans.
+    access: Boat access; the drop point, direction and pickup are set by the operator briefing.
+    hazards: Canyon walls, wall depth, open-water exit and drift navigation require an appropriate plan and controlled buoyancy.
+    marine_life: Gorgonian fans, black coral, glassfish, longnose hawkfish and reef-associated animals are described; sightings
+      vary.
+  ru:
+    summary: Эль-Шугурат — отдельный лодочный сайт в коридоре Габр-эль-Бинт с открытым каньоном, ведущим к рифовой стенке
+      и полю горгоний.
+    access: Доступ с лодки; точку сброса, направление и подбор определяют на брифинге оператора.
+    hazards: Стенки каньона, глубина у рифовой стенки, выход в открытую воду и навигация на дрейфе требуют подходящего плана
+      и контроля плавучести.
+    marine_life: Описаны горгонии, чёрные кораллы, стеклянные рыбки, длиннорылые кудрепёры и рифовая фауна; наблюдения различаются.
+source_refs:
+- src-9db3ce3b9e04
+- src-16282a582b7e
+- src-2395a9e32356
+observations: []
