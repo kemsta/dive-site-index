@@ -1,0 +1,48 @@
+schema_version: '1.1'
+id: site_giannis_d
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Giannis D
+  ru: «Яннис D»
+aliases:
+- Ghiannis D
+- Giannis D Wreck
+- Wood Wreck
+- Wooden Ship
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.576944
+    longitude: 33.923056
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- wreck
+access:
+- boat
+- liveaboard
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A timber-cargo freighter wreck on the northwestern side of Sha'ab Abu Nuhas. Giannis and Ghiannis are transliteration variants for the same wreck.
+    access: Reached by boat or liveaboard; the exposed reef face makes access dependent on sea state and operator procedure.
+    hazards: Current, surge, listing structure, sharp or unstable metal, entanglement, boat traffic, and overhead spaces require a wreck-specific plan. Penetration requires appropriate
+      training and equipment.
+    marine_life: Reef fish and encrusting life occupy the stern, machinery, and surrounding debris; sightings vary.
+  ru:
+    summary: Рэк грузового судна с древесиной на северо-западной стороне Шааб-Абу-Нухаса. Giannis и Ghiannis — варианты транслитерации названия одного рэка.
+    access: Доступ с лодки или сафари-бота; открытая сторона рифа делает погружение зависимым от состояния моря и процедур оператора.
+    hazards: Течение, раскачка, наклонённые конструкции, острый или неустойчивый металл, риск запутывания, движение судов и надголовная среда требуют рэк-плана. Для проникновения нужны
+      соответствующая подготовка и снаряжение.
+    marine_life: Кормовая часть, механизмы и обломки населены рифовыми рыбами и обрастающими организмами; наблюдения меняются.
+source_refs:
+- src-9db3ce3b9e04
+- src-22806661b1ec
+- src-e8352da67068
+observations: []

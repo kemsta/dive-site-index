@@ -1,0 +1,48 @@
+schema_version: '1.1'
+id: site_shaab_abu_nuhas
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Sha'ab Abu Nuhas
+  ru: Шааб-Абу-Нухас
+aliases:
+- Abu Nuhas
+- Shaab Abu Nuhas
+- Ships' Graveyard
+- Ship Graveyard
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.572778
+    longitude: 33.924444
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+access:
+- boat
+- liveaboard
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A shallow offshore reef projecting into the Strait of Gubal shipping route and containing several individually named wreck sites. This record represents the reef as a diveable
+      geographic site; Giannis D, Carnatic, the tile wreck, and Kimon M remain separate records.
+    access: Boat or liveaboard access; routes and usable sectors depend strongly on wind, swell, current, and operator planning.
+    hazards: Exposed sea state, current, shallow reef, breaking water, shipping and dive-boat traffic, and nearby wreckage require local navigation and a site-specific briefing.
+    marine_life: Hard and soft corals and ordinary Red Sea reef communities occur around the plateau and slopes; animal encounters vary.
+  ru:
+    summary: Мелководный морской риф, выступающий в судоходный маршрут пролива Губаль и включающий несколько отдельно именованных рэк-сайтов. Эта запись описывает риф как самостоятельный
+      географический дайв-сайт; «Яннис D», «Карнатик», рэк с плиткой и «Кимон M» остаются отдельными записями.
+    access: Доступ с лодки или сафари-бота; маршруты и доступные сектора сильно зависят от ветра, волнения, течения и плана оператора.
+    hazards: Открытое море, течение, мелководный риф, прибой, движение торговых и дайв-судов и соседние обломки требуют локальной навигации и отдельного брифинга.
+    marine_life: На плато и склонах встречаются твёрдые и мягкие кораллы и обычные сообщества Красного моря; наблюдения животных меняются.
+source_refs:
+- src-9db3ce3b9e04
+- src-e8352da67068
+- src-9163a7b42c43
+observations: []

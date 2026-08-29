@@ -1,0 +1,48 @@
+schema_version: '1.1'
+id: site_gubal_barge
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Gubal Barge
+  ru: Баржа Губал
+aliases:
+- The Barge
+- Barge at Bluff Point
+- Bluff Point Wreck
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.668611111
+    longitude: 33.808888889
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- wreck
+- night
+access:
+- boat
+- liveaboard
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: The shallow remains of an unidentified barge in the sheltered Bluff Point anchorage. It is a compact wreck site distinct from the wider Bluff Point wall and from the Ulysses
+      wreck.
+    access: Boat or liveaboard access, often from a nearby mooring; it is commonly used for a night dive when conditions and operator procedures allow.
+    hazards: Sharp or unstable metal, entanglement, limited night visibility, mooring lines, boat traffic, and separation require care. Any entry beneath structure requires appropriate
+      training.
+    marine_life: The wreck provides shelter for small reef and nocturnal animals; sightings vary by season and dive time.
+  ru:
+    summary: Мелководные остатки неопознанной баржи в защищённой якорной стоянке Блафф-Пойнта. Это компактный рэк-сайт, отдельный от протяжённой стенки Блафф-Пойнта и рэка «Улисс».
+    access: Доступ с лодки или сафари-бота, обычно от ближайшей швартовки; при подходящих условиях и правилах оператора сайт часто используют для ночного погружения.
+    hazards: Острый или неустойчивый металл, риск запутывания, ограниченная ночная видимость, швартовочные линии, движение судов и риск разделения группы требуют осторожности. Любой
+      заход под конструкции требует соответствующей подготовки.
+    marine_life: Рэк служит укрытием для мелких рифовых и ночных животных; наблюдения зависят от сезона и времени погружения.
+source_refs:
+- src-73f5f0aa326c
+- src-1505f58b0025
+observations: []

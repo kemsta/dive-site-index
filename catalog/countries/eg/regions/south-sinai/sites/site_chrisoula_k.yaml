@@ -1,0 +1,50 @@
+schema_version: '1.1'
+id: site_chrisoula_k
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Chrisoula K (Tile Wreck)
+  ru: «Крисула K» (рэк с плиткой)
+aliases:
+- Chrisoula K
+- Chrisoula K Wreck
+- Tile Wreck
+- Wreck of the Tiles
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.579722
+    longitude: 33.928333
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- wreck
+access:
+- boat
+- liveaboard
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: The tile-cargo wreck on the northern side of Sha'ab Abu Nuhas, cataloged here under the established Chrisoula K name. Marcus is not included as an alias because available
+      specialist accounts conflict over whether it is this wreck or a separate deeper wreck.
+    access: Boat or liveaboard access, subject to sea state on the exposed northern side of the reef.
+    hazards: Current, surge, sharp and deteriorating metal, entanglement, boat traffic, and overhead spaces require a conservative wreck plan. Penetration requires suitable training
+      and equipment.
+    marine_life: Coral growth and reef fish occupy the hull and debris; open-water encounters vary.
+  ru:
+    summary: 'Рэк с грузом плитки на северной стороне Шааб-Абу-Нухаса, представленный здесь под устойчивым названием «Крисула K». Marcus не включён в алиасы: специализированные источники
+      расходятся в том, является ли это данным объектом или отдельным более глубоким рэком.'
+    access: Доступ с лодки или сафари-бота; состояние моря на открытой северной стороне рифа может ограничивать погружение.
+    hazards: Течение, раскачка, острый и разрушающийся металл, риск запутывания, движение судов и надголовная среда требуют консервативного рэк-плана. Для проникновения нужны соответствующая
+      подготовка и снаряжение.
+    marine_life: Корпус и обломки покрыты кораллами и населены рифовыми рыбами; встречи в открытой воде непредсказуемы.
+source_refs:
+- src-9db3ce3b9e04
+- src-8c828a3e1dcc
+- src-3c62ee7e44e0
+observations: []

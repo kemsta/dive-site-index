@@ -1,0 +1,47 @@
+schema_version: '1.1'
+id: site_bluff_point_gubal
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Bluff Point
+  ru: Блафф-Пойнт
+aliases:
+- Bluffpoint
+- Bluff Point Reef
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.69447
+    longitude: 33.80219
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- wall
+- drift
+access:
+- boat
+- liveaboard
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A wall and reef dive around the exposed point of Gubal Seghir, with passages and recesses along the reef face. This record represents the reef site, not the nearby Gubal
+      Barge or Ulysses wrecks.
+    access: Boat access; liveaboards commonly use the sheltered area nearby, while the actual route depends on current and sea state.
+    hazards: Strong or changing current, surface traffic, separation, depth at the wall, and overhead-like recesses require a locally planned route and an SMB for drift procedures.
+    marine_life: Reef fish and coral growth occupy the wall and recesses; turtles or larger fish may be seen but are not guaranteed.
+  ru:
+    summary: Стенка и риф у открытого мыса Губаль-Сегир с проходами и углублениями в рельефе. Эта запись относится к рифовому сайту, а не к расположенным рядом барже Губал или рэку «Улисс».
+    access: Доступ с лодки; сафари-боты часто используют защищённую акваторию поблизости, а конкретный маршрут зависит от течения и состояния моря.
+    hazards: Сильное или меняющееся течение, движение судов, риск отделения от группы, глубина у стенки и углубления с элементами надголовной среды требуют локального плана и SMB для
+      дрейфового погружения.
+    marine_life: На стенке и в углублениях обитают рифовые рыбы и кораллы; черепахи и крупная рыба возможны, но не гарантированы.
+source_refs:
+- src-ffbb82d1d2a0
+- src-ebdf9a8a0b65
+observations: []

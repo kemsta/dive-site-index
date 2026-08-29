@@ -206,3 +206,83 @@ sources:
 - id: src-91854bb38c07
   url: https://www.sinaidivers.com/en/backpackers-dahab/dive-sites/
   kind: reference
+- id: src-53cbf490ca35
+  url: https://dive3d.eu/models/egypt/rosalie-moller/
+  kind: reference
+  notes: Site identity, location, access, characteristics, and safety context used conservatively for the catalog record.
+- id: src-ffbb82d1d2a0
+  url: https://www.padi.com/dive-site/egypt/gubal-island/
+  kind: reference
+  notes: Site identity, location, access, characteristics, and safety context used conservatively for the catalog record.
+- id: src-ebdf9a8a0b65
+  url: https://www.seawolf-safari.de/divesite/bluff-point
+  kind: reference
+  notes: Site identity, location, access, characteristics, and safety context used conservatively for the catalog record.
+- id: src-73f5f0aa326c
+  url: https://www.redseawreckproject.com/dive-sites/b-red-sea-wreck-diving-database/barge-at-bluff-point/
+  kind: reference
+  notes: Site identity, location, access, characteristics, and safety context used conservatively for the catalog record.
+- id: src-1505f58b0025
+  url: https://divebooker.com/the-barge-at-bluff-point-baz13789
+  kind: reference
+  notes: Site identity, location, access, characteristics, and safety context used conservatively for the catalog record.
+- id: src-8414cabe8f8a
+  url: https://www.redseawreckproject.com/dive-sites/u-red-sea-wreck-diving-database/ulysses/
+  kind: reference
+  notes: Site identity, location, access, characteristics, and safety context used conservatively for the catalog record.
+- id: src-f6b01a98e53e
+  url: https://dive3d.eu/models/egypt/ulysses/
+  kind: reference
+  notes: Site identity, location, access, characteristics, and safety context used conservatively for the catalog record.
+- id: src-3e84ea8111bf
+  url: https://www.coralplayground.com/dive-sites/the-ulysses
+  kind: reference
+  notes: Site identity, location, access, characteristics, and safety context used conservatively for the catalog record.
+- id: src-8c828a3e1dcc
+  url: https://cdws.travel/wreck-diving/chrisoula-k
+  kind: reference
+  notes: Site identity, location, access, characteristics, and safety context used conservatively for the catalog record.
+- id: src-3c62ee7e44e0
+  url: https://www.redseawreckproject.com/dive-sites/c-red-sea-wreck-diving-database/chrisoula-k/
+  kind: reference
+  notes: Site identity, location, access, characteristics, and safety context used conservatively for the catalog record.
+- id: src-22806661b1ec
+  url: https://padi.com/dive-site/egypt/abu-nuhas-ghiannis-d
+  kind: reference
+  notes: Site identity, location, access, characteristics, and safety context used conservatively for the catalog record.
+- id: src-e8352da67068
+  url: https://redsea-diving.com/abu-nuhas/
+  kind: reference
+  notes: Site identity, location, access, characteristics, and safety context used conservatively for the catalog record.
+- id: src-e6b77b7b26bb
+  url: https://www.cdws.travel/wreck-diving/kimon-m
+  kind: reference
+  notes: Site identity, location, access, characteristics, and safety context used conservatively for the catalog record.
+- id: src-42a0029a970e
+  url: https://www.liveaboard.com/diving/egypt/abu-nuhas
+  kind: reference
+  notes: Site identity, location, access, characteristics, and safety context used conservatively for the catalog record.
+- id: src-1157a7619c96
+  url: https://www.coralplayground.com/dive-sites/the-alternatives
+  kind: reference
+  notes: Site identity, location, access, characteristics, and safety context used conservatively for the catalog record.
+- id: src-9163a7b42c43
+  url: https://masterliveaboards.com/abu-nuhas-the-red-seas-shipwreck-hub/
+  kind: reference
+  notes: Site identity, location, access, characteristics, and safety context used conservatively for the catalog record.
+- id: src-7777dedbbedf
+  url: https://www.circledivers.com/diving-in-sharm-el-sheikh/dive-sites/diving-strait-of-tiran-sharm-el-sheikh
+  kind: reference
+  notes: Site identity, location, access, characteristics, and safety context used conservatively for the catalog record.
+- id: src-fb8e9ebd66c1
+  url: https://www.cameldive.com/dive-sites/laguna-reef/
+  kind: reference
+  notes: Site identity, location, access, characteristics, and safety context used conservatively for the catalog record.
+- id: src-0b98e90237ce
+  url: https://www.cameldive.com/dive-sites/kormoran/
+  kind: reference
+  notes: Site identity, location, access, characteristics, and safety context used conservatively for the catalog record.
+- id: src-0242edf94c6a
+  url: https://www.circledivers.com/diving-in-sharm-el-sheikh/dive-sites/kormoran-zingara-wreck-tiran
+  kind: reference
+  notes: Site identity, location, access, characteristics, and safety context used conservatively for the catalog record.

@@ -17,7 +17,7 @@ from scripts.build import TYPE_RU, build_all, load_catalog, validate_catalog, va
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 CATALOG = ROOT / "catalog"
-EXPECTED_SITE_COUNT = 42
+EXPECTED_SITE_COUNT = 56
 EXPECTED_HTML_COUNT = EXPECTED_SITE_COUNT + 3
 UDDF_XSD = ROOT / "schemas" / "vendor" / "uddf-3.2.3.xsd"
 NODE = shutil.which("node")
@@ -119,6 +119,54 @@ class CanonicalCatalogTests(unittest.TestCase):
         seven = sites["site_dahab_seven_pinnacles"]
         self.assertNotIn("no unambiguous current exact coordinate", seven["content"]["en"]["hazards"].casefold())
         self.assertNotIn("точные координаты не найдены", seven["content"]["ru"]["hazards"].casefold())
+
+    def test_gubal_tiran_expansion_resolves_all_fourteen_candidates(self):
+        expected = {
+            "rosalie-moller-gubal-gulf-of-suez": ("site_ss_rosalie_moller", 27.650833, 33.771111, "src-9db3ce3b9e04"),
+            "bluff-point-gubal-seghir": ("site_bluff_point_gubal", 27.69447, 33.80219, "src-ffbb82d1d2a0"),
+            "gubal-barge-gubal-seghir-bluff-point": ("site_gubal_barge", 27.668611111, 33.808888889, "src-73f5f0aa326c"),
+            "ss-ulysses-gubal-seghir-bluff-point": ("site_ss_ulysses_gubal", 27.686667, 33.802778, "src-8414cabe8f8a"),
+            "chrisoula-k-sha-ab-abu-nuhas": ("site_chrisoula_k", 27.579722, 33.928333, "src-9db3ce3b9e04"),
+            "giannis-d-sha-ab-abu-nuhas": ("site_giannis_d", 27.576944, 33.923056, "src-9db3ce3b9e04"),
+            "kimon-m-sha-ab-abu-nuhas": ("site_kimon_m", 27.581389, 33.93, "src-9db3ce3b9e04"),
+            "ss-carnatic-sha-ab-abu-nuhas": ("site_ss_carnatic", 27.578889, 33.925556, "src-9db3ce3b9e04"),
+            "the-alternatives-sha-ab-mahmoud-eastern-approach-to-the-strait-of-gubal": ("site_the_alternatives", 27.728889, 34.198333, "src-9db3ce3b9e04"),
+            "sha-ab-abu-nuhas-strait-of-gubal-abu-nuhas": ("site_shaab_abu_nuhas", 27.572778, 33.924444, "src-9db3ce3b9e04"),
+            "north-laguna-reef-straits-of-tiran": ("site_north_laguna_reef", 28.005833, 34.484722, "src-9db3ce3b9e04"),
+            "south-laguna-reef-straits-of-tiran": ("site_south_laguna_reef", 27.997222, 34.481667, "src-9db3ce3b9e04"),
+            "kormoran-wreck-straits-of-tiran-north-laguna-reef": ("site_zingara_kormoran", 28.0175, 34.487222, "src-9db3ce3b9e04"),
+            "stingray-station-the-alternatives-sha-ab-mahmoud": ("site_stingray_station_alternatives", 27.724722, 34.185556, "src-9db3ce3b9e04"),
+        }
+        manifest = yaml.safe_load((ROOT / "research" / "south-sinai-expansion.yaml").read_text(encoding="utf-8"))
+        resolutions = {item["candidate_key"]: item for item in manifest["resolutions"] if item["candidate_key"] in expected}
+        self.assertEqual(set(resolutions), set(expected))
+
+        catalog = load_catalog(CATALOG)
+        sites = {site["id"]: site for country in catalog["countries"].values() for region in country["regions"].values() for site in region["sites"]}
+        sources = {source["id"]: source for source in yaml.safe_load((CATALOG / "sources.yaml").read_text(encoding="utf-8"))["sources"]}
+        for candidate_key, (site_id, latitude, longitude, coordinate_source_ref) in expected.items():
+            self.assertEqual(resolutions[candidate_key]["resolution"], "site")
+            self.assertEqual(resolutions[candidate_key]["target_site_id"], site_id)
+            site = sites[site_id]
+            self.assertIn(coordinate_source_ref, site["source_refs"])
+            self.assertAlmostEqual(site["geography"]["coordinates"]["latitude"], latitude, places=6)
+            self.assertAlmostEqual(site["geography"]["coordinates"]["longitude"], longitude, places=6)
+            for source_ref in site["source_refs"]:
+                self.assertNotEqual(urlsplit(sources[source_ref]["url"]).hostname, "www.openstreetmap.org")
+            self.assertIsNone(site["depth"]["minimum_m"])
+            self.assertIsNone(site["depth"]["maximum_m"])
+            self.assertIsNone(site["difficulty"])
+            self.assertNotIn("current", site)
+            self.assertNotIn("visibility", site)
+
+        chrisoula_aliases = " ".join(sites["site_chrisoula_k"]["aliases"]).casefold()
+        self.assertNotIn("marcus", chrisoula_aliases)
+        kormoran_identity = " ".join([sites["site_zingara_kormoran"]["names"]["en"], *sites["site_zingara_kormoran"]["aliases"]]).casefold()
+        self.assertIn("kormoran", kormoran_identity)
+        self.assertIn("zingara", kormoran_identity)
+        gubal_text = " ".join(sites["site_gubal_barge"]["content"]["en"].values()).casefold()
+        self.assertIn("bluff point", gubal_text)
+        self.assertNotEqual(sites["site_stingray_station_alternatives"]["geography"]["coordinates"], sites["site_the_alternatives"]["geography"]["coordinates"])
 
     def test_first_south_sinai_expansion_adds_five_grounded_sites(self):
         catalog = load_catalog(CATALOG)

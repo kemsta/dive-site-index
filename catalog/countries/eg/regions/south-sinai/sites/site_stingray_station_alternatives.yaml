@@ -1,0 +1,49 @@
+schema_version: '1.1'
+id: site_stingray_station_alternatives
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Stingray Station
+  ru: Стингрей-Стейшн
+aliases:
+- Sting Ray Station
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.724722
+    longitude: 34.185556
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- pinnacle
+- sand
+access:
+- boat
+- liveaboard
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A named reef sector at the western extremity of The Alternatives, associated with an irregular pinnacle and sandy habitat. It is modeled as a subsite of the wider Alternatives
+      chain, not as an alias for the entire chain.
+    access: Boat or liveaboard access; the site is usually approached as part of an Alternatives dive according to mooring, current, and visibility.
+    hazards: Variable current, reduced visibility over sand, separation among coral heads, boat traffic, and navigation away from the main pinnacle group require a guided route and surface
+      signaling.
+    marine_life: Blue-spotted stingrays may gather seasonally or use the sandy cleaning area, but sightings are not guaranteed; reef fish and small coral-associated life are more consistent.
+  ru:
+    summary: Именованный сектор рифа на западной оконечности «Альтернатив», связанный с неровной коралловой башней и песчаным участком. Он представлен как подсайт более широкой цепочки,
+      а не как алиас всей группы.
+    access: Доступ с лодки или сафари-бота; обычно сюда заходят в рамках погружения на «Альтернативах» с учётом швартовки, течения и видимости.
+    hazards: Переменное течение, ухудшение видимости над песком, риск разделения среди коралловых голов, движение судов и удаление от основной группы башен требуют контролируемого маршрута
+      и сигнализации на поверхности.
+    marine_life: Голубопятнистые хвостоколы могут сезонно собираться или использовать песчаную станцию очистки, но встреча не гарантирована; рифовые рыбы и мелкие коралловые организмы
+      более постоянны.
+source_refs:
+- src-9db3ce3b9e04
+- src-1157a7619c96
+observations: []
