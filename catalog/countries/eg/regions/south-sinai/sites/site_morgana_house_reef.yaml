@@ -1,0 +1,40 @@
+schema_version: '1.1'
+id: site_morgana_house_reef
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Morgana House Reef
+  ru: Хаус-риф Моргана
+aliases: []
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 29.340833333333332
+    longitude: 34.78361111111111
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+access:
+- shore
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A separately named house reef by the former Morgana resort on the Taba coast.
+    access: Shore access is reported; confirm the permitted entry and local operating arrangements before diving.
+    hazards: Shore entry, navigation, depth and fragile coral require a locally briefed route.
+    marine_life: Coral growth and ordinary reef fish may occur; individual sightings are variable.
+  ru:
+    summary: Отдельно именованный хаус-риф у бывшего курорта Morgana на побережье Табы.
+    access: Описан береговой доступ; до погружения уточните разрешённый вход и действующие местные условия.
+    hazards: Береговой вход, навигация, глубина и хрупкие кораллы требуют маршрута по локальному брифингу.
+    marine_life: Возможны кораллы и обычные рифовые рыбы; конкретные встречи непредсказуемы.
+source_refs:
+- src-9db3ce3b9e04
+- src-6049069bff33
+observations: []

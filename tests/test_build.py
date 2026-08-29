@@ -17,7 +17,7 @@ from scripts.build import TYPE_RU, build_all, load_catalog, validate_catalog, va
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 CATALOG = ROOT / "catalog"
-EXPECTED_SITE_COUNT = 94
+EXPECTED_SITE_COUNT = 106
 EXPECTED_HTML_COUNT = EXPECTED_SITE_COUNT + 3
 UDDF_XSD = ROOT / "schemas" / "vendor" / "uddf-3.2.3.xsd"
 NODE = shutil.which("node")
@@ -290,6 +290,55 @@ class CanonicalCatalogTests(unittest.TestCase):
             text = " ".join([*sites[site_id]["content"]["en"].values(), *sites[site_id]["content"]["ru"].values()]).casefold()
             for phrase in forbidden:
                 self.assertNotIn(phrase, text)
+
+    def test_taba_expansion_resolves_all_seventeen_candidates(self):
+        expected_sites = {
+            "baer-el-benet-taba": ("site_baer_el_benet", 29.41888888888889, 34.825833333333335, "src-9db3ce3b9e04"),
+            "fjord-taba": ("site_fjord_taba", 29.42361111111111, 34.82555555555556, "src-9db3ce3b9e04"),
+            "morgana-house-reef-taba": ("site_morgana_house_reef", 29.340833333333332, 34.78361111111111, "src-9db3ce3b9e04"),
+            "pharaoh-s-island-taba": ("site_pharaohs_island_taba", 29.4575, 34.85583333333334, "src-9db3ce3b9e04"),
+            "topaz-gardens-taba": ("site_topaz_gardens", 29.396, 34.8095, "src-2119737c93a7"),
+            "marsa-el-muqabila-taba-taba-heights": ("site_marsa_el_muqabila", 29.36916666666667, 34.78583333333333, "src-9db3ce3b9e04"),
+            "angel-s-net-taba-heights": ("site_angels_net_taba_heights", 29.4015, 34.812, "src-f86b08437f12"),
+            "aquarium-taba-heights": ("site_aquarium_taba_heights", 29.399, 34.811, "src-48fd9c37251e"),
+            "maxwell-s-reef-taba-heights": ("site_maxwells_reef_taba_heights", 29.41722222222222, 34.82361111111111, "src-9db3ce3b9e04"),
+            "ras-amira-taba-heights": ("site_ras_amira_taba_heights", 29.393055555555556, 34.816944444444445, "src-9db3ce3b9e04"),
+            "sha-ab-ghamila-taba-heights": ("site_shaab_ghamila_taba_heights", 29.3835, 34.8055, "src-74e53f99c8df"),
+            "zak-s-tables-taba-heights": ("site_zaks_tables_taba_heights", 29.390555555555554, 34.80888888888889, "src-9db3ce3b9e04"),
+        }
+        deferred = {"black-corals-taba", "coral-city-taba", "the-canyons-taba", "marina-bay-taba-heights", "waterworld-house-reef-taba-heights"}
+        expected_keys = set(expected_sites) | deferred
+        self.assertEqual(len(expected_keys), 17)
+        manifest = yaml.safe_load((ROOT / "research" / "south-sinai-expansion.yaml").read_text(encoding="utf-8"))
+        resolutions = {item["candidate_key"]: item for item in manifest["resolutions"] if item["candidate_key"] in expected_keys}
+        self.assertEqual(set(resolutions), expected_keys)
+        catalog = load_catalog(CATALOG)
+        sites = {site["id"]: site for country in catalog["countries"].values() for region in country["regions"].values() for site in region["sites"]}
+        sources = {source["id"]: source for source in yaml.safe_load((CATALOG / "sources.yaml").read_text(encoding="utf-8"))["sources"]}
+        for candidate_key, (site_id, latitude, longitude, coordinate_source_ref) in expected_sites.items():
+            self.assertEqual(resolutions[candidate_key]["resolution"], "site")
+            self.assertEqual(resolutions[candidate_key]["target_site_id"], site_id)
+            site = sites[site_id]
+            self.assertIn(coordinate_source_ref, site["source_refs"])
+            self.assertAlmostEqual(site["geography"]["coordinates"]["latitude"], latitude, places=6)
+            self.assertAlmostEqual(site["geography"]["coordinates"]["longitude"], longitude, places=6)
+            for source_ref in site["source_refs"]:
+                self.assertNotIn(urlsplit(sources[source_ref]["url"]).hostname, {"www.openstreetmap.org", "openstreetmap.org"})
+            self.assertIsNone(site["depth"]["minimum_m"])
+            self.assertIsNone(site["depth"]["maximum_m"])
+            self.assertIsNone(site["difficulty"])
+            self.assertNotIn("current", site)
+            self.assertNotIn("visibility", site)
+            public_text = " ".join([*site["content"]["en"].values(), *site["content"]["ru"].values()]).casefold()
+            self.assertNotIn("confirmed", public_text)
+        for candidate_key in deferred:
+            self.assertEqual(resolutions[candidate_key]["resolution"], "unresolved")
+            self.assertIsNone(resolutions[candidate_key]["target_site_id"])
+        self.assertNotIn("site_black_corals_taba", sites)
+        self.assertNotIn("site_coral_city_taba", sites)
+        self.assertNotIn("site_the_canyons_taba", sites)
+        self.assertNotIn("site_marina_bay_taba_heights", sites)
+        self.assertNotIn("site_waterworld_house_reef_taba_heights", sites)
 
     def test_first_south_sinai_expansion_adds_five_grounded_sites(self):
         catalog = load_catalog(CATALOG)

@@ -1,0 +1,48 @@
+schema_version: '1.1'
+id: site_ras_amira_taba_heights
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Ras Amira
+  ru: Рас-Амира
+aliases: []
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 29.393055555555556
+    longitude: 34.816944444444445
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- pinnacle
+- sand
+- training
+access:
+- boat
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A Taba Heights reef and sandy-bottom site with small coral pinnacles, used for locally supervised training and
+      check dives.
+    access: Boat access; use the mooring, route and pickup selected in the operator briefing.
+    hazards: Boat traffic, navigation over sand, depth and fragile pinnacles require controlled buoyancy and supervision appropriate
+      to the dive.
+    marine_life: Small reef fish and coral-associated animals may occur around the pinnacles.
+  ru:
+    summary: Рифовый сайт Taba Heights с песчаным дном и небольшими коралловыми башнями, используемый для обучения и проверочных
+      погружений под местным контролем.
+    access: Доступ с лодки; используйте швартовку, маршрут и порядок подбора из брифинга оператора.
+    hazards: Движение судов, навигация над песком, глубина и хрупкие башни требуют контроля плавучести и соответствующего
+      сопровождения.
+    marine_life: У башен возможны мелкие рифовые рыбы и связанная с кораллами фауна.
+source_refs:
+- src-9db3ce3b9e04
+- src-3c92f9a35564
+- src-7e1d439898a8
+observations: []

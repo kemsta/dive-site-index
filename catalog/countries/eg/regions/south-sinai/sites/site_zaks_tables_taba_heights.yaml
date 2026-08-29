@@ -1,0 +1,46 @@
+schema_version: '1.1'
+id: site_zaks_tables_taba_heights
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Zak's Tables
+  ru: Закс-Тейблс
+aliases:
+- Zack's Table
+- Zak's Table
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 29.390555555555554
+    longitude: 34.80888888888889
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- pinnacle
+- sand
+access:
+- boat
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A Taba Heights reef of table corals and coral heads over sand, also recorded in singular and Zack spellings.
+    access: Boat access; follow the operator-selected mooring, route and pickup procedure.
+    hazards: Boat traffic, navigation over sand and fragile table corals require careful buoyancy and route control.
+    marine_life: Reef fish and small animals may shelter around the coral heads; sightings vary.
+  ru:
+    summary: Риф Taba Heights со столовыми кораллами и коралловыми головами над песком; встречаются также формы единственного
+      числа и написание Zack.
+    access: Доступ с лодки; следуйте выбранным оператором правилам швартовки, маршрута и подбора.
+    hazards: Движение судов, навигация над песком и хрупкие столовые кораллы требуют точного контроля плавучести и маршрута.
+    marine_life: У коралловых голов возможны рифовые рыбы и мелкая фауна; наблюдения различаются.
+source_refs:
+- src-9db3ce3b9e04
+- src-3c92f9a35564
+- src-7e1d439898a8
+observations: []

@@ -1,0 +1,48 @@
+schema_version: '1.1'
+id: site_pharaohs_island_taba
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Pharaoh's Island
+  ru: Остров Фараонов
+aliases:
+- Pharaon Island
+- Farun Island
+- Coral Island
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 29.4575
+    longitude: 34.85583333333334
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- pinnacle
+- bay
+access:
+- boat
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: The established diving area around Pharaoh's Island is represented as one island complex rather than as unnamed
+      child sites.
+    access: Reached by boat; the exact route and entry depend on the selected island sector and local briefing.
+    hazards: Boat traffic, sector choice, navigation and depth changes around the island require a site-specific plan.
+    marine_life: Coral pinnacles and reef fish may be encountered around the island; sightings vary.
+  ru:
+    summary: Подтверждённая зона дайвинга вокруг острова Фараонов представлена единым островным комплексом без неназванных
+      дочерних сайтов.
+    access: Доступ с лодки; конкретные маршрут и вход зависят от выбранного сектора острова и локального брифинга.
+    hazards: Движение судов, выбор сектора, навигация и перепады глубины вокруг острова требуют отдельного плана.
+    marine_life: У острова возможны коралловые башни и рифовые рыбы; наблюдения различаются.
+source_refs:
+- src-9db3ce3b9e04
+- src-3c92f9a35564
+- src-7e1d439898a8
+observations: []

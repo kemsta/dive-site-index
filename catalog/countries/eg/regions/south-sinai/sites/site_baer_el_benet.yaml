@@ -1,0 +1,41 @@
+schema_version: '1.1'
+id: site_baer_el_benet
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Baer el Benet
+  ru: Баэр-эль-Бенет
+aliases:
+- Gaber el Bent
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 29.41888888888889
+    longitude: 34.825833333333335
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+access:
+- boat
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A named Taba reef dive recorded by CDWS; the alternate spelling Gaber el Bent is retained for discovery.
+    access: Check access arrangements with a local Taba operator before departure.
+    hazards: Boat movement, depth and route-finding require a site briefing and a plan within diver training.
+    marine_life: Coral-associated fish may be present; encounters vary by season and dive.
+  ru:
+    summary: Именованный рифовый дайв-сайт Табы из реестра CDWS; вариант Gaber el Bent сохранён для поиска.
+    access: Условия доступа следует заранее уточнить у местного оператора Табы.
+    hazards: Движение судов, глубина и навигация требуют локального брифинга и плана в пределах подготовки дайвера.
+    marine_life: Возможны рифовые рыбы; встречи зависят от сезона и конкретного погружения.
+source_refs:
+- src-9db3ce3b9e04
+- src-0e9b39bda5ed
+observations: []

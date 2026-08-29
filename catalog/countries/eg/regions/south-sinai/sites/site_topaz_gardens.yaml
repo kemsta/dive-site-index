@@ -1,0 +1,44 @@
+schema_version: '1.1'
+id: site_topaz_gardens
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Topaz Gardens
+  ru: Топаз-Гарденс
+aliases:
+- Topaz
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 29.396
+    longitude: 34.8095
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- slope
+access:
+- boat
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A named Taba boat dive over coral gardens on a sloping reef, also shortened to Topaz.
+    access: Boat access; follow the operator-selected mooring, entry and pickup procedure.
+    hazards: Boat traffic, depth changes and contact with fragile coral require controlled buoyancy and a local briefing.
+    marine_life: Reef fish and coral-associated animals may be seen among the coral heads.
+  ru:
+    summary: Именованный лодочный дайв-сайт Табы с коралловыми садами на покатом рифе; также используется краткое имя Topaz.
+    access: Доступ с лодки; следуйте выбранным оператором правилам швартовки, входа и подбора.
+    hazards: Движение судов, перепады глубины и риск контакта с хрупкими кораллами требуют контроля плавучести и локального
+      брифинга.
+    marine_life: Среди коралловых голов возможны рифовые рыбы и связанная с кораллами фауна.
+source_refs:
+- src-2119737c93a7
+- src-3c92f9a35564
+- src-9db3ce3b9e04
+observations: []
