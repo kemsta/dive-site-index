@@ -1,6 +1,9 @@
 import copy
+import json
 import pathlib
+import re
 import shutil
+import subprocess
 import tempfile
 import unittest
 from html.parser import HTMLParser
@@ -15,6 +18,7 @@ from scripts.build import build_all, load_catalog, validate_catalog, validate_si
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 CATALOG = ROOT / "catalog"
 UDDF_XSD = ROOT / "schemas" / "vendor" / "uddf-3.2.3.xsd"
+NODE = shutil.which("node")
 
 
 class LinkCollector(HTMLParser):
@@ -34,6 +38,22 @@ class LinkCollector(HTMLParser):
 
 
 class CanonicalCatalogTests(unittest.TestCase):
+    def test_country_region_and_every_site_have_en_ru_content(self):
+        catalog = load_catalog(CATALOG)
+        for country in catalog["countries"].values():
+            self.assertTrue({"en", "ru"} <= set(country["names"]))
+            for region in country["regions"].values():
+                self.assertTrue({"en", "ru"} <= set(region["names"]))
+                self.assertTrue({"en", "ru"} <= set(region["body_of_water"]["names"]))
+                for site in region["sites"]:
+                    self.assertTrue({"en", "ru"} <= set(site["content"]), site["id"])
+                    for locale in ("en", "ru"):
+                        self.assertEqual(
+                            set(site["content"][locale]),
+                            {"summary", "access", "hazards", "marine_life"},
+                            (site["id"], locale),
+                        )
+
     def test_catalog_is_partitioned_by_country_and_region(self):
         catalog = load_catalog(CATALOG)
         validate_catalog(catalog)
@@ -120,6 +140,156 @@ class CanonicalCatalogTests(unittest.TestCase):
 
 
 class PublishingTests(unittest.TestCase):
+    def test_each_scope_has_its_own_uddf_download(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            out = pathlib.Path(tmp)
+            build_all(CATALOG, out)
+            home = (out / "index.html").read_text(encoding="utf-8")
+            country = (out / "countries" / "eg" / "index.html").read_text(encoding="utf-8")
+            region = (out / "countries" / "eg" / "regions" / "south-sinai" / "index.html").read_text(encoding="utf-8")
+            self.assertIn('href="exports/uddf/all.uddf"', home)
+            self.assertIn('href="../../exports/uddf/countries/eg.uddf"', country)
+            self.assertIn(
+                'href="../../../../exports/uddf/countries/eg/regions/south-sinai.uddf"',
+                region,
+            )
+            for page in (out / "sites").glob("*/index.html"):
+                site_id = page.parent.name
+                document = page.read_text(encoding="utf-8")
+                self.assertIn(
+                    f'href="../../exports/uddf/sites/{site_id}.uddf"', document
+                )
+                export = out / "exports" / "uddf" / "sites" / f"{site_id}.uddf"
+                self.assertTrue(export.is_file(), export)
+                xml = etree.parse(str(export))
+                self.assertEqual(
+                    len(xml.findall(".//{http://www.streit.cc/uddf/3.2/}site")), 1
+                )
+
+    def test_every_page_has_top_language_and_auto_theme_controls(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            out = pathlib.Path(tmp)
+            build_all(CATALOG, out)
+            pages = list(out.rglob("*.html"))
+            self.assertEqual(len(pages), 24)
+            for page in pages:
+                document = page.read_text(encoding="utf-8")
+                self.assertIn('id="language-select"', document, page)
+                self.assertIn('id="theme-select"', document, page)
+                self.assertIn('id="language-select" aria-label="Language" data-i18n-aria="language"', document, page)
+                self.assertIn('id="theme-select" aria-label="Theme" data-i18n-aria="theme"', document, page)
+                self.assertIn('data-theme="auto"', document, page)
+
+    def test_frontend_uses_browser_language_and_bilingual_interface(self):
+        source = (ROOT / "web" / "app.js").read_text(encoding="utf-8")
+        self.assertIn("navigator.languages", source)
+        self.assertIn('localStorage.getItem("language")', source)
+        self.assertIn('localStorage.getItem("theme")', source)
+        styles = (ROOT / "web" / "styles.css").read_text(encoding="utf-8")
+        self.assertIn("prefers-color-scheme", styles)
+        self.assertIn("--link-hover: #111827", styles)
+        self.assertIn("a:hover { color: var(--link-hover); }", styles)
+        self.assertIn("Русский", source)
+        self.assertIn("Dive sites", source)
+        self.assertNotIn("site.types.join", source)
+        self.assertIn("types_en: site.types_en", source)
+        self.assertIn('feature.properties[`types_${activeLanguage}`]', source)
+        self.assertIn("difficulty_not_assigned", source)
+
+    @unittest.skipUnless(NODE, "Node.js is required for browser preference smoke testing")
+    def test_browser_preferences_select_russian_and_auto_theme(self):
+        for browser_languages, expected in (("ru-RU,en-US", "ru"), ("en-US,ru-RU", "en"), ("ar,en-US", "ar"), ("zh-Hant,en-US", "zh-Hant")):
+            with self.subTest(browser_languages=browser_languages):
+                subprocess.run(
+                    [
+                        NODE or "node",
+                        str(ROOT / "tests" / "browser_preferences_smoke.js"),
+                        str(ROOT / "web" / "app.js"),
+                        browser_languages,
+                        expected,
+                    ],
+                    check=True,
+                )
+
+    def test_publication_omits_internal_review_metadata(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            out = pathlib.Path(tmp)
+            build_all(CATALOG, out)
+            html_output = "\n".join(
+                page.read_text(encoding="utf-8") for page in out.rglob("*.html")
+            )
+            app_js = (out / "assets" / "app.js").read_text(encoding="utf-8")
+
+            self.assertNotIn("confidence states", html_output)
+            self.assertNotIn("<span>observations</span>", html_output)
+            self.assertNotIn("<span>Observations</span>", html_output)
+            self.assertNotIn("personal observations", html_output)
+            self.assertNotIn("canonical · confirmed", html_output)
+            self.assertNotIn(">confirmed<", html_output)
+            public_copy = html_output.casefold()
+            self.assertNotIn("reviewed", public_copy)
+            self.assertNotIn("reviewable", public_copy)
+            self.assertNotIn("canonical", public_copy)
+            self.assertNotIn("garmin observation", public_copy)
+            self.assertNotIn("personal observation", public_copy)
+            self.assertNotIn("observation only", public_copy)
+            self.assertNotIn("marine-life observation", public_copy)
+            public_js = app_js.casefold()
+            self.assertNotIn("reviewed", public_js)
+            self.assertNotIn("reviewable", public_js)
+            self.assertNotIn("canonical", public_js)
+            self.assertNotIn("confidence", app_js)
+            forbidden_payload_keys = {"identity", "confidence", "observations", "observation_count"}
+            for page in out.rglob("*.html"):
+                document = etree.HTML(page.read_text(encoding="utf-8"))
+                for script in document.xpath('//script[@id="site-data"]'):
+                    payload = json.loads(script.text or "[]")
+                    keys = {key for site in payload for key in site}
+                    self.assertTrue(forbidden_payload_keys.isdisjoint(keys), (page, keys))
+
+            for export in out.rglob("*.uddf"):
+                public_uddf = export.read_text(encoding="utf-8").casefold()
+                self.assertNotIn("identity:", public_uddf, export)
+                self.assertNotIn("confidence", public_uddf, export)
+                self.assertNotIn("confirmed", public_uddf, export)
+                self.assertNotIn("observations:", public_uddf, export)
+
+            for public_file in [*out.rglob("*.html"), *out.rglob("*.uddf")]:
+                self.assertNotRegex(
+                    public_file.read_text(encoding="utf-8").casefold(),
+                    r"\bobservations?\b",
+                    public_file,
+                )
+
+    def test_theme_text_colors_meet_wcag_aa_contrast(self):
+        styles = (ROOT / "web" / "styles.css").read_text(encoding="utf-8")
+
+        def color(variable: str, block: str) -> str:
+            match = re.search(rf"{re.escape(variable)}:\s*(#[0-9a-fA-F]{{6}})", block)
+            if match is None:
+                self.fail(variable)
+            return match.group(1)
+
+        def luminance(value: str) -> float:
+            channels = [int(value[index:index + 2], 16) / 255 for index in (1, 3, 5)]
+            linear = [channel / 12.92 if channel <= 0.04045 else ((channel + 0.055) / 1.055) ** 2.4 for channel in channels]
+            return 0.2126 * linear[0] + 0.7152 * linear[1] + 0.0722 * linear[2]
+
+        def contrast(foreground: str, background: str) -> float:
+            lighter, darker = sorted((luminance(foreground), luminance(background)), reverse=True)
+            return (lighter + 0.05) / (darker + 0.05)
+
+        dark = styles.split(":root[data-theme=\"light\"]", 1)[0]
+        light = styles.split(":root[data-theme=\"light\"]", 1)[1].split("@media", 1)[0]
+        combinations = [
+            (color("--muted", dark), color("--bg", dark)),
+            (color("--muted", dark), color("--panel", dark)),
+            (color("--muted", light), color("--bg", light)),
+            (color("--cyan", light), color("--bg", light)),
+        ]
+        for foreground, background in combinations:
+            self.assertGreaterEqual(contrast(foreground, background), 4.5, (foreground, background))
+
     def test_entire_site_card_is_a_stable_link(self):
         with tempfile.TemporaryDirectory() as tmp:
             out = pathlib.Path(tmp)
@@ -191,19 +361,20 @@ class PublishingTests(unittest.TestCase):
             shutil.copytree(CATALOG, catalog_dir)
             path = catalog_dir / "countries" / "eg" / "regions" / "south-sinai" / "sites" / "site_jackson_reef.yaml"
             site = yaml.safe_load(path.read_text(encoding="utf-8"))
-            site["names"]["ar"] = "شعاب جاكسون"
-            site["content"]["ar"] = {
-                "summary": "وصف عربي.",
-                "access": "وصول.",
-                "hazards": "مخاطر.",
-                "marine_life": "حياة بحرية.",
+            site["names"]["zh-Hant"] = "傑克遜礁"
+            site["content"]["zh-Hant"] = {
+                "summary": "繁體中文說明。",
+                "access": "船潛。",
+                "hazards": "注意海流。",
+                "marine_life": "珊瑚礁生物。",
             }
             path.write_text(yaml.safe_dump(site, sort_keys=False, allow_unicode=True), encoding="utf-8")
             build_all(catalog_dir, out)
             detail = (out / "sites" / "site_jackson_reef" / "index.html").read_text(encoding="utf-8")
-            self.assertIn('<html lang="en">', detail)
+            self.assertIn('<html lang="en" data-theme="auto">', detail)
             self.assertIn('class="locale-content" data-locale="en">', detail)
-            self.assertIn('data-locale="ar" hidden', detail)
+            self.assertIn('data-locale="zh-Hant" hidden', detail)
+            self.assertIn('<option value="zh-Hant">ZH-HANT</option>', detail)
 
     def test_build_does_not_publish_media_or_non_requested_data_exports(self):
         with tempfile.TemporaryDirectory() as tmp:

@@ -5,6 +5,7 @@ identity:
   confidence: user-confirmed
 names:
   en: Shaab Ali — Dolphin Drop
+  ru: Шааб-Али — Долфин-Дроп
 aliases: []
 geography:
   country_id: eg
@@ -32,8 +33,20 @@ content:
       risk before entering open water.
     hazards: Open-water separation, boat traffic, current, changing sea state, and the unpredictability of wild
       animals. Keep a respectful distance and follow local wildlife-interaction rules and crew instructions.
-    marine_life: Dolphins were observed during the recorded event. This is a personal observation, not a promise
-      that dolphins inhabit or revisit the exact coordinate.
+    marine_life: Dolphins were seen during the recorded encounter. This does not imply that dolphins inhabit or
+      revisit the exact coordinate.
+  ru:
+    summary: Пользовательская точка события у Шааб-Али, а не официально названный дайв-сайт, который можно надёжно
+      идентифицировать и найти повторно. Во время активности Garmin 23951597811 группа следовала за дельфинами на катере
+      и вошла в воду рядом с ними. Координата фиксирует именно эту встречу и не должна восприниматься как место, где
+      появление дельфинов гарантировано.
+    access: Вход в воду и подбор с катера согласуются непосредственно с экипажем; перед входом в открытую воду оцените
+      состояние моря, движение судов, течение и риск разделения группы.
+    hazards: Риск разделения в открытой воде, движение катеров, течение, меняющееся состояние моря и непредсказуемость
+      диких животных. Соблюдайте уважительную дистанцию, местные правила взаимодействия с дикой природой и указания
+      экипажа.
+    marine_life: Во время зафиксированной встречи видели дельфинов. Это не означает, что они обитают в точке с
+      указанными координатами или возвращаются туда.
 source_refs: []
 observations:
 - record_id: '23951597811'
