@@ -1,0 +1,43 @@
+name: Suggest a dive site
+description: Propose a new site for the catalog
+title: "[New site]: "
+labels: ["data", "new-site"]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for helping expand Dive Site Index. Do not include private diver data.
+  - type: input
+    id: name
+    attributes:
+      label: Site name
+      placeholder: Common local or published name
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: Country, region, and coordinates
+      description: Decimal latitude/longitude if known; say how they were obtained.
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Description
+      description: Include site type, depth, access, hazards, and marine life when known. Mark uncertainty explicitly.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Supporting sources
+      description: Provide URLs or explain first-hand knowledge. Do not copy copyrighted descriptions.
+    validations:
+      required: true
+  - type: checkboxes
+    id: rights
+    attributes:
+      label: Contribution terms
+      options:
+        - label: I have the right to submit this information under the repository contribution terms.
+          required: true

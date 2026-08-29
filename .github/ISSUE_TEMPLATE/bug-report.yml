@@ -1,0 +1,43 @@
+name: Report a website or export bug
+description: Report a problem with the website, map, accessibility, build, or UDDF export
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: For sensitive security reports, follow SECURITY.md instead of filing a public issue.
+  - type: input
+    id: url
+    attributes:
+      label: Affected URL or file
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Browser, device, or application
+  - type: checkboxes
+    id: sensitive
+    attributes:
+      label: Security check
+      options:
+        - label: This report does not disclose credentials, private data, or exploit details.
+          required: true
