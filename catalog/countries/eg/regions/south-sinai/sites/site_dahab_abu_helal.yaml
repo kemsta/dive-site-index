@@ -1,0 +1,45 @@
+schema_version: '1.1'
+id: site_dahab_abu_helal
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Abu Helal
+  ru: Абу-Хелал
+aliases:
+- Ras Abu Helal
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 28.54221
+    longitude: 34.51669
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- canyon
+- slope
+- sand
+access:
+- shore
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A quieter north-Dahab reef with a crescent-shaped entry lagoon, expansive coral garden and a deep narrow feature known as Small or Little Canyon.
+    access: Shore entry is condition-dependent and generally planned for calm water and high tide; a southbound drift from Abu Telha can exit here.
+    hazards: Entry and exit are difficult outside calm high-tide conditions; current may strengthen around the headland, and the narrow deep canyon is not for untrained recreational penetration.
+    marine_life: Lionfish, groupers, triggerfish, unicornfish, barracuda, rays and occasional turtles are reported among extensive hard-coral formations.
+  ru:
+    summary: Тихий северный риф с входной лагуной в форме полумесяца, большим коралловым садом и глубокой узкой формой Small/Little Canyon.
+    access: Береговой вход зависит от условий и обычно планируется на прилив при спокойном море; возможен дрейф от Abu Telha с выходом здесь.
+    hazards: Вне спокойного прилива вход и выход трудны; у мыса течение может усиливаться, а узкий глубокий каньон нельзя проходить без технической подготовки.
+    marine_life: Среди обширных твёрдых кораллов отмечают крылаток, груперов, спинорогов, единороговых рыб, барракуд, скатов и иногда черепах.
+source_refs:
+- src-71755a43d3f9
+- src-d6ed327a12b9
+- src-8f6a3eca1752
+observations: []

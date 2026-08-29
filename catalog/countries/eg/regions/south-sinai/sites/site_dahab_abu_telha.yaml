@@ -1,0 +1,44 @@
+schema_version: '1.1'
+id: site_dahab_abu_telha
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Abu Telha
+  ru: Абу-Тельха
+aliases:
+- Abu Talha
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 28.5505
+    longitude: 34.5215
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- slope
+- canyon
+access:
+- shore
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A distinct coral-garden site north of Abu Helal, with a small lagoon entry and a reef slope used either for a loop or a southbound drift.
+    access: Condition-dependent shore entry, normally at high tide in calm water; the common drift finishes at Abu Helal.
+    hazards: The reef-platform entry can be difficult in wind, waves or low tide; a deeper canyon is reserved for appropriately trained technical divers.
+    marine_life: The site is especially associated with schools of red-toothed triggerfish; varied coral, rays, nudibranchs and occasional turtles are also reported.
+  ru:
+    summary: Отдельный коралловый сад к северу от Abu Helal с входом через небольшую лагуну и рифовым склоном для кругового маршрута или южного дрейфа.
+    access: Береговой вход зависит от условий и обычно выполняется в спокойный прилив; распространённый дрейф заканчивается у Abu Helal.
+    hazards: При ветре, волне или отливе вход через рифовую платформу сложен; глубокий каньон предназначен только для технически подготовленных дайверов.
+    marine_life: Сайт особенно известен стаями краснозубых спинорогов; также описаны разнообразные кораллы, скаты, голожаберные и иногда черепахи.
+source_refs:
+- src-1e603da76b49
+- src-de9262999172
+- src-eb72f49a6a3b
+observations: []

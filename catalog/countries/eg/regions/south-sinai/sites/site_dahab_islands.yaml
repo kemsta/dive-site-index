@@ -1,0 +1,46 @@
+schema_version: '1.1'
+id: site_dahab_islands
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: The Islands
+  ru: Зе-Айлендс
+aliases:
+- Islands
+- The Island
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 28.477778
+    longitude: 34.511667
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- pinnacle
+- channel
+- sand
+access:
+- shore
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A distinct shallow coral-maze site south of Mashraba, formed by several large coral islands, pools, valleys and passages.
+    access: Shore entry across the reef platform through a designated path or opening; high tide provides the safer, lower-impact entry.
+    hazards: Low tide, wind and breaking water can make entry and exit difficult; the maze has many route choices, so local navigation is important.
+    marine_life: Yellowtail and blackfin barracuda, snappers, groupers, anthias, lionfish, Napoleon wrasse, blue-spotted rays and occasional turtles or eagle rays are reported.
+  ru:
+    summary: 'Отдельный мелководный сайт к югу от Машрабы: лабиринт из крупных коралловых «островов», бассейнов, долин и проходов.'
+    access: Вход с берега через рифовую платформу по выделенному проходу; прилив делает вход безопаснее и уменьшает риск повредить коралл.
+    hazards: При отливе, ветре и прибое вход и выход сложны; из-за множества маршрутов важна уверенная навигация с местным гидом.
+    marine_life: Отмечают желтохвостых и чернопёрых барракуд, луцианов, груперов, антиасов, крылаток, наполеонов, пятнистых скатов, иногда черепах и орляков.
+source_refs:
+- src-9db3ce3b9e04
+- src-49499f9e2f44
+- src-35db53adc3ed
+observations: []

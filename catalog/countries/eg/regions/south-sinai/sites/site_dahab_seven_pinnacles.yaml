@@ -1,0 +1,46 @@
+schema_version: '1.1'
+id: site_dahab_seven_pinnacles
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Seven Pinnacles
+  ru: Севен-Пиннаклс
+aliases:
+- The Seven Pinnacles
+- 7 Pinnacles
+- Laguna
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 28.4745009297555
+    longitude: 34.4970166683197
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- pinnacle
+- slope
+- sand
+access:
+- shore
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A shallow shore site at the Laguna sand spit, centred on a group of coral pinnacles rising from a gently sloping sandy bottom.
+    access: Shore entry from the sand spit; this is the shore-access Laguna site west of the offshore Napoleon Reef.
+    hazards: The sandy entry is shallow; follow the locally briefed route and avoid contact with coral pinnacles and long-spined sea urchins.
+    marine_life: Operators report reef fish around the pinnacles, many long-spined sea urchins, octopus and occasional turtles.
+  ru:
+    summary: Мелководный береговой сайт у песчаной косы Лагуны с группой коралловых пиннаклов на пологом песчаном дне.
+    access: Вход с берега на песчаной косе; это береговой сайт Laguna к западу от офшорного Napoleon Reef.
+    hazards: Песчаный вход мелководный; следуйте маршруту местного брифинга и не касайтесь коралловых пиннаклов и длинноиглых морских ежей.
+    marine_life: Операторы отмечают рифовых рыб у пиннаклов, множество длинноиглых морских ежей, осьминогов и иногда черепах.
+source_refs:
+- src-c4500222da23
+- src-35db53adc3ed
+observations: []

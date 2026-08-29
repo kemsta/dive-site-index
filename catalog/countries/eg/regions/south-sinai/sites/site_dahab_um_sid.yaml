@@ -1,0 +1,47 @@
+schema_version: '1.1'
+id: site_dahab_um_sid
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Um Sid
+  ru: Ум-Сид
+aliases:
+- Om Sid
+- Umm Sid
+- Umm El Sid
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 28.420833
+    longitude: 34.457222
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- slope
+- sand
+- pinnacle
+access:
+- shore
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A less-frequented Southern Oasis shore site with a reef corridor, coral tongue, garden-eel slope and prominent gorgonian fans.
+    access: Shore entry through a broad corridor cut into the sloping reef; the route loops around the coral tongue and returns through shallower reef.
+    hazards: Currents can be strong or unpredictable, especially on deeper sections; the Dahab site must not be confused with similarly named Ras Um Sid sites at Sharm el-Sheikh.
+    marine_life: Garden eels, longnose hawkfish, anthias, nudibranchs, morays, scorpionfish, octopus, blue-spotted rays and occasional turtles or eagle rays are reported.
+  ru:
+    summary: Малопосещаемый береговой сайт Southern Oasis с коридором в рифе, коралловым языком, склоном садовых угрей и крупными горгонариями.
+    access: Вход с берега через широкий коридор в наклонном рифе; маршрут огибает коралловый язык и возвращается по мелкой части рифа.
+    hazards: Течение бывает сильным и непредсказуемым, особенно глубже; не путать этот сайт Дахаба с одноимёнными Ras Um Sid в Шарм-эш-Шейхе.
+    marine_life: Отмечают садовых угрей, длиннорылых кудреперов, антиасов, голожаберных, мурен, скорпен, осьминогов, пятнистых скатов, иногда черепах и орляков.
+source_refs:
+- src-9db3ce3b9e04
+- src-fd701845391a
+- src-acddb2f8efe3
+observations: []

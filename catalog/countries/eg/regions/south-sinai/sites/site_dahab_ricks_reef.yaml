@@ -1,0 +1,46 @@
+schema_version: '1.1'
+id: site_dahab_ricks_reef
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Rick's Reef
+  ru: Риф Рика
+aliases:
+- Ricks Reef
+- Rick´s Reef
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 28.557222
+    longitude: 34.523611
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- drift
+- wall
+- pinnacle
+access:
+- shore
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A distinct entry north of the Canyon used for a shallow southbound drift along coral slope, wall and pinnacles to the Canyon lagoon.
+    access: Shore entry through a small opening in the reef table; the standard route drifts south and exits through the Canyon lagoon.
+    hazards: This is normally a one-way drift, so current direction, gas reserve and the Canyon exit must be checked before entry.
+    marine_life: Salad and table corals, anthias, groupers, pufferfish, parrotfish and the fish-rich former Fish Bowl area are recurring features.
+  ru:
+    summary: Отдельный вход к северу от Canyon для мелководного южного дрейфа вдоль кораллового склона, стенки и пиннаклов к лагуне Canyon.
+    access: Вход с берега через небольшое отверстие в рифовой платформе; стандартный маршрут идёт на юг и выходит через лагуну Canyon.
+    hazards: Обычно это односторонний дрейф, поэтому до входа нужно проверить направление течения, запас газа и доступность выхода Canyon.
+    marine_life: Характерны салатовые и столовые кораллы, антиасы, груперы, иглобрюхи, рыбы-попугаи и богатая рыбой зона бывшего Fish Bowl.
+source_refs:
+- src-9db3ce3b9e04
+- src-95e6f4f56d04
+- src-8f6a3eca1752
+observations: []

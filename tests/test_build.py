@@ -17,7 +17,7 @@ from scripts.build import TYPE_RU, build_all, load_catalog, validate_catalog, va
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 CATALOG = ROOT / "catalog"
-EXPECTED_SITE_COUNT = 26
+EXPECTED_SITE_COUNT = 42
 EXPECTED_HTML_COUNT = EXPECTED_SITE_COUNT + 3
 UDDF_XSD = ROOT / "schemas" / "vendor" / "uddf-3.2.3.xsd"
 NODE = shutil.which("node")
@@ -40,6 +40,86 @@ class LinkCollector(HTMLParser):
 
 
 class CanonicalCatalogTests(unittest.TestCase):
+    def test_south_sinai_expansion_tracks_all_researched_candidates(self):
+        manifest_path = ROOT / "research" / "south-sinai-expansion.yaml"
+        self.assertTrue(manifest_path.is_file(), manifest_path)
+        manifest = yaml.safe_load(manifest_path.read_text(encoding="utf-8"))
+        self.assertEqual(manifest["schema_version"], "1.0")
+        resolutions = manifest["resolutions"]
+        self.assertEqual(len(resolutions), 118)
+        self.assertEqual(len({item["candidate_key"] for item in resolutions}), 118)
+
+        catalog = load_catalog(CATALOG)
+        sites = {
+            site["id"]: site
+            for country in catalog["countries"].values()
+            for region in country["regions"].values()
+            for site in region["sites"]
+        }
+        for item in resolutions:
+            self.assertIn(item["resolution"], {"site", "alias", "pending"}, item["candidate_key"])
+            if item["resolution"] == "pending":
+                self.assertIsNone(item["target_site_id"], item["candidate_key"])
+                continue
+            target = sites[item["target_site_id"]]
+            if item["resolution"] == "alias":
+                self.assertIn(item["canonical_name"], target["aliases"], item["candidate_key"])
+
+    def test_dahab_expansion_resolves_all_sixteen_candidates(self):
+        expected = {
+            "eel-garden-dahab-central-assalah-bay": ("site_dahab_eel_garden", 28.505, 34.519722, "src-9db3ce3b9e04"),
+            "the-islands-dahab-central-lagoona-el-qura-bay": ("site_dahab_islands", 28.477778, 34.511667, "src-9db3ce3b9e04"),
+            "napoleon-reef-dahab-central-lagoona-spit": ("site_dahab_napoleon_reef", 28.470556, 34.5075, "src-9db3ce3b9e04"),
+            "bannerfish-bay-dahab-central-masbat-bay": ("site_dahab_bannerfish_bay", 28.498889, 34.518611, "src-9db3ce3b9e04"),
+            "mashraba-dahab-central-south-end-of-dahab-bay": ("site_dahab_mashraba", 28.495, 34.516944, "src-9db3ce3b9e04"),
+            "seven-pinnacles-dahab-central-tip-of-the-sand-spit": ("site_dahab_seven_pinnacles", 28.4745009297555, 34.4970166683197, "src-c4500222da23"),
+            "abu-helal-dahab-north": ("site_dahab_abu_helal", 28.54221, 34.51669, "src-71755a43d3f9"),
+            "abu-telha-dahab-north": ("site_dahab_abu_telha", 28.5505, 34.5215, "src-1e603da76b49"),
+            "bells-dahab-north": ("site_dahab_bells", 28.573514, 34.539233, "src-74944b21d746"),
+            "canyon-coral-garden-dahab-north-canyon-area": ("site_dahab_canyon_coral_garden", 28.554722, 34.520833, "src-9db3ce3b9e04"),
+            "rick-s-reef-dahab-north-canyon-area": ("site_dahab_ricks_reef", 28.557222, 34.523611, "src-9db3ce3b9e04"),
+            "three-pools-dahab-south-el-qura-bay": ("site_dahab_three_pools", 28.435833, 34.457222, "src-9db3ce3b9e04"),
+            "the-caves-dahab-south-el-qura-bay-nabq-edge": ("site_dahab_caves", 28.416667, 34.455833, "src-9db3ce3b9e04"),
+            "um-sid-dahab-south-southern-oasis": ("site_dahab_um_sid", 28.420833, 34.457222, "src-9db3ce3b9e04"),
+            "golden-blocks-dahab-south-southern-oasis-wadi-qnai": ("site_dahab_golden_blocks", 28.439027777777778, 34.46352777777778, "src-2002a13df988"),
+            "moray-garden-dahab-south-southern-oasis-wadi-qnai": ("site_dahab_moray_garden", 28.437778, 34.458889, "src-9db3ce3b9e04"),
+        }
+        manifest = yaml.safe_load(
+            (ROOT / "research" / "south-sinai-expansion.yaml").read_text(encoding="utf-8")
+        )
+        resolutions = {
+            item["candidate_key"]: item
+            for item in manifest["resolutions"]
+            if item["candidate_key"] in expected
+        }
+        self.assertEqual(set(resolutions), set(expected))
+
+        catalog = load_catalog(CATALOG)
+        sites = {
+            site["id"]: site
+            for country in catalog["countries"].values()
+            for region in country["regions"].values()
+            for site in region["sites"]
+        }
+        sources = {
+            source["id"]: source
+            for source in yaml.safe_load((CATALOG / "sources.yaml").read_text(encoding="utf-8"))["sources"]
+        }
+        for candidate_key, (site_id, latitude, longitude, coordinate_source_ref) in expected.items():
+            self.assertEqual(resolutions[candidate_key]["resolution"], "site")
+            self.assertEqual(resolutions[candidate_key]["target_site_id"], site_id)
+            site = sites[site_id]
+            self.assertIn(coordinate_source_ref, site["source_refs"])
+            self.assertIn(coordinate_source_ref, sources)
+            self.assertAlmostEqual(site["geography"]["coordinates"]["latitude"], latitude, places=6)
+            self.assertAlmostEqual(site["geography"]["coordinates"]["longitude"], longitude, places=6)
+            self.assertNotIn("current", site)
+            self.assertNotIn("visibility", site)
+
+        seven = sites["site_dahab_seven_pinnacles"]
+        self.assertNotIn("no unambiguous current exact coordinate", seven["content"]["en"]["hazards"].casefold())
+        self.assertNotIn("точные координаты не найдены", seven["content"]["ru"]["hazards"].casefold())
+
     def test_first_south_sinai_expansion_adds_five_grounded_sites(self):
         catalog = load_catalog(CATALOG)
         sites = {

@@ -1,0 +1,48 @@
+schema_version: '1.1'
+id: site_dahab_three_pools
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Three Pools
+  ru: Три-Пулс
+aliases:
+- The Three Pools
+- 3 Pools
+- Threepools
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 28.435833
+    longitude: 34.457222
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- sand
+- channel
+- pinnacle
+- slope
+access:
+- shore
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A south-Dahab shore site named for three shallow sandy reef pools linked by coral saddles, opening onto a slope, pinnacles and coral garden.
+    access: Shore entry through the linked pools; high tide makes passage over the saddles easier and reduces reef contact.
+    hazards: Low tide makes the shallow pool passages awkward and increases the risk of contacting coral; precise buoyancy is needed in the confined entry.
+    marine_life: Napoleon wrasse, triggerfish, butterflyfish, morays, turtles, glassfish, crocodilefish, scorpionfish and octopus are reported around the pools and outer reef.
+  ru:
+    summary: Южный береговой сайт, названный по трём мелким песчаным бассейнам, соединённым коралловыми седловинами и выходящим к склону, пиннаклам и саду.
+    access: Вход с берега через связанные бассейны; прилив облегчает проход через седловины и снижает риск касания рифа.
+    hazards: При отливе мелкие проходы неудобны и возрастает риск контакта с кораллом; во входной зоне нужна точная плавучесть.
+    marine_life: В районе бассейнов и внешнего рифа отмечают наполеонов, спинорогов, рыб-бабочек, мурен, черепах, стеклянных и крокодиловых рыб, скорпен и осьминогов.
+source_refs:
+- src-9db3ce3b9e04
+- src-35db53adc3ed
+- src-f79f065f0394
+observations: []

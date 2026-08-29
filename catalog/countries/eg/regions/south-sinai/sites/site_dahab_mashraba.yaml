@@ -1,0 +1,47 @@
+schema_version: '1.1'
+id: site_dahab_mashraba
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Mashraba
+  ru: Машраба
+aliases:
+- Mashraba Reef
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 28.495
+    longitude: 34.516944
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- wall
+- pinnacle
+- slope
+- sand
+- swim-through
+access:
+- shore
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A distinct reef at the south end of Dahab Bay, with a sandy slope, Roman's Rock pinnacle, reef wall, table corals and a deeper swim-through feature.
+    access: Local walk-in shore dive near the Mashraba bridge; routes may return through the shallows or continue from Bannerfish Bay when planned as a drift.
+    hazards: The deep swim-through is not part of a routine recreational profile and requires appropriate qualification and planning; sediment can enter the bay after flash floods.
+    marine_life: Glassfish and anthias gather around pinnacles; Napoleon wrasse, groupers, rays, turtles, seahorses and gorgonians are also reported.
+  ru:
+    summary: 'Отдельный риф на юге бухты Дахаб: песчаный склон, пиннакл Roman''s Rock, рифовая стенка, столовые кораллы и глубокий сквозной проход.'
+    access: Местное береговое погружение у моста Машраба; маршрут возвращается по мелководью либо идёт сюда дрейфом от Bannerfish Bay.
+    hazards: Глубокий сквозной проход не относится к обычному рекреационному профилю и требует соответствующей квалификации; после ливневых паводков в бухту попадает осадок.
+    marine_life: У пиннаклов собираются стеклянные рыбки и антиасы; также отмечают наполеонов, груперов, скатов, черепах, морских коньков и горгонарий.
+source_refs:
+- src-9db3ce3b9e04
+- src-0c5c621ff0ab
+- src-c7c7ebea2f83
+observations: []

@@ -1,0 +1,43 @@
+schema_version: '1.1'
+id: site_dahab_napoleon_reef
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Napoleon Reef
+  ru: Риф Наполеон
+aliases: []
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 28.470556
+    longitude: 34.5075
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- pinnacle
+- drift
+access:
+- boat
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: An offshore Lagoona reef centred on a large madrepore tower separated by a channel from the half-submerged reef.
+    access: Normally reached by boat or zodiac because the reef lies several hundred metres offshore.
+    hazards: Offshore access and possible current require boat support and a locally planned entry and pickup; do not confuse it with the shore-access Seven Pinnacles.
+    marine_life: Napoleon wrasse gives the site its name; operators also report reef fish, stingrays, scorpionfish and varied coral growth around the tower.
+  ru:
+    summary: Офшорный риф Лагуны с крупной башней мадрепоровых кораллов, отделённой каналом от полузатопленного рифа.
+    access: Обычно доступен с лодки или зодиака, поскольку находится в нескольких сотнях метров от берега.
+    hazards: Офшорное положение и возможное течение требуют лодочной поддержки и согласованного с местным гидом входа и подбора; не путать с береговым Seven Pinnacles.
+    marine_life: Название связано с рыбой-наполеоном; также описаны рифовые рыбы, хвостоколы, скорпены и разнообразные кораллы вокруг башни.
+source_refs:
+- src-9db3ce3b9e04
+- src-e61113c5e7b5
+- src-35db53adc3ed
+observations: []
