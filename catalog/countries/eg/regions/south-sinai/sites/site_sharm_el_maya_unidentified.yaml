@@ -1,4 +1,4 @@
-schema_version: '1.0'
+schema_version: '1.1'
 id: site_sharm_el_maya_unidentified
 identity:
   kind: user-defined
@@ -15,11 +15,8 @@ geography:
     longitude: 34.273171
   body_of_water_id: red-sea
   water_type: salt
-classification:
-  types:
-  - user-defined location
-  - unidentified dive
-  - Garmin observation
+types: []
+access: []
 depth:
   minimum_m: null
   maximum_m: null

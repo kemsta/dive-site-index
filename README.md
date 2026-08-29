@@ -6,7 +6,7 @@ An open, source-grounded dive-site catalog with a multilingual data model, deter
 
 ## What this is
 
-Dive Site Index is a community-editable catalog of dive sites. It gives sites stable identifiers, multilingual names and descriptions, coordinates, depth and difficulty fields, access and hazard notes, source references, and downloadable UDDF records. The same data can be browsed on the website or reused in other applications.
+Dive Site Index is a community-editable catalog of dive sites. It gives sites stable identifiers, multilingual names and descriptions, coordinates, compact type and access fields, depth and difficulty, access and hazard notes, source references, and downloadable UDDF records. The same data can be browsed on the website or reused in other applications.
 
 The catalog is informational. It is not a dive briefing and does not replace training, a qualified local guide, current weather/current/tide checks, local regulations, or site-specific risk assessment.
 
@@ -47,6 +47,12 @@ Names and descriptive content are keyed by BCP-47 language tags:
 names:
   en: Jackson Reef
   ru: Риф Джексон
+types: [reef, wall, drift]
+access: [boat]
+depth:
+  minimum_m: 5
+  maximum_m: 30
+difficulty: advanced
 content:
   en:
     summary: ...
@@ -59,6 +65,8 @@ content:
     hazards: ...
     marine_life: ...
 ```
+
+`types` uses a small controlled vocabulary for stable site characteristics such as `reef`, `wall`, `wreck`, `drift`, `canyon`, or `sand`. `access` is separate and uses `boat`, `shore`, `pier`, or `liveaboard`. Both arrays may be empty when a value is not established. Optional `current` and `visibility` fields should be added only when reliable general site data is available; conditions from one dive are not treated as permanent site properties.
 
 A site may start with one locale and gain reviewed translations incrementally. Stable identity never depends on a translated or operator-specific name.
 

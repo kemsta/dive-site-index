@@ -1,4 +1,4 @@
-schema_version: '1.0'
+schema_version: '1.1'
 id: site_shaab_ali_dolphin_drop
 identity:
   kind: user-defined
@@ -15,11 +15,9 @@ geography:
     longitude: 33.898283
   body_of_water_id: red-sea
   water_type: salt
-classification:
-  types:
-  - user-defined location
-  - open-water boat entry
-  - wildlife encounter
+types: []
+access:
+- boat
 depth:
   minimum_m: null
   maximum_m: null

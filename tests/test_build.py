@@ -12,7 +12,7 @@ from urllib.parse import urlsplit
 import yaml
 from lxml import etree
 
-from scripts.build import build_all, load_catalog, validate_catalog, validate_site
+from scripts.build import TYPE_RU, build_all, load_catalog, validate_catalog, validate_site
 
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
@@ -38,6 +38,44 @@ class LinkCollector(HTMLParser):
 
 
 class CanonicalCatalogTests(unittest.TestCase):
+    def test_every_site_uses_compact_public_classification(self):
+        catalog = load_catalog(CATALOG)
+        allowed_types = {
+            "reef", "wall", "wreck", "drift", "cave", "cavern",
+            "pinnacle", "drop-off", "slope", "plateau", "canyon",
+            "channel", "sand", "bay", "swim-through", "jetty",
+            "artificial", "training", "night", "snorkeling", "other",
+        }
+        allowed_access = {"boat", "shore", "pier", "liveaboard"}
+        self.assertEqual(set(TYPE_RU), allowed_types)
+        for country in catalog["countries"].values():
+            for region in country["regions"].values():
+                for site in region["sites"]:
+                    self.assertNotIn("classification", site, site["id"])
+                    self.assertIsInstance(site["types"], list, site["id"])
+                    self.assertTrue(set(site["types"]) <= allowed_types, site["id"])
+                    self.assertEqual(len(site["types"]), len(set(site["types"])), site["id"])
+                    self.assertIsInstance(site["access"], list, site["id"])
+                    self.assertTrue(set(site["access"]) <= allowed_access, site["id"])
+                    self.assertEqual(len(site["access"]), len(set(site["access"])), site["id"])
+
+    def test_optional_current_and_visibility_fields_are_validated(self):
+        catalog = load_catalog(CATALOG)
+        site = copy.deepcopy(catalog["countries"]["eg"]["regions"]["south-sinai"]["sites"][0])
+        site["current"] = {"typical": "moderate", "variable": True}
+        site["visibility"] = {"minimum_m": 15, "maximum_m": 30}
+        validate_site(site, country_id="eg", region_id="south-sinai")
+
+        invalid_current = copy.deepcopy(site)
+        invalid_current["current"]["typical"] = "sometimes-fast"
+        with self.assertRaises(ValueError):
+            validate_site(invalid_current, country_id="eg", region_id="south-sinai")
+
+        invalid_visibility = copy.deepcopy(site)
+        invalid_visibility["visibility"] = {"minimum_m": 30, "maximum_m": 15}
+        with self.assertRaisesRegex(ValueError, "visibility"):
+            validate_site(invalid_visibility, country_id="eg", region_id="south-sinai")
+
     def test_country_region_and_every_site_have_en_ru_content(self):
         catalog = load_catalog(CATALOG)
         for country in catalog["countries"].values():
@@ -140,6 +178,45 @@ class CanonicalCatalogTests(unittest.TestCase):
 
 
 class PublishingTests(unittest.TestCase):
+    def test_optional_conditions_are_exported_to_uddf(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            catalog = pathlib.Path(tmp) / "catalog"
+            out = pathlib.Path(tmp) / "public"
+            shutil.copytree(CATALOG, catalog)
+            site_path = catalog / "countries" / "eg" / "regions" / "south-sinai" / "sites" / "site_amphoras.yaml"
+            site = yaml.safe_load(site_path.read_text(encoding="utf-8"))
+            site["current"] = {"typical": "moderate", "variable": True}
+            site["visibility"] = {"minimum_m": 15, "maximum_m": 30}
+            site_path.write_text(yaml.safe_dump(site, sort_keys=False, allow_unicode=True), encoding="utf-8")
+            build_all(catalog, out)
+            uddf = (out / "exports" / "uddf" / "sites" / "site_amphoras.uddf").read_text(encoding="utf-8")
+            self.assertIn("<minimumvisibility>15</minimumvisibility>", uddf)
+            self.assertIn("<maximumvisibility>30</maximumvisibility>", uddf)
+            self.assertIn("Typical current: moderate; variable", uddf)
+
+    def test_public_output_uses_structured_types_and_access(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            out = pathlib.Path(tmp)
+            build_all(CATALOG, out)
+            site = (out / "sites" / "site_shark_yolanda" / "index.html").read_text(encoding="utf-8")
+            home = (out / "index.html").read_text(encoding="utf-8")
+            uddf = (out / "exports" / "uddf" / "sites" / "site_shark_yolanda.uddf").read_text(encoding="utf-8")
+            self.assertIn('data-site-types="reef,wall,plateau,drift,wreck"', site)
+            self.assertIn('data-site-access="boat"', site)
+            self.assertIn('data-types="reef wall plateau drift wreck"', home)
+            self.assertIn('data-access="boat"', home)
+            self.assertIn("Site types: reef, wall, plateau, drift, wreck", uddf)
+            self.assertIn("Access methods: boat", uddf)
+            public_types = []
+            for page in out.rglob("*.html"):
+                document = page.read_text(encoding="utf-8")
+                public_types.extend(re.findall(r'data-site-types="([^"]*)"', document))
+                public_types.extend(re.findall(r'data-types="([^"]*)"', document))
+            map_payload = (out / "index.html").read_text(encoding="utf-8")
+            for forbidden in ("Garmin observation", "user-defined location", "unidentified dive"):
+                self.assertNotIn(forbidden.casefold(), " ".join(public_types).casefold())
+                self.assertNotIn(f'"types_en":"{forbidden}', map_payload)
+
     def test_repository_explains_contribution_reporting_and_commercial_use(self):
         expected = [
             ROOT / "CONTRIBUTING.md",

@@ -21,10 +21,15 @@ body:
     validations:
       required: true
   - type: textarea
+    id: classification
+    attributes:
+      label: Type and access
+      description: List any known site types (for example reef, wall, wreck, drift) and access methods (boat, shore, pier, or liveaboard). Leave unknown values blank rather than guessing.
+  - type: textarea
     id: details
     attributes:
       label: Description
-      description: Include site type, depth, access, hazards, and marine life when known. Mark uncertainty explicitly.
+      description: Include depth, current, visibility, access details, hazards, and marine life when known. Mark uncertainty explicitly; do not turn conditions from one dive into permanent site properties.
     validations:
       required: true
   - type: textarea

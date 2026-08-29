@@ -1,4 +1,4 @@
-schema_version: '1.0'
+schema_version: '1.1'
 id: site_satellite_reef
 identity:
   kind: canonical
@@ -15,13 +15,13 @@ geography:
     longitude: 34.257522
   body_of_water_id: red-sea
   water_type: salt
-classification:
-  types:
-  - reef
-  - plateau
-  - drop-off
-  - drift dive
-  - boat dive
+types:
+- reef
+- plateau
+- drop-off
+- drift
+access:
+- boat
 depth:
   minimum_m: 0.5
   maximum_m: 30

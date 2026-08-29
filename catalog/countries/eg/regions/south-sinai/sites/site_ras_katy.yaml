@@ -1,4 +1,4 @@
-schema_version: '1.0'
+schema_version: '1.1'
 id: site_ras_katy
 identity:
   kind: canonical
@@ -15,13 +15,13 @@ geography:
     longitude: 34.302488
   body_of_water_id: red-sea
   water_type: salt
-classification:
-  types:
-  - reef
-  - coral pinnacles
-  - sandy area
-  - mooring dive
-  - snorkelling site
+types:
+- reef
+- pinnacle
+- sand
+- snorkeling
+access:
+- boat
 depth:
   minimum_m: 5
   maximum_m: 30

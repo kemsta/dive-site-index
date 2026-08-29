@@ -1,4 +1,4 @@
-schema_version: '1.0'
+schema_version: '1.1'
 id: site_jackfish_alley
 identity:
   kind: canonical
@@ -15,13 +15,13 @@ geography:
     longitude: 34.256989
   body_of_water_id: red-sea
   water_type: salt
-classification:
-  types:
-  - reef
-  - wall
-  - sandy alley
-  - drift dive
-  - optional swim-throughs
+types:
+- reef
+- wall
+- drift
+- swim-through
+access:
+- boat
 depth:
   minimum_m: 5
   maximum_m: 18

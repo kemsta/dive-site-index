@@ -3,9 +3,9 @@
   "$id": "https://kemsta.github.io/dive-site-index/schemas/site.schema.json",
   "title": "Canonical dive site",
   "type": "object",
-  "required": ["schema_version", "id", "identity", "names", "aliases", "geography", "classification", "depth", "difficulty", "content", "source_refs", "observations"],
+  "required": ["schema_version", "id", "identity", "names", "aliases", "geography", "types", "access", "depth", "difficulty", "content", "source_refs", "observations"],
   "properties": {
-    "schema_version": {"const": "1.0"},
+    "schema_version": {"const": "1.1"},
     "id": {"type": "string", "pattern": "^[a-z][a-z0-9_-]+$"},
     "identity": {
       "type": "object",
@@ -38,11 +38,15 @@
       },
       "additionalProperties": false
     },
-    "classification": {
-      "type": "object",
-      "required": ["types"],
-      "properties": {"types": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true}},
-      "additionalProperties": false
+    "types": {
+      "type": "array",
+      "items": {"enum": ["reef", "wall", "wreck", "drift", "cave", "cavern", "pinnacle", "drop-off", "slope", "plateau", "canyon", "channel", "sand", "bay", "swim-through", "jetty", "artificial", "training", "night", "snorkeling", "other"]},
+      "uniqueItems": true
+    },
+    "access": {
+      "type": "array",
+      "items": {"enum": ["boat", "shore", "pier", "liveaboard"]},
+      "uniqueItems": true
     },
     "depth": {
       "type": "object",
@@ -54,6 +58,24 @@
       "additionalProperties": false
     },
     "difficulty": {"enum": ["beginner", "intermediate", "advanced", null]},
+    "current": {
+      "type": "object",
+      "required": ["typical", "variable"],
+      "properties": {
+        "typical": {"enum": ["none", "mild", "moderate", "strong"]},
+        "variable": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "visibility": {
+      "type": "object",
+      "required": ["minimum_m", "maximum_m"],
+      "properties": {
+        "minimum_m": {"type": "number", "minimum": 0},
+        "maximum_m": {"type": "number", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
     "content": {
       "type": "object",
       "minProperties": 1,
