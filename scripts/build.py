@@ -339,12 +339,12 @@ def site_card(site: dict, prefix: str) -> str:
     summary = html.escape(site["content"][locale]["summary"])
     types = " ".join(html.escape(value) for value in site["classification"]["types"][:3])
     tags = "".join(f'<span class="chip">{html.escape(value)}</span>' for value in site["classification"]["types"][:3])
-    return f'''<article class="site-card" data-name="{name.casefold()}" data-types="{types.casefold()}" data-difficulty="{html.escape(site['difficulty'] or 'unassigned')}">
+    return f'''<a class="site-card" href="{prefix}sites/{site['id']}/" data-site-id="{site['id']}" data-name="{name.casefold()}" data-types="{types.casefold()}" data-difficulty="{html.escape(site['difficulty'] or 'unassigned')}">
   <div class="card-top"><span class="eyebrow">{html.escape(site['identity']['confidence'])}</span><span class="depth">{depth_label(site)}</span></div>
-  <h3><a href="{prefix}sites/{site['id']}/">{name}</a></h3>
+  <h3>{name}</h3>
   <p>{summary}</p>
   <div class="chips">{tags}</div>
-</article>'''
+</a>'''
 
 
 def layout(*, title: str, body: str, prefix: str, site_data: list[dict] | None = None, description: str = "Open canonical dive-site index", lang: str = "en") -> str:
