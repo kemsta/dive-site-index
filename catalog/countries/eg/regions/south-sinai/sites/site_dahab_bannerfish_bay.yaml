@@ -1,0 +1,45 @@
+schema_version: '1.1'
+id: site_dahab_bannerfish_bay
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Bannerfish Bay
+  ru: Баннерфиш-Бей
+aliases: []
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 28.498889
+    longitude: 34.518611
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- bay
+- reef
+- sand
+- training
+- night
+access:
+- shore
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A sheltered central-Dahab bay combining seagrass, sand patches and small reefs, valued for macro life, training and night dives.
+    access: Walk-in shore access using the central waterfront/Lighthouse-side entry; the area can also start a southbound drift to Mashraba.
+    hazards: Fine sand and seagrass are easily disturbed; maintain buoyancy and watch for camouflaged venomous bottom fish rather than standing or kneeling.
+    marine_life: Bannerfish, seahorses, ghost pipefish, seamoths, frogfish, flounders, morays, shrimps, scorpionfish, octopus and a resident turtle are reported.
+  ru:
+    summary: Защищённая бухта в центре Дахаба с морской травой, песчаными участками и мини-рифами; ценится за макрожизнь, обучение и ночные погружения.
+    access: Пеший вход с центральной набережной со стороны Lighthouse; отсюда также начинают южный дрейф к Mashraba.
+    hazards: Ил и морская трава легко взмучиваются; сохраняйте плавучесть и не становитесь на дно из-за замаскированных ядовитых донных рыб.
+    marine_life: Описаны вымпельные рыбы, морские коньки, рыбы-призраки, морские мотыльки, удильщики, камбалы, мурены, креветки, скорпены, осьминоги и местная черепаха.
+source_refs:
+- src-9db3ce3b9e04
+- src-efc31c92c1b1
+- src-91854bb38c07
+observations: []

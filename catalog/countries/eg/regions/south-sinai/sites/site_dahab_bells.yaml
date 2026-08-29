@@ -1,0 +1,48 @@
+schema_version: '1.1'
+id: site_dahab_bells
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Bells
+  ru: Беллс
+aliases:
+- The Bells
+- El Bells
+- Bell Tower
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 28.573514
+    longitude: 34.539233
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- wall
+- drift
+- channel
+- drop-off
+access:
+- shore
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A narrow reef-table breach and chimney north of the Blue Hole that opens onto a vertical outer wall and commonly starts the Bells-to-Blue-Hole drift.
+    access: Shore access by walking north from the Blue Hole facilities, entering single-file through the narrow breach and normally exiting through the Blue Hole.
+    hazards: The chimney, immediate depth, sheer drop-off and one-way drift demand precise buoyancy, gas planning and local guidance; deep Blue Hole features are outside ordinary recreational limits.
+    marine_life: Black coral, soft corals, anemones, clownfish, lionfish and other reef fish occur on the wall; turtles or larger visitors in the blue are possible but not assured.
+  ru:
+    summary: Узкая трещина и шахта в рифовой платформе к северу от Blue Hole, выходящая на отвесную внешнюю стену и служащая началом дрейфа Bells—Blue Hole.
+    access: 'С берега: пешком к северу от инфраструктуры Blue Hole, вход по одному через узкую трещину, обычный выход — через Blue Hole.'
+    hazards: Шахта, резкий набор глубины, отвесный свал и односторонний дрейф требуют точной плавучести, расчёта газа и местного гида; глубокие элементы Blue Hole выходят за рекреационные пределы.
+    marine_life: На стене встречаются чёрные и мягкие кораллы, актинии, рыбы-клоуны, крылатки и другие рифовые рыбы; черепахи и крупные гости в синеве возможны, но не гарантированы.
+source_refs:
+- src-74944b21d746
+- src-91854bb38c07
+- src-35db53adc3ed
+observations: []

@@ -1,0 +1,46 @@
+schema_version: '1.1'
+id: site_dahab_golden_blocks
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Golden Blocks
+  ru: Голден-Блокс
+aliases:
+- The Golden Blocks
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 28.439027777777778
+    longitude: 34.46352777777778
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- pinnacle
+- slope
+- sand
+- drift
+access:
+- shore
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A southern shore reef named for prominent coral towers, with a gentle coral slope divided by sandy paths and a small canyon-like feature.
+    access: Easy shore entry over shingle in the sheltered Southern Oasis; dive as a loop or begin a planned drift to Moray Garden.
+    hazards: Deeper sandy alleys and the drift option require route and gas planning; protect the shallow table corals and avoid entering small overhead features without suitable training.
+    marine_life: Golden anthias crowd the named pinnacles; nudibranchs, groupers, morays, rays, octopus, glassfish, turtles and occasional larger visitors are reported.
+  ru:
+    summary: Южный береговой риф, названный по заметным коралловым башням; пологий склон разделён песчаными дорожками и небольшой каньоноподобной формой.
+    access: Простой вход с берега по гальке в защищённой Southern Oasis; возможен круговой маршрут или спланированный дрейф к Moray Garden.
+    hazards: Глубокие песчаные аллеи и дрейф требуют расчёта маршрута и газа; берегите мелкие столовые кораллы и не входите под своды без подготовки.
+    marine_life: На именных пиннаклах много золотистых антиасов; также отмечают голожаберных, груперов, мурен, скатов, осьминогов, стеклянных рыбок, черепах и редких крупных гостей.
+source_refs:
+- src-2002a13df988
+- src-b2ffdc02c00c
+- src-022a2e265509
+observations: []

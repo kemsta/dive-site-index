@@ -1,0 +1,47 @@
+schema_version: '1.1'
+id: site_dahab_canyon_coral_garden
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Canyon Coral Garden
+  ru: Каньон-Корал-Гарден
+aliases:
+- Coral Garden
+- Canyon Gardens
+- Canyon Japanese Garden
+- Japanese Garden
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 28.554722
+    longitude: 34.520833
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- slope
+- sand
+access:
+- shore
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: The named shallow coral-garden dive reached through the Canyon lagoon, then turning right rather than following the Canyon profile.
+    access: Shore entry uses the Canyon's sandy lagoon and saddle; outside the lagoon the route turns right along the coral garden and returns shallow.
+    hazards: It shares the Canyon-area entry, so tide, reef contact and navigation back to the lagoon matter; do not confuse this shallow profile with penetration of the Canyon fissure.
+    marine_life: Hard and soft corals support anthias, crocodilefish, glassfish, unicornfish, octopus and the camouflaged Red Sea walkman reported by operators.
+  ru:
+    summary: 'Именованный мелководный коралловый сад: вход через лагуну Canyon, затем поворот направо вместо маршрута к самому каньону.'
+    access: Береговой вход через песчаную лагуну и седловину Canyon; снаружи маршрут идёт направо вдоль сада и возвращается по мелководью.
+    hazards: Вход общий с Canyon, поэтому важны прилив, защита рифа и навигация обратно в лагуну; не путать этот мелкий профиль с проникновением в трещину каньона.
+    marine_life: Среди твёрдых и мягких кораллов отмечают антиасов, крокодиловых рыб, стеклянных рыбок, единороговых рыб, осьминогов и замаскированного Red Sea walkman.
+source_refs:
+- src-9db3ce3b9e04
+- src-8f6a3eca1752
+- src-9ed7ecfd88c4
+observations: []

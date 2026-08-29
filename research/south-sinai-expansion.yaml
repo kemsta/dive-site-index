@@ -1,0 +1,593 @@
+schema_version: '1.0'
+scope: South Sinai expansion candidate resolution tracker
+resolutions:
+- candidate_key: eel-garden-dahab-central-assalah-bay
+  canonical_name: Eel Garden
+  area: Dahab Central — Assalah Bay
+  resolution: site
+  target_site_id: site_dahab_eel_garden
+- candidate_key: the-islands-dahab-central-lagoona-el-qura-bay
+  canonical_name: The Islands
+  area: Dahab Central — Lagoona/El Qura Bay
+  resolution: site
+  target_site_id: site_dahab_islands
+- candidate_key: napoleon-reef-dahab-central-lagoona-spit
+  canonical_name: Napoleon Reef
+  area: Dahab Central — Lagoona/Spit
+  resolution: site
+  target_site_id: site_dahab_napoleon_reef
+- candidate_key: bannerfish-bay-dahab-central-masbat-bay
+  canonical_name: Bannerfish Bay
+  area: Dahab Central — Masbat Bay
+  resolution: site
+  target_site_id: site_dahab_bannerfish_bay
+- candidate_key: mashraba-dahab-central-south-end-of-dahab-bay
+  canonical_name: Mashraba
+  area: Dahab Central — south end of Dahab Bay
+  resolution: site
+  target_site_id: site_dahab_mashraba
+- candidate_key: seven-pinnacles-dahab-central-tip-of-the-sand-spit
+  canonical_name: Seven Pinnacles
+  area: Dahab Central — tip of the sand spit
+  resolution: site
+  target_site_id: site_dahab_seven_pinnacles
+- candidate_key: abu-helal-dahab-north
+  canonical_name: Abu Helal
+  area: Dahab North
+  resolution: site
+  target_site_id: site_dahab_abu_helal
+- candidate_key: abu-telha-dahab-north
+  canonical_name: Abu Telha
+  area: Dahab North
+  resolution: site
+  target_site_id: site_dahab_abu_telha
+- candidate_key: bells-dahab-north
+  canonical_name: Bells
+  area: Dahab North
+  resolution: site
+  target_site_id: site_dahab_bells
+- candidate_key: canyon-coral-garden-dahab-north-canyon-area
+  canonical_name: Canyon Coral Garden
+  area: Dahab North — Canyon area
+  resolution: site
+  target_site_id: site_dahab_canyon_coral_garden
+- candidate_key: rick-s-reef-dahab-north-canyon-area
+  canonical_name: Rick's Reef
+  area: Dahab North — Canyon area
+  resolution: site
+  target_site_id: site_dahab_ricks_reef
+- candidate_key: three-pools-dahab-south-el-qura-bay
+  canonical_name: Three Pools
+  area: Dahab South — El Qura Bay
+  resolution: site
+  target_site_id: site_dahab_three_pools
+- candidate_key: the-caves-dahab-south-el-qura-bay-nabq-edge
+  canonical_name: The Caves
+  area: Dahab South — El Qura Bay/Nabq edge
+  resolution: site
+  target_site_id: site_dahab_caves
+- candidate_key: um-sid-dahab-south-southern-oasis
+  canonical_name: Um Sid
+  area: Dahab South — Southern Oasis
+  resolution: site
+  target_site_id: site_dahab_um_sid
+- candidate_key: golden-blocks-dahab-south-southern-oasis-wadi-qnai
+  canonical_name: Golden Blocks
+  area: Dahab South — Southern Oasis/Wadi Qnai
+  resolution: site
+  target_site_id: site_dahab_golden_blocks
+- candidate_key: moray-garden-dahab-south-southern-oasis-wadi-qnai
+  canonical_name: Moray Garden
+  area: Dahab South — Southern Oasis/Wadi Qnai
+  resolution: site
+  target_site_id: site_dahab_moray_garden
+- candidate_key: baby-blue-hole-gabr-el-bint
+  canonical_name: Baby Blue Hole
+  area: Gabr el Bint
+  resolution: pending
+  target_site_id: null
+- candidate_key: gabr-el-bint-canyon-gabr-el-bint
+  canonical_name: Gabr el Bint Canyon
+  area: Gabr el Bint
+  resolution: pending
+  target_site_id: null
+- candidate_key: gabr-el-bint-gabr-el-bint-nabq-protected-area-south-of-dahab
+  canonical_name: Gabr el Bint
+  area: Gabr el Bint / Nabq Protected Area, south of Dahab
+  resolution: pending
+  target_site_id: null
+- candidate_key: el-shugurat-gabr-el-bint-boat-diving-corridor
+  canonical_name: El Shugurat
+  area: Gabr el Bint boat-diving corridor
+  resolution: pending
+  target_site_id: null
+- candidate_key: shaab-said-gabr-el-bint-boat-diving-corridor
+  canonical_name: Shaab Said
+  area: Gabr el Bint boat-diving corridor
+  resolution: pending
+  target_site_id: null
+- candidate_key: shaira-gabr-el-bint-boat-diving-corridor
+  canonical_name: Shaira
+  area: Gabr el Bint boat-diving corridor
+  resolution: pending
+  target_site_id: null
+- candidate_key: rosalie-moller-gubal-gulf-of-suez
+  canonical_name: Rosalie Moller
+  area: Gubal / Gulf of Suez
+  resolution: pending
+  target_site_id: null
+- candidate_key: bluff-point-gubal-seghir
+  canonical_name: Bluff Point
+  area: Gubal Seghir
+  resolution: pending
+  target_site_id: null
+- candidate_key: gubal-barge-gubal-seghir-bluff-point
+  canonical_name: Gubal Barge
+  area: Gubal Seghir / Bluff Point
+  resolution: pending
+  target_site_id: null
+- candidate_key: ss-ulysses-gubal-seghir-bluff-point
+  canonical_name: SS Ulysses
+  area: Gubal Seghir / Bluff Point
+  resolution: pending
+  target_site_id: null
+- candidate_key: abu-lou-lou-nuweiba
+  canonical_name: Abu Lou Lou
+  area: Nuweiba
+  resolution: pending
+  target_site_id: null
+- candidate_key: al-ma-agana-nuweiba
+  canonical_name: Al Ma'agana
+  area: Nuweiba
+  resolution: pending
+  target_site_id: null
+- candidate_key: angelfish-coral-garden-nuweiba
+  canonical_name: Angelfish Coral Garden
+  area: Nuweiba
+  resolution: pending
+  target_site_id: null
+- candidate_key: angelfish-north-nuweiba
+  canonical_name: Angelfish North
+  area: Nuweiba
+  resolution: pending
+  target_site_id: null
+- candidate_key: angelfish-south-nuweiba
+  canonical_name: Angelfish South
+  area: Nuweiba
+  resolution: pending
+  target_site_id: null
+- candidate_key: bawaki-nuweiba
+  canonical_name: Bawaki
+  area: Nuweiba
+  resolution: pending
+  target_site_id: null
+- candidate_key: castle-beach-nuweiba
+  canonical_name: Castle Beach
+  area: Nuweiba
+  resolution: pending
+  target_site_id: null
+- candidate_key: dolphin-bay-nuweiba
+  canonical_name: Dolphin Bay
+  area: Nuweiba
+  resolution: pending
+  target_site_id: null
+- candidate_key: el-huwei-nuweiba
+  canonical_name: El Huwei
+  area: Nuweiba
+  resolution: pending
+  target_site_id: null
+- candidate_key: ras-el-shetan-nuweiba
+  canonical_name: Ras el Shetan
+  area: Nuweiba
+  resolution: pending
+  target_site_id: null
+- candidate_key: ray-hole-nuweiba
+  canonical_name: Ray Hole
+  area: Nuweiba
+  resolution: pending
+  target_site_id: null
+- candidate_key: sha-ab-elaria-nuweiba
+  canonical_name: Sha'ab Elaria
+  area: Nuweiba
+  resolution: pending
+  target_site_id: null
+- candidate_key: swisscare-house-reef-nuweiba
+  canonical_name: Swisscare House Reef
+  area: Nuweiba
+  resolution: pending
+  target_site_id: null
+- candidate_key: t-reef-nuweiba
+  canonical_name: T-Reef
+  area: Nuweiba
+  resolution: pending
+  target_site_id: null
+- candidate_key: the-labyrinth-nuweiba
+  canonical_name: The Labyrinth
+  area: Nuweiba
+  resolution: pending
+  target_site_id: null
+- candidate_key: um-um-raicher-nuweiba
+  canonical_name: Um Um Raicher
+  area: Nuweiba
+  resolution: pending
+  target_site_id: null
+- candidate_key: el-hibeq-north-nuweiba-el-hibeq-area
+  canonical_name: El Hibeq North
+  area: Nuweiba (El Hibeq area)
+  resolution: pending
+  target_site_id: null
+- candidate_key: el-hibeq-south-nuweiba-el-hibeq-area
+  canonical_name: El Hibeq South
+  area: Nuweiba (El Hibeq area)
+  resolution: pending
+  target_site_id: null
+- candidate_key: mfo-nuweiba-mfo-area
+  canonical_name: MFO
+  area: Nuweiba (MFO area)
+  resolution: pending
+  target_site_id: null
+- candidate_key: mfo-pipeline-nuweiba-mfo-area
+  canonical_name: MFO Pipeline
+  area: Nuweiba (MFO area)
+  resolution: pending
+  target_site_id: null
+- candidate_key: mfo-pipeline-coral-garden-nuweiba-mfo-area
+  canonical_name: MFO Pipeline Coral Garden
+  area: Nuweiba (MFO area)
+  resolution: pending
+  target_site_id: null
+- candidate_key: mfo-sinkers-nuweiba-mfo-area
+  canonical_name: MFO Sinkers
+  area: Nuweiba (MFO area)
+  resolution: pending
+  target_site_id: null
+- candidate_key: farrah-shore-nuweiba-myserique-el-mazeriq-area
+  canonical_name: Farrah Shore
+  area: Nuweiba (Myserique / El Mazeriq area)
+  resolution: pending
+  target_site_id: null
+- candidate_key: myserique-north-nuweiba-myserique-el-mazeriq-area
+  canonical_name: Myserique North
+  area: Nuweiba (Myserique / El Mazeriq area)
+  resolution: pending
+  target_site_id: null
+- candidate_key: myserique-south-nuweiba-myserique-el-mazeriq-area
+  canonical_name: Myserique South
+  area: Nuweiba (Myserique / El Mazeriq area)
+  resolution: pending
+  target_site_id: null
+- candidate_key: ray-s-place-nuweiba-myserique-el-mazeriq-area
+  canonical_name: Ray's Place
+  area: Nuweiba (Myserique / El Mazeriq area)
+  resolution: pending
+  target_site_id: null
+- candidate_key: outside-rock-sea-nuweiba-rock-sea-area
+  canonical_name: Outside Rock Sea
+  area: Nuweiba (Rock Sea area)
+  resolution: pending
+  target_site_id: null
+- candidate_key: rock-sea-nuweiba-rock-sea-area
+  canonical_name: Rock Sea
+  area: Nuweiba (Rock Sea area)
+  resolution: pending
+  target_site_id: null
+- candidate_key: the-valley-nuweiba-rock-sea-area
+  canonical_name: The Valley
+  area: Nuweiba (Rock Sea area)
+  resolution: pending
+  target_site_id: null
+- candidate_key: north-ras-abu-galum-nuweiba-ras-abu-galum-protected-area
+  canonical_name: North Ras Abu Galum
+  area: Nuweiba / Ras Abu Galum Protected Area / Ras Abu Galum Protected Area
+  resolution: pending
+  target_site_id: null
+- candidate_key: ras-abu-galum-alternatives-nuweiba-ras-abu-galum-protected-area
+  canonical_name: Ras Abu Galum Alternatives
+  area: Nuweiba / Ras Abu Galum Protected Area
+  resolution: pending
+  target_site_id: null
+- candidate_key: ras-abu-galum-coral-garden-nuweiba-ras-abu-galum-protected-area
+  canonical_name: Ras Abu Galum Coral Garden
+  area: Nuweiba / Ras Abu Galum Protected Area
+  resolution: pending
+  target_site_id: null
+- candidate_key: ras-mumlah-coral-garden-nuweiba-ras-abu-galum-protected-area
+  canonical_name: Ras Mumlah Coral Garden
+  area: Nuweiba / Ras Abu Galum Protected Area
+  resolution: pending
+  target_site_id: null
+- candidate_key: ras-mumlah-north-nuweiba-ras-abu-galum-protected-area
+  canonical_name: Ras Mumlah North
+  area: Nuweiba / Ras Abu Galum Protected Area
+  resolution: pending
+  target_site_id: null
+- candidate_key: ras-mumlah-south-nuweiba-ras-abu-galum-protected-area
+  canonical_name: Ras Mumlah South
+  area: Nuweiba / Ras Abu Galum Protected Area
+  resolution: pending
+  target_site_id: null
+- candidate_key: south-ras-abu-galum-nuweiba-ras-abu-galum-protected-area
+  canonical_name: South Ras Abu Galum
+  area: Nuweiba / Ras Abu Galum Protected Area / Ras Abu Galum Protected Area
+  resolution: pending
+  target_site_id: null
+- candidate_key: a-maeid-ras-abu-galum-protected-area
+  canonical_name: A'Maeid
+  area: Ras Abu Galum Protected Area
+  resolution: pending
+  target_site_id: null
+- candidate_key: big-stone-ras-abu-galum-protected-area
+  canonical_name: Big Stone
+  area: Ras Abu Galum Protected Area
+  resolution: pending
+  target_site_id: null
+- candidate_key: dheyla-drift-ras-abu-galum-protected-area
+  canonical_name: Dheyla Drift
+  area: Ras Abu Galum Protected Area
+  resolution: pending
+  target_site_id: null
+- candidate_key: dheyla-pinnacle-ras-abu-galum-protected-area
+  canonical_name: Dheyla Pinnacle
+  area: Ras Abu Galum Protected Area
+  resolution: pending
+  target_site_id: null
+- candidate_key: khoramat-ras-abu-galum-protected-area
+  canonical_name: Khoramat
+  area: Ras Abu Galum Protected Area
+  resolution: pending
+  target_site_id: null
+- candidate_key: ras-abu-galum-ras-abu-galum-protected-area
+  canonical_name: Ras Abu Galum
+  area: Ras Abu Galum Protected Area
+  resolution: pending
+  target_site_id: null
+- candidate_key: sabah-house-reef-ras-abu-galum-protected-area
+  canonical_name: Sabah House Reef
+  area: Ras Abu Galum Protected Area
+  resolution: pending
+  target_site_id: null
+- candidate_key: sand-canyon-ras-abu-galum-protected-area
+  canonical_name: Sand Canyon
+  area: Ras Abu Galum Protected Area
+  resolution: pending
+  target_site_id: null
+- candidate_key: the-rocks-ras-abu-galum-protected-area
+  canonical_name: The Rocks
+  area: Ras Abu Galum Protected Area
+  resolution: pending
+  target_site_id: null
+- candidate_key: tonsils-ras-abu-galum-protected-area
+  canonical_name: Tonsils
+  area: Ras Abu Galum Protected Area
+  resolution: pending
+  target_site_id: null
+- candidate_key: anemone-city-ras-mohammed
+  canonical_name: Anemone City
+  area: Ras Mohammed
+  resolution: pending
+  target_site_id: null
+- candidate_key: eel-garden-ras-mohammed
+  canonical_name: Eel Garden
+  area: Ras Mohammed
+  resolution: pending
+  target_site_id: null
+- candidate_key: marsa-ghozlani-ras-mohammed
+  canonical_name: Marsa Ghozlani
+  area: Ras Mohammed
+  resolution: pending
+  target_site_id: null
+- candidate_key: ras-burg-ras-mohammed
+  canonical_name: Ras Burg
+  area: Ras Mohammed
+  resolution: pending
+  target_site_id: null
+- candidate_key: ras-za-atar-ras-mohammed
+  canonical_name: Ras Za'atar
+  area: Ras Mohammed
+  resolution: pending
+  target_site_id: null
+- candidate_key: chrisoula-k-sha-ab-abu-nuhas
+  canonical_name: Chrisoula K
+  area: Sha'ab Abu Nuhas
+  resolution: pending
+  target_site_id: null
+- candidate_key: giannis-d-sha-ab-abu-nuhas
+  canonical_name: Giannis D
+  area: Sha'ab Abu Nuhas
+  resolution: pending
+  target_site_id: null
+- candidate_key: kimon-m-sha-ab-abu-nuhas
+  canonical_name: Kimon M
+  area: Sha'ab Abu Nuhas
+  resolution: pending
+  target_site_id: null
+- candidate_key: ss-carnatic-sha-ab-abu-nuhas
+  canonical_name: SS Carnatic
+  area: Sha'ab Abu Nuhas
+  resolution: pending
+  target_site_id: null
+- candidate_key: the-alternatives-sha-ab-mahmoud-eastern-approach-to-the-strait-of-gubal
+  canonical_name: The Alternatives
+  area: Sha'ab Mahmoud / eastern approach to the Strait of Gubal
+  resolution: pending
+  target_site_id: null
+- candidate_key: eagle-ray-bay-sharm-el-sheikh-local-coast
+  canonical_name: Eagle Ray Bay
+  area: Sharm el-Sheikh local coast
+  resolution: pending
+  target_site_id: null
+- candidate_key: paradise-sharm-el-sheikh-local-coast
+  canonical_name: Paradise
+  area: Sharm el-Sheikh local coast
+  resolution: pending
+  target_site_id: null
+- candidate_key: pinky-s-wall-sharm-el-sheikh-local-coast
+  canonical_name: Pinky's Wall
+  area: Sharm el-Sheikh local coast
+  resolution: pending
+  target_site_id: null
+- candidate_key: sharks-bay-sharm-el-sheikh-local-coast
+  canonical_name: Sharks Bay
+  area: Sharm el-Sheikh local coast
+  resolution: pending
+  target_site_id: null
+- candidate_key: sodfa-sharm-el-sheikh-local-coast
+  canonical_name: Sodfa
+  area: Sharm el-Sheikh local coast
+  resolution: pending
+  target_site_id: null
+- candidate_key: tower-sharm-el-sheikh-local-coast
+  canonical_name: Tower
+  area: Sharm el-Sheikh local coast
+  resolution: pending
+  target_site_id: null
+- candidate_key: turtle-bay-sharm-el-sheikh-local-coast
+  canonical_name: Turtle Bay
+  area: Sharm el-Sheikh local coast
+  resolution: pending
+  target_site_id: null
+- candidate_key: white-knight-sharm-el-sheikh-local-coast
+  canonical_name: White Knight
+  area: Sharm el-Sheikh local coast
+  resolution: pending
+  target_site_id: null
+- candidate_key: ras-ghamila-sharm-el-sheikh-local-coast-southern-approach-to-tiran
+  canonical_name: Ras Ghamila
+  area: Sharm el-Sheikh local coast / southern approach to Tiran
+  resolution: pending
+  target_site_id: null
+- candidate_key: ras-nasrani-sharm-el-sheikh-local-coast-southern-approach-to-tiran
+  canonical_name: Ras Nasrani
+  area: Sharm el-Sheikh local coast / southern approach to Tiran
+  resolution: pending
+  target_site_id: null
+- candidate_key: far-garden-sharm-el-sheikh-local-coast-the-gardens
+  canonical_name: Far Garden
+  area: Sharm el-Sheikh local coast — The Gardens
+  resolution: pending
+  target_site_id: null
+- candidate_key: fiddle-garden-sharm-el-sheikh-local-coast-the-gardens
+  canonical_name: Fiddle Garden
+  area: Sharm el-Sheikh local coast — The Gardens
+  resolution: pending
+  target_site_id: null
+- candidate_key: middle-garden-sharm-el-sheikh-local-coast-the-gardens
+  canonical_name: Middle Garden
+  area: Sharm el-Sheikh local coast — The Gardens
+  resolution: pending
+  target_site_id: null
+- candidate_key: near-garden-sharm-el-sheikh-local-coast-the-gardens
+  canonical_name: Near Garden
+  area: Sharm el-Sheikh local coast — The Gardens
+  resolution: pending
+  target_site_id: null
+- candidate_key: sha-ab-abu-nuhas-strait-of-gubal-abu-nuhas
+  canonical_name: Sha'ab Abu Nuhas
+  area: Strait of Gubal / Abu Nuhas
+  resolution: pending
+  target_site_id: null
+- candidate_key: north-laguna-reef-straits-of-tiran
+  canonical_name: North Laguna Reef
+  area: Straits of Tiran
+  resolution: pending
+  target_site_id: null
+- candidate_key: south-laguna-reef-straits-of-tiran
+  canonical_name: South Laguna Reef
+  area: Straits of Tiran
+  resolution: pending
+  target_site_id: null
+- candidate_key: kormoran-wreck-straits-of-tiran-north-laguna-reef
+  canonical_name: Kormoran Wreck
+  area: Straits of Tiran — North Laguna Reef
+  resolution: pending
+  target_site_id: null
+- candidate_key: baer-el-benet-taba
+  canonical_name: Baer el Benet
+  area: Taba
+  resolution: pending
+  target_site_id: null
+- candidate_key: black-corals-taba
+  canonical_name: Black Corals
+  area: Taba
+  resolution: pending
+  target_site_id: null
+- candidate_key: coral-city-taba
+  canonical_name: Coral City
+  area: Taba
+  resolution: pending
+  target_site_id: null
+- candidate_key: fjord-taba
+  canonical_name: Fjord
+  area: Taba
+  resolution: pending
+  target_site_id: null
+- candidate_key: morgana-house-reef-taba
+  canonical_name: Morgana House Reef
+  area: Taba
+  resolution: pending
+  target_site_id: null
+- candidate_key: pharaoh-s-island-taba
+  canonical_name: Pharaoh's Island
+  area: Taba
+  resolution: pending
+  target_site_id: null
+- candidate_key: the-canyons-taba
+  canonical_name: The Canyons
+  area: Taba
+  resolution: pending
+  target_site_id: null
+- candidate_key: topaz-gardens-taba
+  canonical_name: Topaz Gardens
+  area: Taba
+  resolution: pending
+  target_site_id: null
+- candidate_key: marsa-el-muqabila-taba-taba-heights
+  canonical_name: Marsa El Muqabila
+  area: Taba / Taba Heights
+  resolution: pending
+  target_site_id: null
+- candidate_key: angel-s-net-taba-heights
+  canonical_name: Angel's Net
+  area: Taba Heights
+  resolution: pending
+  target_site_id: null
+- candidate_key: aquarium-taba-heights
+  canonical_name: Aquarium
+  area: Taba Heights
+  resolution: pending
+  target_site_id: null
+- candidate_key: marina-bay-taba-heights
+  canonical_name: Marina Bay
+  area: Taba Heights
+  resolution: pending
+  target_site_id: null
+- candidate_key: maxwell-s-reef-taba-heights
+  canonical_name: Maxwell's Reef
+  area: Taba Heights
+  resolution: pending
+  target_site_id: null
+- candidate_key: ras-amira-taba-heights
+  canonical_name: Ras Amira
+  area: Taba Heights
+  resolution: pending
+  target_site_id: null
+- candidate_key: sha-ab-ghamila-taba-heights
+  canonical_name: Sha'ab Ghamila
+  area: Taba Heights
+  resolution: pending
+  target_site_id: null
+- candidate_key: waterworld-house-reef-taba-heights
+  canonical_name: Waterworld House Reef
+  area: Taba Heights
+  resolution: pending
+  target_site_id: null
+- candidate_key: zak-s-tables-taba-heights
+  canonical_name: Zak's Tables
+  area: Taba Heights
+  resolution: pending
+  target_site_id: null
+- candidate_key: stingray-station-the-alternatives-sha-ab-mahmoud
+  canonical_name: Stingray Station
+  area: The Alternatives / Sha'ab Mahmoud
+  resolution: pending
+  target_site_id: null

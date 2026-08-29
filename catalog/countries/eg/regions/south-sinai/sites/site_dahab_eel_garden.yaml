@@ -1,0 +1,45 @@
+schema_version: '1.1'
+id: site_dahab_eel_garden
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Eel Garden
+  ru: Ил-Гарден
+aliases:
+- The Eel Garden
+- Eel Gardens
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 28.505
+    longitude: 34.519722
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- slope
+- sand
+access:
+- shore
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A named Assalah Bay shore site where a pale sandy slope and adjacent reef support a large garden-eel colony.
+    access: Shore entry across a broad reef platform and through a narrow channel; operators recommend high tide to avoid reef contact.
+    hazards: The exposed entry can become difficult in wind, waves or strong current; avoid crossing the living reef on foot.
+    marine_life: Garden eels are the signature attraction; barracuda, butterflyfish, morays, rays and ghost pipefish are also reported, alongside hard and soft corals.
+  ru:
+    summary: 'Береговой дайв-сайт в бухте Ассала: светлый песчаный склон и соседний риф с большой колонией садовых угрей.'
+    access: Вход с берега через широкую рифовую платформу и узкий канал; операторы рекомендуют прилив, чтобы не задевать риф.
+    hazards: При ветре, волне или сильном течении вход и выход осложняются; нельзя идти по живому рифу.
+    marine_life: Главная особенность — садовые угри; также отмечают барракуд, рыб-бабочек, мурен, скатов и рыб-призраков среди твёрдых и мягких кораллов.
+source_refs:
+- src-9db3ce3b9e04
+- src-35db53adc3ed
+- src-8f6a3eca1752
+observations: []

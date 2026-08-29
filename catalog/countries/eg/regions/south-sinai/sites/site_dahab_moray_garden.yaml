@@ -1,0 +1,48 @@
+schema_version: '1.1'
+id: site_dahab_moray_garden
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Moray Garden
+  ru: Морей-Гарден
+aliases:
+- Moray Gardens
+- Shark Cave
+- Sharks Caves
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 28.437778
+    longitude: 34.458889
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- slope
+- sand
+- wall
+- drift
+access:
+- shore
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: An accessible southern coral-garden site between Golden Blocks and Three Pools, with sandy and seagrass entry habitat, coral slopes and a small wall.
+    access: Shore entry from a broad beach over sand and seagrass; dive either side as a loop or use a planned drift from Golden Blocks or toward Three Pools.
+    hazards: Drift variants require current and exit planning; the Shark Cave name is historical/local and does not promise sharks or a true cave.
+    marine_life: Morays, crocodilefish, glassfish, bannerfish, groupers, nudibranchs, scorpionfish, blue-spotted rays and barracuda are commonly reported; larger visitors are occasional.
+  ru:
+    summary: 'Доступный южный коралловый сад между Golden Blocks и Three Pools: песок и морская трава у входа, коралловые склоны и небольшая стенка.'
+    access: Вход с широкого пляжа через песок и морскую траву; можно пройти круговой маршрут в любую сторону либо дрейфовать от Golden Blocks или к Three Pools.
+    hazards: Дрейфовые варианты требуют проверки течения и планирования выхода; название Shark Cave историческое и не обещает акул или настоящую пещеру.
+    marine_life: Часто отмечают мурен, крокодиловых и стеклянных рыб, вымпельных рыб, груперов, голожаберных, скорпен, пятнистых скатов и барракуд; крупные гости редки.
+source_refs:
+- src-9db3ce3b9e04
+- src-91455affa11d
+- src-35db53adc3ed
+observations: []

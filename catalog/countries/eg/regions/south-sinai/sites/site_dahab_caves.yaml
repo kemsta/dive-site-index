@@ -1,0 +1,48 @@
+schema_version: '1.1'
+id: site_dahab_caves
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: The Caves
+  ru: Зе-Кейвс
+aliases:
+- Caves
+- Dahab Caves
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 28.416667
+    longitude: 34.455833
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- cavern
+- drift
+- slope
+- sand
+- pinnacle
+access:
+- shore
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: The southernmost commonly drive-accessible Dahab site, focused on two large open-fronted reef overhangs beside a sandy slope and boulder pinnacles.
+    access: Giant-stride shore entry from the reef ledge; return to the same ledge or use a planned drift exit farther along the shore.
+    hazards: Entry and exit become unsafe in waves and are best attempted in calm, suitable-tide conditions; use a torch in the overhangs and avoid treating them as unrestricted caves.
+    marine_life: Anthias and bannerfish gather beneath the roofs; groupers, scorpionfish, morays, nudibranchs, flatworms, garden eels and occasional turtles or guitarfish are reported.
+  ru:
+    summary: 'Самый южный из обычно доступных на машине сайтов Дахаба: два крупных открытых навеса под рифом у песчаного склона и валунных пиннаклов.'
+    access: Шаг в воду с рифового уступа; выход на тот же уступ либо по заранее спланированному дрейфовому маршруту дальше по берегу.
+    hazards: При волне вход и выход опасны и допустимы только при спокойном море и подходящем уровне воды; под навесами нужен фонарь, их нельзя считать неограниченно безопасными пещерами.
+    marine_life: Под сводами собираются антиасы и вымпельные рыбы; отмечают груперов, скорпен, мурен, голожаберных, плоских червей, садовых угрей, иногда черепах и гитарных скатов.
+source_refs:
+- src-9db3ce3b9e04
+- src-4805adbfcbfb
+- src-10f4090d6bdf
+observations: []
