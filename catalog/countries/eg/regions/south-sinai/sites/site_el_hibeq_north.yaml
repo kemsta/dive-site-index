@@ -1,0 +1,44 @@
+schema_version: '1.1'
+id: site_el_hibeq_north
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: El Hibeq North
+  ru: Эль-Хибек-Норт
+aliases: []
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 28.7676591056913
+    longitude: 34.6369743347168
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- slope
+access:
+- shore
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A northern El Hibeq shore dive over coral outcrops, sand and seagrass, with an eel garden and a maximum reported
+      depth of 30 m.
+    access: Careful shore entry over a rocky area.
+    hazards: Rocky entry; keep within certification limits on the deeper part of the site.
+    marine_life: Blue-spotted rays, crocodilefish, moray eels, longnose hawkfish and schools of reef fish are reported.
+  ru:
+    summary: Северный береговой маршрут Эль-Хибека среди коралловых выходов, песка и морской травы; отмечен сад угрей, заявленная
+      максимальная глубина — 30 м.
+    access: Осторожный вход с берега по каменистому участку.
+    hazards: Каменистый вход; на глубокой части следует соблюдать пределы сертификации.
+    marine_life: Упоминаются синепятнистые хвостоколы, рыбы-крокодилы, мурены, длиннорылые рыбы-ястребы и стаи рифовых рыб.
+source_refs:
+- src-90d833eb721c
+- src-58a26ecb41c8
+- src-3b590cf22603
+observations: []

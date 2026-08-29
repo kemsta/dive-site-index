@@ -1,0 +1,45 @@
+schema_version: '1.1'
+id: site_bawaki
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Bawaki
+  ru: Баваки
+aliases: []
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 29.056
+    longitude: 34.6655
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- slope
+- artificial
+access:
+- shore
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: Named sector in the CDWS compound Bawaki Dolphin Bay area; African Divers describes a shore dive to about 40
+      m with an old fishing-boat engine.
+    access: Shore access; use the locally briefed entry and route.
+    hazards: Entry conditions, depth, navigation and fragile coral require a conservative plan within training limits.
+    marine_life: Corals, reef fish, nudibranchs and cleaning stations are reported.
+  ru:
+    summary: Именованный сектор составной зоны CDWS Bawaki Dolphin Bay; African Divers описывает береговой маршрут до примерно
+      40 м с двигателем старой рыбацкой лодки.
+    access: Доступ с берега; используйте вход и маршрут по местному брифингу.
+    hazards: Условия входа, глубина, навигация и хрупкие кораллы требуют консервативного плана в пределах подготовки.
+    marine_life: Упоминаются кораллы, рифовые рыбы, голожаберные моллюски и станции очистки.
+source_refs:
+- src-1d039d741f6d
+- src-58a26ecb41c8
+- src-3b590cf22603
+observations: []

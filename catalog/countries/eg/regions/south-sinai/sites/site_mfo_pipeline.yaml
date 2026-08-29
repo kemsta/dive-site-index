@@ -1,0 +1,47 @@
+schema_version: '1.1'
+id: site_mfo_pipeline
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: MFO Pipeline
+  ru: MFO Пайплайн
+aliases:
+- Pipeline
+- Mo
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 28.97472222222222
+    longitude: 34.69888888888889
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- artificial
+- reef
+access:
+- shore
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: Two disused desalination pipes, one reaching 12 m and the other 22 m, now colonised by hard and soft coral and
+      used as cleaning stations.
+    access: Shore dive; the pipes provide the main navigation reference.
+    hazards: Avoid contact with the structure and camouflaged venomous fish.
+    marine_life: Scorpionfish, occasional frogfish, anthias, batfish, jacks, snappers, octopus and torpedo rays are reported.
+  ru:
+    summary: 'Две неиспользуемые опреснительные трубы: одна доходит до 12 м, другая — до 22 м; сейчас они покрыты твёрдыми
+      и мягкими кораллами и служат станциями очистки.'
+    access: Береговое погружение; трубы служат основным ориентиром.
+    hazards: Следует избегать контакта с конструкцией и замаскированными ядовитыми рыбами.
+    marine_life: Упоминаются скорпены, иногда рыбы-лягушки, антиасы, платаксы, каранксы, луцианы, осьминоги и электрические
+      скаты.
+source_refs:
+- src-abd93aabb873
+- src-58a26ecb41c8
+- src-8c46ece6ae03
+observations: []

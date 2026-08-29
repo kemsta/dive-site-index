@@ -1,0 +1,46 @@
+schema_version: '1.1'
+id: site_myserique_north
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Myserique North
+  ru: Мизерик-Норт
+aliases: []
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 28.8151982639471
+    longitude: 34.6596336364746
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- sand
+access:
+- shore
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A northern Myserique shore dive through a reef break into a coral garden and distinctive sand-and-seagrass craters
+      bounded by reef walls, to 29 m.
+    access: Shore entry through a break in the reef table.
+    hazards: The reef-table entry requires care; current is reported as rare.
+    marine_life: Blue-spotted rays and ghost pipefish are highlighted, with a large porous coral known locally as Brian's
+      Brain.
+  ru:
+    summary: Северный береговой маршрут Myserique через проход в рифе к коралловому саду и характерным кратерам с песком и
+      морской травой между рифовыми стенками; глубина до 29 м.
+    access: Вход с берега через разрыв в рифовой платформе.
+    hazards: При проходе через рифовую платформу нужна осторожность; течение отмечается редко.
+    marine_life: Выделяются синепятнистые хвостоколы и рыбы-призраки, а также крупный пористый коралл с местным названием
+      Brian's Brain.
+source_refs:
+- src-50df4d43d5c4
+- src-58a26ecb41c8
+- src-83aa233bf2a0
+observations: []

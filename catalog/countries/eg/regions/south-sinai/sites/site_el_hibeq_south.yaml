@@ -1,0 +1,42 @@
+schema_version: '1.1'
+id: site_el_hibeq_south
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: El Hibeq South
+  ru: Эль-Хибек-Саут
+aliases: []
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 28.747192544786
+    longitude: 34.6376609802246
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- pinnacle
+access:
+- boat
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A shallow southern El Hibeq dive around five coral pinnacles arranged in a broad circle.
+    access: Boat access only according to the local operator description.
+    hazards: Occasional current is reported.
+    marine_life: Varied reef fish, blue-spotted rays and barracuda are reported around the pinnacles.
+  ru:
+    summary: Мелководный южный маршрут Эль-Хибека вокруг пяти коралловых пинаклей, образующих широкий круг.
+    access: По описанию местного оператора доступ возможен только с лодки.
+    hazards: Иногда бывает течение.
+    marine_life: Вокруг пинаклей отмечаются разнообразные рифовые рыбы, синепятнистые хвостоколы и барракуды.
+source_refs:
+- src-5903279d2b14
+- src-58a26ecb41c8
+- src-3b590cf22603
+observations: []

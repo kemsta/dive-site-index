@@ -1,0 +1,45 @@
+schema_version: '1.1'
+id: site_farrah_shore
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Farrah Shore
+  ru: Фарра-Шор
+aliases: []
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 28.8464780269477
+    longitude: 34.6534538269043
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- slope
+- drop-off
+access:
+- shore
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A shore reef with large table corals, craters and valleys beyond 40 m, continuing as a steep coral slope into
+      technical depths beyond 80 m.
+    access: Snorkel over rocks before descending onto the shallow coral garden.
+    hazards: Rocky approach and rapid depth increase; the deeper slope is beyond recreational limits.
+    marine_life: Blue-spotted rays, stingrays, feathertail rays, surgeonfish and glassfish are reported.
+  ru:
+    summary: Береговой риф с крупными столовыми кораллами, кратерами и долинами глубже 40 м; далее крутой коралловый склон
+      уходит на технические глубины свыше 80 м.
+    access: К каменистому входу проходят по поверхности, затем погружаются на мелководный коралловый сад.
+    hazards: Каменистый подход и быстрое увеличение глубины; глубокий склон выходит за рекреационные пределы.
+    marine_life: Упоминаются синепятнистые хвостоколы, другие хвостоколы, перьехвостые скаты, рыбы-хирурги и стеклянные рыбки.
+source_refs:
+- src-6d51ee310cf6
+- src-58a26ecb41c8
+- src-3b590cf22603
+observations: []

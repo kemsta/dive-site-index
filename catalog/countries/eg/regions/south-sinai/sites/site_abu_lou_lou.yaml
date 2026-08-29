@@ -1,0 +1,47 @@
+schema_version: '1.1'
+id: site_abu_lou_lou
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Abu Lou Lou
+  ru: Абу-Лу-Лу
+aliases:
+- Abou Lou Lou
+- Hilton House Reef
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 28.971666666666664
+    longitude: 34.67333333333333
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- pinnacle
+- sand
+access:
+- shore
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: Hilton-area house reef reached from shore, with seagrass, coral pinnacles and cleaning stations; depth is about
+      20–26 m.
+    access: Shore access; use the locally briefed entry and route.
+    hazards: Entry conditions, depth, navigation and fragile coral require a conservative plan within training limits.
+    marine_life: Reef fish and small coral-associated animals occur across the reef and seagrass habitats.
+  ru:
+    summary: Хаус-риф у Hilton с заходом с берега, морской травой, коралловыми башнями и станциями очистки; глубина около
+      20–26 м.
+    access: Доступ с берега; используйте вход и маршрут по местному брифингу.
+    hazards: Условия входа, глубина, навигация и хрупкие кораллы требуют консервативного плана в пределах подготовки.
+    marine_life: На рифе и участках морской травы встречаются рифовые рыбы и мелкая коралловая фауна.
+source_refs:
+- src-9db3ce3b9e04
+- src-58a26ecb41c8
+- src-3b590cf22603
+observations: []

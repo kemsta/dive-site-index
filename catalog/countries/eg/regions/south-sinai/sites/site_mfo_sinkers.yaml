@@ -1,0 +1,53 @@
+schema_version: '1.1'
+id: site_mfo_sinkers
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: MFO Sinkers
+  ru: MFO Синкерс
+aliases:
+- The Sinkers
+- The Sinker
+- Sinker
+- MFO Sinker or Buoy
+- MFO Sinker or Bouy
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 28.973055555555554
+    longitude: 34.683611111111105
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- artificial
+- reef
+access:
+- shore
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A fully submerged mooring buoy suspended at roughly 8–12 m above chains descending to about 35 m, now heavily
+      colonised by marine life.
+    access: Shore entry followed by a swim along the reef to the buoy lines and chains.
+    hazards: Current is likely and rarely strong; depth increases along the chains and the suspended structure must be approached
+      without entanglement or contact.
+    marine_life: Soft corals, cleaner shrimp, glassfish, damselfish, fusiliers, moray eels, jacks, snappers and occasional
+      barracuda are reported.
+  ru:
+    summary: Полностью затопленный швартовный буй, подвешенный примерно на 8–12 м над цепями, уходящими примерно до 35 м;
+      конструкция густо обросла морской жизнью.
+    access: Вход с берега, затем проход вдоль рифа к направляющим линиям и цепям буя.
+    hazards: Течение вероятно и редко бывает сильным; вдоль цепей глубина возрастает, у подвешенной конструкции следует исключить
+      запутывание и контакт.
+    marine_life: Упоминаются мягкие кораллы, креветки-чистильщики, стеклянные рыбки, помацентровые, фузильеры, мурены, каранксы,
+      луцианы и иногда барракуды.
+source_refs:
+- src-abd93aabb873
+- src-58a26ecb41c8
+- src-8c46ece6ae03
+observations: []

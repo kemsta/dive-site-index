@@ -1,0 +1,47 @@
+schema_version: '1.1'
+id: site_the_valley
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: The Valley
+  ru: Зе-Вэлли
+aliases: []
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 29.148863059072
+    longitude: 34.7314739227295
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- canyon
+- sand
+access:
+- shore
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A long sandy underwater valley between two tall reef walls, reached across a sloping coral garden; the valley
+      floor drops below 50 m.
+    access: Shore access beside a small camp, followed by a swim over the sloping coral garden.
+    hazards: The valley floor exceeds 50 m and the site supports technical profiles; recreational divers should remain on
+      the reef walls within their limits.
+    marine_life: Moray eels, nudibranchs, reef fish, octopus and shrimp are reported among the walls and coral garden.
+  ru:
+    summary: Длинная песчаная подводная долина между двумя высокими рифовыми стенками, к которой проходят через пологий коралловый
+      сад; дно уходит глубже 50 м.
+    access: Береговой вход рядом с небольшим лагерем, затем проход над пологим коралловым садом.
+    hazards: Дно долины глубже 50 м, возможны технические профили; рекреационным дайверам следует держаться рифовых стенок
+      в пределах своей подготовки.
+    marine_life: Среди стенок и кораллового сада упоминаются мурены, голожаберные моллюски, рифовые рыбы, осьминоги и креветки.
+source_refs:
+- src-3c437b5d61d4
+- src-58a26ecb41c8
+- src-3b590cf22603
+observations: []
