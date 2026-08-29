@@ -1,0 +1,51 @@
+schema_version: '1.0'
+id: site_small_crack
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Small Crack (Small Passage)
+aliases: []
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.731648
+    longitude: 34.097496
+  body_of_water_id: red-sea
+  water_type: salt
+classification:
+  types:
+  - reef
+  - tidal passage
+  - drift dive
+  - coral slope
+  - boat or liveaboard dive
+depth:
+  minimum_m: 2
+  maximum_m: 30
+difficulty: advanced
+content:
+  en:
+    summary: A tidal passage through Sha'ab Mahmoud, connecting the outer reef with a sheltered lagoon. A common
+      route follows the outer wall and coral slope before using the current to pass through the narrow channel;
+      typical diving is concentrated in roughly 5–20 m although the wider site extends shallower and deeper. The
+      quality and safety of the dive depend more on tide timing than on distance covered.
+    access: Normally a zodiac drop on the outer reef followed by a timed drift through the passage toward the lagoon
+      and liveaboard. The guide must choose the route from the actual tidal flow.
+    hazards: Strong and reversing tidal current, being swept toward open water, difficult pickup in rough conditions,
+      shallow surge, separation, and boat traffic. Carry an SMB and do not enter the passage against the briefing.
+    marine_life: Soft corals, table corals, gorgonians, turtles, and varied reef fish may be encountered; flashlight
+      fish are reported on suitable night dives.
+source_refs:
+- src-07fbea3b3d67
+- src-f2a1f6367a5b
+observations:
+- record_id: '23958344510'
+  dive_number: 23
+  start_time_utc: '2026-08-13T05:54:15+00:00'
+  latitude: 27.730868
+  longitude: 34.095789
+  maximum_depth_m: 26.74
+  confidence: high
+  decision_note: GPS exit is about 0.19 km from Small Crack.

@@ -1,0 +1,6 @@
+schema_version: '1.0'
+id: eg
+iso_alpha2: EG
+names:
+  en: Egypt
+default_locale: en

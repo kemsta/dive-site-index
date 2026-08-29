@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kemsta.github.io/dive-site-index/schemas/region.schema.json",
+  "title": "Region catalog node",
+  "type": "object",
+  "required": ["schema_version", "id", "country_id", "names", "default_locale", "body_of_water"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "id": {"type": "string", "pattern": "^[a-z][a-z0-9_-]+$"},
+    "country_id": {"type": "string"},
+    "names": {"$ref": "#/$defs/localizedStrings"},
+    "default_locale": {"type": "string"},
+    "body_of_water": {
+      "type": "object",
+      "required": ["id", "names"],
+      "properties": {
+        "id": {"type": "string"},
+        "names": {"$ref": "#/$defs/localizedStrings"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "localizedStrings": {
+      "type": "object",
+      "minProperties": 1,
+      "patternProperties": {"^.+$": {"type": "string", "minLength": 1}},
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

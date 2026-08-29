@@ -1,0 +1,50 @@
+schema_version: '1.0'
+id: site_ras_katy
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Ras Katy
+aliases: []
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.846658
+    longitude: 34.302488
+  body_of_water_id: red-sea
+  water_type: salt
+classification:
+  types:
+  - reef
+  - coral pinnacles
+  - sandy area
+  - mooring dive
+  - snorkelling site
+depth:
+  minimum_m: 5
+  maximum_m: 30
+difficulty: beginner
+content:
+  en:
+    summary: A sheltered local reef close to Sharm's main marina, centred on a sandy area and a line of coral pinnacles
+      rising toward the surface. The protected inner section is suitable for an easy reef route and macro observation,
+      while current can increase toward the corner in the direction of Temple. It is also popular with snorkellers,
+      so surface awareness matters.
+    access: Usually from a moored day boat between the fringing reef and the main pinnacle; a drift exit may be
+      chosen if current builds toward the corner.
+    hazards: Local current near the corner, snorkel and boat traffic, shallow surge, and fragile pinnacles. Confirm
+      whether the plan is a return to the mooring or a drift pickup.
+    marine_life: Goby–shrimp pairs inhabit the sand, while hard and soft corals and small reef fish cover the pinnacles.
+      Larger animals may pass but are not the site's dependable feature.
+source_refs:
+- src-5e615f5f8305
+observations:
+- record_id: '23962259369'
+  dive_number: 25
+  start_time_utc: '2026-08-13T12:24:11+00:00'
+  latitude: 27.847035
+  longitude: 34.30213
+  maximum_depth_m: 26.159
+  confidence: high
+  decision_note: GPS exit is about 0.06 km from Ras Katy.

@@ -1,0 +1,59 @@
+schema_version: '1.0'
+id: site_jackfish_alley
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Jackfish Alley
+aliases: []
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.744153
+    longitude: 34.256989
+  body_of_water_id: red-sea
+  water_type: salt
+classification:
+  types:
+  - reef
+  - wall
+  - sandy alley
+  - drift dive
+  - optional swim-throughs
+depth:
+  minimum_m: 5
+  maximum_m: 18
+difficulty: intermediate
+content:
+  en:
+    summary: A Ras Mohammed drift route combining a shallow wall, sandy bays, coral gardens, and short light-filled
+      swim-throughs. The first opening begins near 5 m, while a second route and coral pinnacles occupy the 5–15
+      m range. The site's varied topography rewards a conservative route that avoids turning optional openings into
+      unplanned overhead environments.
+    access: Boat drift along the Ras Mohammed coast, normally with live pickup. Swim-throughs are optional and should
+      be used only when included in the guide's briefing.
+    hazards: Current, overhead sections, separation during the drift, boat traffic, scorpionfish, and fragile coral.
+      Maintain visual contact with the exit in any swim-through.
+    marine_life: Blue-spotted rays may rest on the sand; glassfish, scorpionfish, lionfish, fusiliers, and jackfish
+      use the pinnacles and alley. Tuna or reef sharks may pass in the blue but are not guaranteed.
+source_refs:
+- src-b777c13f1b2a
+- src-086015a4bac9
+observations:
+- record_id: dive-4-2025-07-08
+  dive_number: 4
+  start_time_utc: '2025-07-08T09:33:39+00:00'
+  latitude: 27.742628
+  longitude: 34.256761
+  maximum_depth_m: 18.739
+  confidence: high
+  decision_note: GPS exit is about 0.17 km from the retained Jackfish Alley marker.
+- record_id: '23971643028'
+  dive_number: 26
+  start_time_utc: '2026-08-14T07:31:36+00:00'
+  latitude: 27.743026
+  longitude: 34.256616
+  maximum_depth_m: 27.84
+  confidence: high
+  decision_note: GPS exit is about 0.13 km from Jackfish Alley.

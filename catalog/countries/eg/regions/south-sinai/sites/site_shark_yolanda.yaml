@@ -1,0 +1,51 @@
+schema_version: '1.0'
+id: site_shark_yolanda
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Shark & Yolanda Reefs
+aliases: []
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.725205
+    longitude: 34.258692
+  body_of_water_id: red-sea
+  water_type: salt
+classification:
+  types:
+  - reef
+  - wall
+  - plateau
+  - drift dive
+  - wreck cargo
+depth:
+  minimum_m: 5
+  maximum_m: 30
+difficulty: advanced
+content:
+  en:
+    summary: A classic Ras Mohammed drift linking the current-swept wall of Shark Reef with Yolanda Reef and the
+      shallow saddle between them. The reachable remains of the Jolanda's cargo, including bathroom fittings, lie
+      on the reef plateau; the main hull slipped far beyond recreational depth. The route can deliver dense schooling
+      fish, but its exposed position demands disciplined depth and group control.
+    access: Usually a negative-entry or controlled boat drift with live pickup. Route and direction must be selected
+      after checking current and surface traffic.
+    hazards: Strong current, rapid depth change beside the wall, blue-water separation, busy boat traffic, and sharp
+      or unstable wreck debris. Removing protected cargo or natural material is prohibited.
+    marine_life: Large schools of snapper and other reef fish are a seasonal highlight; barracuda, jacks, Napoleon
+      wrasse, turtles, and occasional pelagic visitors may also appear.
+source_refs:
+- src-e1d7b21db5d8
+- src-ad3ddf231290
+observations:
+- record_id: '23945025381'
+  dive_number: 18
+  start_time_utc: '2026-08-12T04:49:03+00:00'
+  latitude: 27.724882
+  longitude: 34.259149
+  maximum_depth_m: 21.563
+  confidence: user-confirmed
+  decision_note: Exit is nearly equidistant from Shark and Yolanda; user selected combined name.

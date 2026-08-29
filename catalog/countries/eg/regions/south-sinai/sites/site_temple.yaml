@@ -1,0 +1,51 @@
+schema_version: '1.0'
+id: site_temple
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Temple
+aliases: []
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.85
+    longitude: 34.31
+  body_of_water_id: red-sea
+  water_type: salt
+classification:
+  types:
+  - reef
+  - coral pinnacles
+  - sandy bay
+  - mooring dive
+  - night dive
+depth:
+  minimum_m: 5
+  maximum_m: 30
+difficulty: beginner
+content:
+  en:
+    summary: A sheltered local reef site named for large coral pinnacles that resemble columns. The main route crosses
+      a sandy bay at about 10–18 m and circles several pinnacles, including shallow, light-filled openings. Coral
+      cover, glassfish, lionfish, morays, and blue-spotted stingrays make it useful for an easy scenic or night
+      dive.
+    access: Normally a mooring dive from a day boat, returning to the same area unless the guide plans a drift toward
+      a neighbouring site.
+    hazards: Local current around the exposed side of the pinnacles, disorientation between similar coral heads,
+      fragile coral, and overhead risk if entering any opening. Use only openings approved in the site briefing.
+    marine_life: Giant morays, blue-spotted stingrays, lionfish, scorpionfish, glassfish, pipefish, gorgonians,
+      and mixed hard and soft corals are reported.
+source_refs:
+- src-7d5ec06f6449
+- src-6e0821e9413e
+observations:
+- record_id: '23922835710'
+  dive_number: 15
+  start_time_utc: '2026-08-10T12:06:43+00:00'
+  latitude: 27.851066
+  longitude: 34.317671
+  maximum_depth_m: 20.518
+  confidence: user-confirmed
+  decision_note: Start is near Temple and exit near Ras Umm Sid; user selected Temple.

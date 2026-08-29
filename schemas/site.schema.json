@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kemsta.github.io/dive-site-index/schemas/site.schema.json",
+  "title": "Canonical dive site",
+  "type": "object",
+  "required": ["schema_version", "id", "identity", "names", "aliases", "geography", "classification", "depth", "difficulty", "content", "source_refs", "observations"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "id": {"type": "string", "pattern": "^[a-z][a-z0-9_-]+$"},
+    "identity": {
+      "type": "object",
+      "required": ["kind", "confidence"],
+      "properties": {
+        "kind": {"enum": ["canonical", "user-defined"]},
+        "confidence": {"enum": ["confirmed", "probable", "user-confirmed", "unresolved"]}
+      },
+      "additionalProperties": false
+    },
+    "names": {"$ref": "#/$defs/localizedStrings"},
+    "aliases": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "geography": {
+      "type": "object",
+      "required": ["country_id", "region_id", "coordinates", "body_of_water_id", "water_type"],
+      "properties": {
+        "country_id": {"type": "string"},
+        "region_id": {"type": "string"},
+        "coordinates": {
+          "type": "object",
+          "required": ["latitude", "longitude"],
+          "properties": {
+            "latitude": {"type": "number", "minimum": -90, "maximum": 90},
+            "longitude": {"type": "number", "minimum": -180, "maximum": 180}
+          },
+          "additionalProperties": false
+        },
+        "body_of_water_id": {"type": "string"},
+        "water_type": {"enum": ["salt", "fresh", "brackish", "unknown"]}
+      },
+      "additionalProperties": false
+    },
+    "classification": {
+      "type": "object",
+      "required": ["types"],
+      "properties": {"types": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true}},
+      "additionalProperties": false
+    },
+    "depth": {
+      "type": "object",
+      "required": ["minimum_m", "maximum_m"],
+      "properties": {
+        "minimum_m": {"type": ["number", "null"], "minimum": 0},
+        "maximum_m": {"type": ["number", "null"], "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "difficulty": {"enum": ["beginner", "intermediate", "advanced", null]},
+    "content": {
+      "type": "object",
+      "minProperties": 1,
+      "patternProperties": {
+        "^.+$": {
+          "type": "object",
+          "required": ["summary", "access", "hazards", "marine_life"],
+          "properties": {
+            "summary": {"type": "string", "minLength": 1},
+            "access": {"type": "string"},
+            "hazards": {"type": "string"},
+            "marine_life": {"type": "string"}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "source_refs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "observations": {"type": "array", "items": {"$ref": "#/$defs/observation"}}
+  },
+  "$defs": {
+    "localizedStrings": {
+      "type": "object",
+      "minProperties": 1,
+      "patternProperties": {"^.+$": {"type": "string", "minLength": 1}},
+      "additionalProperties": false
+    },
+    "observation": {
+      "type": "object",
+      "required": ["record_id", "dive_number", "start_time_utc", "latitude", "longitude", "maximum_depth_m", "confidence", "decision_note"],
+      "properties": {
+        "record_id": {"type": "string", "minLength": 1},
+        "dive_number": {"type": ["integer", "null"], "minimum": 1},
+        "start_time_utc": {"type": "string", "format": "date-time"},
+        "latitude": {"type": "number", "minimum": -90, "maximum": 90},
+        "longitude": {"type": "number", "minimum": -180, "maximum": 180},
+        "maximum_depth_m": {"type": "number", "minimum": 0},
+        "confidence": {"enum": ["low", "medium", "high", "confirmed", "probable", "user-confirmed", "unresolved"]},
+        "decision_note": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

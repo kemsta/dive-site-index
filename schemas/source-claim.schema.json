@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kemsta.github.io/dive-site-index/schemas/source-claim.schema.json",
+  "title": "Mined source claim",
+  "type": "object",
+  "required": ["schema_version", "claim_id", "source_ref", "subject_hint", "field_path", "value", "retrieved_at", "status"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "claim_id": {"type": "string", "pattern": "^[a-zA-Z0-9._-]+$"},
+    "source_ref": {"type": "string"},
+    "source_record_id": {"type": ["string", "null"]},
+    "source_license": {"type": ["string", "null"]},
+    "subject_hint": {
+      "type": "object",
+      "properties": {
+        "site_id": {"type": ["string", "null"]},
+        "name": {"type": ["string", "null"]},
+        "latitude": {"type": ["number", "null"]},
+        "longitude": {"type": ["number", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "field_path": {"type": "string", "minLength": 1},
+    "locale": {"type": ["string", "null"]},
+    "value": {},
+    "retrieved_at": {"type": "string", "format": "date-time"},
+    "evidence_quote": {"type": ["string", "null"]},
+    "confidence": {"enum": ["low", "medium", "high", null]},
+    "status": {"enum": ["mined", "reviewed", "rejected", "accepted"]},
+    "review_note": {"type": ["string", "null"]}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,46 @@
+schema_version: '1.0'
+id: site_sharm_el_maya_unidentified
+identity:
+  kind: user-defined
+  confidence: user-confirmed
+names:
+  en: Sharm el-Maya — Unidentified Dive
+aliases: []
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.831728
+    longitude: 34.273171
+  body_of_water_id: red-sea
+  water_type: salt
+classification:
+  types:
+  - user-defined location
+  - unidentified dive
+  - Garmin observation
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A user-defined record for Garmin dive 5 rather than a formally identified dive site. The watch recorded
+      a point southwest of Sharm el-Maya, but that point does not match a documented named site closely enough for
+      a reliable assignment. The user does not remember the original site name.
+    access: Unknown. Preserve the Garmin point as an observation only and do not infer boat, shore, mooring, or
+      drift procedures from it.
+    hazards: Site-specific hazards are unknown. Apply the original operator briefing and normal Red Sea boat-diving
+      precautions if further records become available.
+    marine_life: No site-specific marine-life observation was supplied.
+source_refs: []
+observations:
+- record_id: dive-5-2025-07-08
+  dive_number: 5
+  start_time_utc: '2025-07-08T12:01:40+00:00'
+  latitude: 27.831728
+  longitude: 34.273171
+  maximum_depth_m: 11.293
+  confidence: user-confirmed
+  decision_note: The GPS point does not closely match a documented site; the user does not remember the name, so
+    no official identity is claimed.

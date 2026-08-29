@@ -1,0 +1,46 @@
+schema_version: '1.0'
+id: site_shaab_ali_dolphin_drop
+identity:
+  kind: user-defined
+  confidence: user-confirmed
+names:
+  en: Shaab Ali — Dolphin Drop
+aliases: []
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.786532
+    longitude: 33.898283
+  body_of_water_id: red-sea
+  water_type: salt
+classification:
+  types:
+  - user-defined location
+  - open-water boat entry
+  - wildlife encounter
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A user-defined event location at Shaab Ali rather than a formally named, repeatable dive site. During
+      Garmin activity 23951597811, the group followed dolphins by boat and entered the water close to them. The
+      coordinate records that particular encounter and must not be interpreted as a guaranteed dolphin location.
+    access: Boat entry and pickup coordinated directly with the crew; assess sea state, traffic, current, and separation
+      risk before entering open water.
+    hazards: Open-water separation, boat traffic, current, changing sea state, and the unpredictability of wild
+      animals. Keep a respectful distance and follow local wildlife-interaction rules and crew instructions.
+    marine_life: Dolphins were observed during the recorded event. This is a personal observation, not a promise
+      that dolphins inhabit or revisit the exact coordinate.
+source_refs: []
+observations:
+- record_id: '23951597811'
+  dive_number: 22
+  start_time_utc: '2026-08-12T15:12:52+00:00'
+  latitude: 27.786532
+  longitude: 33.898283
+  maximum_depth_m: 17.452
+  confidence: user-confirmed
+  decision_note: User identified this as a dolphin-following water entry at Shaab Ali.

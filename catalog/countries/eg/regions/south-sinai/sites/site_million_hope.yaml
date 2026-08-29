@@ -1,0 +1,50 @@
+schema_version: '1.0'
+id: site_million_hope
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Million Hope / Hey Daroma
+aliases: []
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 28.056389
+    longitude: 34.449171
+  body_of_water_id: red-sea
+  water_type: salt
+classification:
+  types:
+  - wreck
+  - reef
+  - boat dive
+depth:
+  minimum_m: 4
+  maximum_m: 20
+difficulty: advanced
+content:
+  en:
+    summary: The upright remains of the 174.6 m bulk carrier Million Hope lie beside the reef north of Nabq, with
+      the hull on the seabed at about 20 m and parts of the superstructure historically above the surface. The remains
+      of the smaller Hey Daroma are compressed beneath or beside the larger wreck. Open cargo holds, machinery,
+      and the reef–hull corridor make this a substantial wreck site even without penetration.
+    access: Boat access only, subject to local authorization and safe sea state; use the operator's mooring or live-drop
+      procedure rather than approaching the exposed structure independently.
+    hazards: Sharp and unstable metal, entanglement, surge, restricted visibility inside the wreck, overhead environments,
+      large scale, and possible current. Penetration requires appropriate training, equipment, and a site-specific
+      plan.
+    marine_life: Reef fish and encrusting life use the hull and the narrow space beside the reef; the wreck's scale
+      and structure are the principal attractions.
+source_refs:
+- src-adc4ce93d91b
+- src-699cd7742429
+observations:
+- record_id: '23934259289'
+  dive_number: 17
+  start_time_utc: '2026-08-11T09:32:33+00:00'
+  latitude: 28.05774
+  longitude: 34.447949
+  maximum_depth_m: 22.839
+  confidence: high
+  decision_note: GPS exit is about 0.19 km from Million Hope and 0.12 km from Hey Daroma; the wrecks overlap.

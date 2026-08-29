@@ -1,0 +1,67 @@
+schema_version: '1.0'
+id: site_marsa_bareika
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Marsa Bareika
+aliases: []
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.786602
+    longitude: 34.21778
+  body_of_water_id: red-sea
+  water_type: salt
+classification:
+  types:
+  - bay
+  - reef
+  - sand
+  - canyon
+  - boat dive
+depth:
+  minimum_m: 6
+  maximum_m: 30
+difficulty: intermediate
+content:
+  en:
+    summary: A broad, naturally sheltered bay inside Ras Mohammed National Park, with shallow sandy areas and reef
+      features extending toward a canyon that reaches approximately 30 m. Parts of the bay's beaches are protected
+      turtle-nesting habitat, so access and route restrictions must be respected. This record retains the published/mapped
+      site coordinate while also preserving the Garmin point from the user's dive.
+    access: Boat access under local operator and national-park procedures; follow the guide's designated entry,
+      exit, and restricted-area briefing.
+    hazards: Protected and restricted zones, possible current outside the sheltered bay, boat traffic, and depth
+      in the canyon. Do not approach closed nesting beaches.
+    marine_life: The sandy plateau can support small benthic life such as nudibranchs and shrimp; glassfish and
+      lionfish are reported around the canyon. Rays and larger visitors are possible, not guaranteed.
+source_refs:
+- src-821f9afaab12
+- src-aa1842459fb6
+observations:
+- record_id: dive-3-2025-07-08
+  dive_number: 3
+  start_time_utc: '2025-07-08T07:21:17+00:00'
+  latitude: 27.787311
+  longitude: 34.206766
+  maximum_depth_m: 19.193
+  confidence: high
+  decision_note: Two Garmin dives share this point inside Marsa Bareika; the mapped marker is about 1.1 km away.
+- record_id: dive-8-2025-07-10
+  dive_number: 8
+  start_time_utc: '2025-07-10T06:44:55+00:00'
+  latitude: 27.787338
+  longitude: 34.206749
+  maximum_depth_m: 25.851
+  confidence: high
+  decision_note: Repeated Garmin point inside Marsa Bareika, matching dive 3.
+- record_id: '23920062240'
+  dive_number: 13
+  start_time_utc: '2026-08-10T07:24:55+00:00'
+  latitude: 27.787644
+  longitude: 34.206568
+  maximum_depth_m: 27.006
+  confidence: user-confirmed
+  decision_note: GPS exit is in Marsa Bareika; mapped marker is about 1.1 km away.

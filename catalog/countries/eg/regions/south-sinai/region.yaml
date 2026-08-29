@@ -1,0 +1,10 @@
+schema_version: '1.0'
+id: south-sinai
+country_id: eg
+names:
+  en: South Sinai
+default_locale: en
+body_of_water:
+  id: red-sea
+  names:
+    en: Red Sea

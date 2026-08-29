@@ -1,0 +1,50 @@
+schema_version: '1.0'
+id: site_ras_bob
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Ras Bob
+aliases: []
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.963183
+    longitude: 34.410833
+  body_of_water_id: red-sea
+  water_type: salt
+classification:
+  types:
+  - reef
+  - wall
+  - sandy slope
+  - garden eels
+  - optional swim-throughs
+  - boat or shore dive
+depth:
+  minimum_m: 5
+  maximum_m: 20
+difficulty: intermediate
+content:
+  en:
+    summary: A northern Sharm local reef with a coral-encrusted wall descending to about 16 m. Small swim-throughs
+      and narrow recesses interrupt the wall, while a sandy slope below supports a garden-eel area. The compact
+      topography suits a controlled local reef dive when current is mild.
+    access: Boat or locally arranged shore access; follow the guide's plan for a mooring return or short drift along
+      the wall.
+    hazards: Overhead risk in narrow recesses, disorientation in swim-throughs, fragile coral, local current, boat
+      traffic, and depth on the sandy slope. Enter openings only when included in the briefing.
+    marine_life: Glassfish gather beneath table corals, garden eels occupy the sand, and mixed Red Sea reef fish
+      use the wall and recesses.
+source_refs:
+- src-9cc41a10ae47
+observations:
+- record_id: dive-10-2025-07-11
+  dive_number: 10
+  start_time_utc: '2025-07-11T06:46:54+00:00'
+  latitude: 27.963249
+  longitude: 34.410667
+  maximum_depth_m: 18.695
+  confidence: high
+  decision_note: GPS drift ends about 0.04 km from the published Ras Bob coordinate.
