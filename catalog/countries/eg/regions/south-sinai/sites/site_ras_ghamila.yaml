@@ -1,0 +1,45 @@
+schema_version: '1.1'
+id: site_ras_ghamila
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Ras Ghamila
+  ru: Рас-Гамила
+aliases:
+- Ras Gamila
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.97222222222222
+    longitude: 34.42805555555555
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- plateau
+- drift
+- pinnacle
+access:
+- boat
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: The northernmost Sharm local-coast site, where a broad sandy plateau with coral heads and sea fans approaches the Tiran passage.
+    access: Boat drift after checking current direction.
+    hazards: Reversing or strengthening current near the passage, depth, shipping/boat traffic and separation.
+    marine_life: Sea fans, table and Porites corals, turtles, rays and passing pelagic fish.
+  ru:
+    summary: 'Самый северный местный сайт Шарм-эш-Шейха: широкое песчаное плато с коралловыми головами и горгонариями подходит к проходу Тиран.'
+    access: Дрифт с катера после проверки направления течения.
+    hazards: Меняющееся или усиливающееся течение у прохода, глубина, судоходство и разделение группы.
+    marine_life: Горгонарии, столовидные кораллы и пориты, черепахи, скаты и проходящие пелагические рыбы.
+source_refs:
+- src-9db3ce3b9e04
+- src-90e8f29fa9bd
+- src-476e59ca6e6e
+observations: []

@@ -1,0 +1,44 @@
+schema_version: '1.1'
+id: site_eagle_ray_bay
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Eagle Ray Bay
+  ru: Игл-Рей-Бей
+aliases:
+- Eagles Ray Bay
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.929229
+    longitude: 34.371531
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- bay
+access:
+- boat
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A name used by Camel Dive Club and a small number of directories for a Sharm local-coast reef or bay subdivision. Its exact limits and relationship to adjacent named sites
+      remain unclear.
+    access: Likely operated from a local day boat, but access and entry pattern require local confirmation.
+    hazards: Depth, current, exact boundaries and boat traffic are not adequately documented.
+    marine_life: The name suggests eagle-ray sightings, but no site-specific encounter claim is treated as established.
+  ru:
+    summary: Название, используемое Camel Dive Club и немногими каталогами для местного рифа или подразделения бухты Шарм-эш-Шейха. Точные границы и связь с соседними сайтами неясны.
+    access: Вероятен доступ с местного дневного катера, но способ входа требует подтверждения на месте.
+    hazards: Глубина, течение, точные границы и движение катеров документированы недостаточно.
+    marine_life: Название намекает на встречи с орляками, но это не принято как подтверждённая особенность сайта.
+source_refs:
+- src-4cba2d32da79
+- src-aa963cb978f0
+- src-db600b0d08f5
+observations: []

@@ -1,0 +1,46 @@
+schema_version: '1.1'
+id: site_tower
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Tower
+  ru: Тауэр
+aliases:
+- Tower Reef
+- Tower Reef – Canyon
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.88222222222222
+    longitude: 34.32555555555556
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- wall
+- canyon
+- drift
+access:
+- boat
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A Sharm local-coast reef marked by a fossil coral tower and a very deep vertical canyon or crack.
+    access: Usually a guided boat drift; shore access is not assumed for general catalog use.
+    hazards: The canyon extends far beyond recreational depth; current, wall exposure and boat pickup also require care.
+    marine_life: Coral pinnacles, glassfish, clownfish, nudibranchs and ordinary wall-reef life.
+  ru:
+    summary: Местный риф Шарм-эш-Шейха, отмеченный ископаемой коралловой башней и очень глубоким вертикальным каньоном или трещиной.
+    access: Обычно дрифт с катера и гидом; общий береговой доступ не предполагается.
+    hazards: Каньон уходит далеко за пределы рекреационных глубин; также важны течение, открытая стена и подбор катером.
+    marine_life: Коралловые башни, стеклянные рыбки, рыбы-клоуны, голожаберные моллюски и обычная фауна рифовой стены.
+source_refs:
+- src-9db3ce3b9e04
+- src-90e8f29fa9bd
+- src-147d60634250
+observations: []

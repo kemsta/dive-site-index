@@ -1,0 +1,49 @@
+schema_version: '1.1'
+id: site_sharks_bay
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Sharks Bay
+  ru: Шаркс-Бей
+aliases:
+- Shark's Bay
+- Sharks' Bay
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.949179
+    longitude: 34.387663
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- bay
+- plateau
+- training
+- night
+- snorkeling
+access:
+- boat
+- shore
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A sheltered local bay reef with a shallow coral plateau, deeper pinnacles and long-established use for training, relaxed and night dives.
+    access: Shore or boat access within Sharks Bay, subject to resort and jetty rules.
+    hazards: Boat and jetty traffic, localized drop-offs, fragile coral and night-navigation hazards.
+    marine_life: Macro life, crustaceans, cephalopods, scorpionfish, stonefish and reef fish; occasional rays occur.
+  ru:
+    summary: Защищённый местный риф бухты с мелким коралловым плато и более глубокими башнями, давно используемый для учебных, спокойных и ночных погружений.
+    access: Доступ с берега или катера в Шаркс-Бей с учётом правил курортов и причалов.
+    hazards: Движение катеров и у причалов, локальные свалы, хрупкие кораллы и риски ночной навигации.
+    marine_life: Макрофауна, ракообразные, головоногие, скорпены, бородавчатки и рифовые рыбы; иногда встречаются скаты.
+source_refs:
+- src-4cba2d32da79
+- src-90e8f29fa9bd
+- src-c5411413bc8f
+observations: []

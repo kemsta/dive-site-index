@@ -1,0 +1,44 @@
+schema_version: '1.1'
+id: site_anemone_city
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Anemone City
+  ru: Анемон-Сити
+aliases: []
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.7270704977063
+    longitude: 34.2584502696991
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- plateau
+- wall
+- drift
+access:
+- boat
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A distinct anemone-covered plateau immediately north of Shark Reef, often used as the start of a longer drift toward Shark Reef.
+    access: Normally reached by day boat and conducted as a guided drift.
+    hazards: Potentially strong or changing current, blue-water crossing toward Shark Reef, depth at the wall and boat traffic.
+    marine_life: Dense anemone and clownfish colonies, table and soft corals, turtles and passing pelagic fish may be seen.
+  ru:
+    summary: Отдельное плато с многочисленными анемонами к северу от Шарк-Рифа; его часто используют как начало более длинного дрейфа к Шарк-Рифу.
+    access: Обычно сюда приходят на дневном катере и погружаются в сопровождении гида в режиме дрейфа.
+    hazards: Возможны сильное или меняющееся течение, переход в синей воде к Шарк-Рифу, большая глубина у стены и движение катеров.
+    marine_life: Характерны плотные колонии анемон и рыб-клоунов, столовидные и мягкие кораллы; возможны черепахи и пелагические рыбы.
+source_refs:
+- src-0938d93f500b
+- src-874f4c5856e0
+- src-caf2b377a563
+observations: []

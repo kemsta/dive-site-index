@@ -1,0 +1,45 @@
+schema_version: '1.1'
+id: site_middle_garden
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Middle Garden
+  ru: Мидл-Гарден
+aliases:
+- Middle Gardens
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.91444444444444
+    longitude: 34.352222222222224
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- sand
+- plateau
+- training
+access:
+- boat
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: The sheltered central Gardens site, with a broad sandy bottom scattered with coral heads and several mooring routes.
+    access: Normally a boat mooring dive and commonly used for check or training dives.
+    hazards: Boat traffic, fragile coral, navigation among moorings and depth toward the bay edge.
+    marine_life: Blue-spotted rays, reef fish, morays and small life around scattered coral heads.
+  ru:
+    summary: Защищённый центральный сайт Gardens с широким песчаным дном, отдельными коралловыми головами и несколькими маршрутами от швартовок.
+    access: Обычно погружение со швартовки; часто используется для чек-дайвов и обучения.
+    hazards: Движение катеров, хрупкие кораллы, навигация среди швартовок и глубина к краю бухты.
+    marine_life: Синепятнистые хвостоколы, рифовые рыбы, мурены и мелкая фауна у коралловых голов.
+source_refs:
+- src-9db3ce3b9e04
+- src-c5411413bc8f
+- src-476e59ca6e6e
+observations: []

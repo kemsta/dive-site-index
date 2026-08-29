@@ -1,0 +1,47 @@
+schema_version: '1.1'
+id: site_ras_zaatar
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Ras Za'atar
+  ru: Рас-Заатар
+aliases:
+- Ras Zaatar
+- Ras Za’atar
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.764166666666668
+    longitude: 34.255833333333335
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- wall
+- drift
+- cavern
+- plateau
+access:
+- boat
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A rocky Ras Mohammed headland with a coral wall, illuminated chimneys and a plateau beyond the corner.
+    access: Boat-only drift; direction is selected after a current check.
+    hazards: Accelerating current around the headland, wall depth, chimney recesses, separation and boat pickup.
+    marine_life: Soft corals, gorgonians, lionfish, sweepers and groupers inhabit the wall and chimneys; sharks may cruise the plateau edge.
+  ru:
+    summary: Скалистый мыс Рас-Мохаммеда с коралловой стеной, освещёнными трубами и плато за поворотом.
+    access: Только катерный дрифт; направление выбирают после проверки течения.
+    hazards: Ускорение течения у мыса, глубина стены, углубления труб, разделение группы и подбор катером.
+    marine_life: На стене и в трубах живут мягкие кораллы, горгонарии, крылатки, стеклянные рыбки и груперы; у края плато возможны акулы.
+source_refs:
+- src-6b522d611dc4
+- src-df010cd39bfb
+- src-4cba2d32da79
+observations: []

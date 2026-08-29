@@ -1,0 +1,45 @@
+schema_version: '1.1'
+id: site_eel_garden_ras_mohammed
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Eel Garden
+  ru: Ил-Гарден
+aliases: []
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.765
+    longitude: 34.253055555555555
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- sand
+- slope
+- drift
+access:
+- boat
+- shore
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A Ras Mohammed sandy slope and reef section between Jackfish Alley and Shark Observatory, named for its garden-eel colony.
+    access: Usually a boat dive; guided overland shore entry is also reported when park and sea conditions permit.
+    hazards: Current, surge near the shallow entry, depth on the sandy slope, boat pickup and easily disturbed sand.
+    marine_life: Garden eels are the defining feature; morays, rays and ordinary Red Sea reef fish may also occur.
+  ru:
+    summary: Участок песчаного склона и рифа в Рас-Мохаммеде между Джекфиш-Элли и Шарк-Обсерватори, названный по колонии садовых угрей.
+    access: Обычно погружение выполняют с катера; при разрешении парка и подходящем состоянии моря также описан береговой вход с гидом.
+    hazards: Течение, прибой у мелководного входа, глубина на песчаном склоне, подбор катером и легко взмучиваемый песок.
+    marine_life: Главная особенность — садовые угри; также возможны мурены, скаты и обычные рифовые рыбы Красного моря.
+source_refs:
+- src-6b522d611dc4
+- src-516204fcb932
+- src-141d4d9831c5
+observations: []

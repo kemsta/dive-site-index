@@ -1,0 +1,44 @@
+schema_version: '1.1'
+id: site_turtle_bay
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Turtle Bay
+  ru: Тёртл-Бей
+aliases: []
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.862222222222222
+    longitude: 34.32027777777778
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- slope
+- drift
+- bay
+access:
+- boat
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A local coastal drift between Amphoras and Paradise, sharing their fringing wall, sandy slope and scattered coral pinnacles.
+    access: Normally dived from a day boat as a gentle drift.
+    hazards: Depth near the outer drop-off, current, fragile coral and boat pickup.
+    marine_life: Typical coral-garden and reef fish; turtles and larger visitors are possible but not guaranteed.
+  ru:
+    summary: Местный прибрежный дрифт между Амфорами и Парадайзом с окаймляющей стенкой, песчаным склоном и отдельными коралловыми башнями.
+    access: Обычно спокойный дрифт с дневного катера.
+    hazards: Глубина у внешнего свала, течение, хрупкие кораллы и подбор катером.
+    marine_life: Типичная фауна кораллового сада и рифовые рыбы; черепахи и крупные гости возможны, но не гарантированы.
+source_refs:
+- src-9db3ce3b9e04
+- src-90e8f29fa9bd
+- src-c5411413bc8f
+observations: []

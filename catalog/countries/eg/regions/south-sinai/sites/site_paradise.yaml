@@ -1,0 +1,45 @@
+schema_version: '1.1'
+id: site_paradise
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Paradise
+  ru: Парадайз
+aliases:
+- Paradise Reef
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.855555555555558
+    longitude: 34.31916666666667
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- slope
+- plateau
+- drift
+access:
+- boat
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A local reef between Ras Umm Sid and Amphoras, with a sandy plateau and tall soft-coral-covered pinnacles.
+    access: Usually a gentle day-boat drift.
+    hazards: Depth near the drop-off, occasional current, fragile pinnacles and boat traffic.
+    marine_life: Soft corals, table corals, sea fans and common reef fish; pelagic visitors are possible.
+  ru:
+    summary: Местный риф между Рас-Умм-Сидом и Амфорами с песчаным плато и высокими башнями, покрытыми мягкими кораллами.
+    access: Обычно спокойный дрифт с дневного катера.
+    hazards: Глубина у свала, периодическое течение, хрупкие башни и движение катеров.
+    marine_life: Мягкие и столовидные кораллы, горгонарии и обычные рифовые рыбы; возможны пелагические гости.
+source_refs:
+- src-9db3ce3b9e04
+- src-c5411413bc8f
+- src-d2f41f54454c
+observations: []

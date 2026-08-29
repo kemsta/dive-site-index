@@ -17,7 +17,7 @@ from scripts.build import TYPE_RU, build_all, load_catalog, validate_catalog, va
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 CATALOG = ROOT / "catalog"
-EXPECTED_SITE_COUNT = 56
+EXPECTED_SITE_COUNT = 75
 EXPECTED_HTML_COUNT = EXPECTED_SITE_COUNT + 3
 UDDF_XSD = ROOT / "schemas" / "vendor" / "uddf-3.2.3.xsd"
 NODE = shutil.which("node")
@@ -167,6 +167,60 @@ class CanonicalCatalogTests(unittest.TestCase):
         gubal_text = " ".join(sites["site_gubal_barge"]["content"]["en"].values()).casefold()
         self.assertIn("bluff point", gubal_text)
         self.assertNotEqual(sites["site_stingray_station_alternatives"]["geography"]["coordinates"], sites["site_the_alternatives"]["geography"]["coordinates"])
+
+    def test_sharm_ras_mohammed_expansion_resolves_all_nineteen_candidates(self):
+        expected = {
+            "anemone-city-ras-mohammed": ("site_anemone_city", 27.7270704977063, 34.2584502696991, "src-0938d93f500b"),
+            "eel-garden-ras-mohammed": ("site_eel_garden_ras_mohammed", 27.765, 34.253055555555555, "src-6b522d611dc4"),
+            "marsa-ghozlani-ras-mohammed": ("site_marsa_ghozlani", 27.820833333333333, 34.2525, "src-6b522d611dc4"),
+            "ras-burg-ras-mohammed": ("site_ras_burg", 27.75611111111111, 34.2525, "src-6b522d611dc4"),
+            "ras-za-atar-ras-mohammed": ("site_ras_zaatar", 27.764166666666668, 34.255833333333335, "src-6b522d611dc4"),
+            "eagle-ray-bay-sharm-el-sheikh-local-coast": ("site_eagle_ray_bay", 27.929229, 34.371531, "src-4cba2d32da79"),
+            "paradise-sharm-el-sheikh-local-coast": ("site_paradise", 27.855555555555558, 34.31916666666667, "src-9db3ce3b9e04"),
+            "pinky-s-wall-sharm-el-sheikh-local-coast": ("site_pinkys_wall", 27.870555555555555, 34.323055555555555, "src-9db3ce3b9e04"),
+            "sharks-bay-sharm-el-sheikh-local-coast": ("site_sharks_bay", 27.949179, 34.387663, "src-4cba2d32da79"),
+            "sodfa-sharm-el-sheikh-local-coast": ("site_sodfa", 27.883333333333333, 34.328611111111115, "src-9db3ce3b9e04"),
+            "tower-sharm-el-sheikh-local-coast": ("site_tower", 27.88222222222222, 34.32555555555556, "src-9db3ce3b9e04"),
+            "turtle-bay-sharm-el-sheikh-local-coast": ("site_turtle_bay", 27.862222222222222, 34.32027777777778, "src-9db3ce3b9e04"),
+            "white-knight-sharm-el-sheikh-local-coast": ("site_white_knight", 27.960277777777776, 34.39805555555556, "src-9db3ce3b9e04"),
+            "ras-ghamila-sharm-el-sheikh-local-coast-southern-approach-to-tiran": ("site_ras_ghamila", 27.97222222222222, 34.42805555555555, "src-9db3ce3b9e04"),
+            "ras-nasrani-sharm-el-sheikh-local-coast-southern-approach-to-tiran": ("site_ras_nasrani", 27.96333333333333, 34.41555555555556, "src-9db3ce3b9e04"),
+            "far-garden-sharm-el-sheikh-local-coast-the-gardens": ("site_far_garden", 27.915277777777778, 34.35861111111111, "src-9db3ce3b9e04"),
+            "fiddle-garden-sharm-el-sheikh-local-coast-the-gardens": ("site_fiddle_garden", 27.915555555555553, 34.3575, "src-9db3ce3b9e04"),
+            "middle-garden-sharm-el-sheikh-local-coast-the-gardens": ("site_middle_garden", 27.91444444444444, 34.352222222222224, "src-9db3ce3b9e04"),
+            "near-garden-sharm-el-sheikh-local-coast-the-gardens": ("site_near_garden", 27.906666666666666, 34.346944444444446, "src-9db3ce3b9e04"),
+        }
+        manifest = yaml.safe_load((ROOT / "research" / "south-sinai-expansion.yaml").read_text(encoding="utf-8"))
+        resolutions = {item["candidate_key"]: item for item in manifest["resolutions"] if item["candidate_key"] in expected}
+        self.assertEqual(set(resolutions), set(expected))
+        catalog = load_catalog(CATALOG)
+        sites = {site["id"]: site for country in catalog["countries"].values() for region in country["regions"].values() for site in region["sites"]}
+        sources = {source["id"]: source for source in yaml.safe_load((CATALOG / "sources.yaml").read_text(encoding="utf-8"))["sources"]}
+        for candidate_key, (site_id, latitude, longitude, coordinate_source_ref) in expected.items():
+            self.assertEqual(resolutions[candidate_key]["resolution"], "site")
+            self.assertEqual(resolutions[candidate_key]["target_site_id"], site_id)
+            site = sites[site_id]
+            self.assertIn(coordinate_source_ref, site["source_refs"])
+            self.assertAlmostEqual(site["geography"]["coordinates"]["latitude"], latitude, places=6)
+            self.assertAlmostEqual(site["geography"]["coordinates"]["longitude"], longitude, places=6)
+            for source_ref in site["source_refs"]:
+                self.assertNotEqual(urlsplit(sources[source_ref]["url"]).hostname, "www.openstreetmap.org")
+            self.assertIsNone(site["depth"]["minimum_m"])
+            self.assertIsNone(site["depth"]["maximum_m"])
+            self.assertIsNone(site["difficulty"])
+            self.assertNotIn("current", site)
+            self.assertNotIn("visibility", site)
+
+        self.assertNotEqual(sites["site_eel_garden_ras_mohammed"]["id"], "site_dahab_eel_garden")
+        self.assertEqual(sites["site_eel_garden_ras_mohammed"]["names"]["en"], sites["site_dahab_eel_garden"]["names"]["en"])
+        marsa_content = " ".join([*sites["site_marsa_ghozlani"]["content"]["en"].values(), *sites["site_marsa_ghozlani"]["content"]["ru"].values()]).casefold()
+        self.assertNotIn("unverified", marsa_content)
+        self.assertNotIn("не подтверждены", marsa_content)
+        self.assertNotEqual(sites["site_marsa_ghozlani"]["geography"]["coordinates"], sites["site_ras_ghozlani"]["geography"]["coordinates"])
+        self.assertLess(sites["site_sharks_bay"]["geography"]["coordinates"]["longitude"], 35.1)
+        garden_ids = ["site_far_garden", "site_fiddle_garden", "site_middle_garden", "site_near_garden"]
+        garden_points = {(sites[site_id]["geography"]["coordinates"]["latitude"], sites[site_id]["geography"]["coordinates"]["longitude"]) for site_id in garden_ids}
+        self.assertEqual(len(garden_points), 4)
 
     def test_first_south_sinai_expansion_adds_five_grounded_sites(self):
         catalog = load_catalog(CATALOG)
