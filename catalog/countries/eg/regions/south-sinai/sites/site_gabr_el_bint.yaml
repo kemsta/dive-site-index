@@ -1,0 +1,52 @@
+schema_version: '1.1'
+id: site_gabr_el_bint
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Gabr el Bint
+  ru: Габр-эль-Бинт
+aliases:
+- Gabr El Bint
+- Gabr El-Bint
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 28.353055555555557
+    longitude: 34.43333333333333
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- wall
+access:
+- boat
+- shore
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: The principal Gabr el Bint dive follows a reef wall and coral ridge in the protected coastal sector south of
+      Dahab; north- and south-going profiles remain routes within this site.
+    access: Access is by boat or by a locally arranged overland approach followed by a shore entry; use the entry and route
+      given in the local briefing.
+    hazards: The remote setting, wall depth, route finding and boat pickup or shore exit require a site-specific plan within
+      certification limits.
+    marine_life: Gorgonian fans, hard and soft corals, reef fish and turtles are described at the site; individual encounters
+      vary.
+  ru:
+    summary: Основной сайт Габр-эль-Бинт проходит вдоль рифовой стенки и кораллового гребня в охраняемом прибрежном секторе
+      к югу от Дахаба; северный и южный профили остаются маршрутами внутри одного сайта.
+    access: Доступ возможен с лодки либо после организованного наземного перехода с входом с берега; используйте точку входа
+      и маршрут из местного брифинга.
+    hazards: Удалённость, глубина у стенки, навигация и подбор лодкой либо выход на берег требуют локального плана в пределах
+      сертификации.
+    marine_life: Источники описывают горгонии, твёрдые и мягкие кораллы, рифовых рыб и черепах; конкретные встречи различаются.
+source_refs:
+- src-9db3ce3b9e04
+- src-d3546d738396
+- src-2395a9e32356
+observations: []

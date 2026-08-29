@@ -448,3 +448,18 @@ sources:
 - id: src-16ee99c46d82
   url: https://scubadiving.place/divesite/taba-bay-house-reef
   kind: reference
+- id: src-d3546d738396
+  url: https://redsea-diving.com/gabr-el-bint/
+  kind: reference
+- id: src-2395a9e32356
+  url: https://www.seadancerdivecenter.com/diving-dahab/gabr-el-bint/
+  kind: reference
+- id: src-16282a582b7e
+  url: https://www.circledivers.com/diving-in-dahab/dive-sites/el-shugurat-dive-site-dahab
+  kind: reference
+- id: src-4a6950696fc6
+  url: https://www.padi.com/dive-site/egypt/ras-abu-galum-north
+  kind: reference
+- id: src-4a5d36ba8f55
+  url: https://www.padi.com/dive-site/egypt/ras-abu-galum-south
+  kind: reference

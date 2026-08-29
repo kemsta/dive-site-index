@@ -1,0 +1,48 @@
+schema_version: '1.1'
+id: site_south_ras_abu_galum
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: South Ras Abu Galum
+  ru: Южный Рас-Абу-Галум
+aliases:
+- Ras Abu Galum South
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 28.611666666666668
+    longitude: 34.55333333333333
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+access:
+- boat
+- shore
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: South Ras Abu Galum is the southern named dive sector near the Bedouin settlement, separate from North Ras Abu
+      Galum and centred on a coral reef profile.
+    access: Reached by boat or by a remote coastal approach followed by shore entry; use the locally briefed entry and exit.
+    hazards: Remote logistics, shore-entry conditions, navigation and fragile coral require a conservative guided plan within
+      training limits.
+    marine_life: Several hard-coral forms and ordinary Red Sea reef fish are described; specific animal encounters vary.
+  ru:
+    summary: Южный Рас-Абу-Галум — именованный южный сектор погружений у бедуинского поселения, отдельный от Северного Рас-Абу-Галума
+      и связанный с рифовым профилем.
+    access: Доступ с лодки либо после удалённого перехода вдоль берега с входом с берега; используйте вход и выход из местного
+      брифинга.
+    hazards: Удалённая логистика, условия берегового входа, навигация и хрупкие кораллы требуют консервативного маршрута с
+      гидом в пределах подготовки.
+    marine_life: Описаны несколько форм твёрдых кораллов и обычные рифовые рыбы Красного моря; конкретные встречи различаются.
+source_refs:
+- src-9db3ce3b9e04
+- src-35db53adc3ed
+- src-4a5d36ba8f55
+observations: []

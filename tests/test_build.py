@@ -17,7 +17,7 @@ from scripts.build import TYPE_RU, build_all, load_catalog, validate_catalog, va
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 CATALOG = ROOT / "catalog"
-EXPECTED_SITE_COUNT = 106
+EXPECTED_SITE_COUNT = 110
 EXPECTED_HTML_COUNT = EXPECTED_SITE_COUNT + 3
 UDDF_XSD = ROOT / "schemas" / "vendor" / "uddf-3.2.3.xsd"
 NODE = shutil.which("node")
@@ -339,6 +339,60 @@ class CanonicalCatalogTests(unittest.TestCase):
         self.assertNotIn("site_the_canyons_taba", sites)
         self.assertNotIn("site_marina_bay_taba_heights", sites)
         self.assertNotIn("site_waterworld_house_reef_taba_heights", sites)
+
+    def test_abu_galum_gabr_expansion_resolves_all_twenty_three_candidates(self):
+        expected_sites = {
+            "gabr-el-bint-gabr-el-bint-nabq-protected-area-south-of-dahab": ("site_gabr_el_bint", 28.353055555555557, 34.43333333333333, "src-9db3ce3b9e04"),
+            "el-shugurat-gabr-el-bint-boat-diving-corridor": ("site_el_shugurat", 28.355833333333333, 34.439722222222215, "src-9db3ce3b9e04"),
+            "north-ras-abu-galum-nuweiba-ras-abu-galum-protected-area": ("site_north_ras_abu_galum", 28.615000000000002, 34.559444444444445, "src-9db3ce3b9e04"),
+            "south-ras-abu-galum-nuweiba-ras-abu-galum-protected-area": ("site_south_ras_abu_galum", 28.611666666666668, 34.55333333333333, "src-9db3ce3b9e04"),
+        }
+        unresolved = {
+            "baby-blue-hole-gabr-el-bint", "gabr-el-bint-canyon-gabr-el-bint", "shaab-said-gabr-el-bint-boat-diving-corridor", "shaira-gabr-el-bint-boat-diving-corridor",
+            "ras-abu-galum-alternatives-nuweiba-ras-abu-galum-protected-area", "ras-abu-galum-coral-garden-nuweiba-ras-abu-galum-protected-area",
+            "ras-mumlah-coral-garden-nuweiba-ras-abu-galum-protected-area", "ras-mumlah-north-nuweiba-ras-abu-galum-protected-area",
+            "ras-mumlah-south-nuweiba-ras-abu-galum-protected-area", "a-maeid-ras-abu-galum-protected-area", "big-stone-ras-abu-galum-protected-area",
+            "dheyla-drift-ras-abu-galum-protected-area", "dheyla-pinnacle-ras-abu-galum-protected-area", "khoramat-ras-abu-galum-protected-area",
+            "ras-abu-galum-ras-abu-galum-protected-area", "sabah-house-reef-ras-abu-galum-protected-area", "sand-canyon-ras-abu-galum-protected-area",
+            "the-rocks-ras-abu-galum-protected-area", "tonsils-ras-abu-galum-protected-area",
+        }
+        expected_keys = set(expected_sites) | unresolved
+        self.assertEqual(len(expected_keys), 23)
+        manifest = yaml.safe_load((ROOT / "research" / "south-sinai-expansion.yaml").read_text(encoding="utf-8"))
+        resolutions = {item["candidate_key"]: item for item in manifest["resolutions"] if item["candidate_key"] in expected_keys}
+        self.assertEqual(set(resolutions), expected_keys)
+        catalog = load_catalog(CATALOG)
+        sites = {site["id"]: site for country in catalog["countries"].values() for region in country["regions"].values() for site in region["sites"]}
+        sources = {source["id"]: source for source in yaml.safe_load((CATALOG / "sources.yaml").read_text(encoding="utf-8"))["sources"]}
+        for candidate_key, (site_id, latitude, longitude, coordinate_source_ref) in expected_sites.items():
+            self.assertEqual(resolutions[candidate_key]["resolution"], "site")
+            self.assertEqual(resolutions[candidate_key]["target_site_id"], site_id)
+            site = sites[site_id]
+            self.assertIn(coordinate_source_ref, site["source_refs"])
+            self.assertAlmostEqual(site["geography"]["coordinates"]["latitude"], latitude, places=6)
+            self.assertAlmostEqual(site["geography"]["coordinates"]["longitude"], longitude, places=6)
+            for source_ref in site["source_refs"]:
+                self.assertNotIn(urlsplit(sources[source_ref]["url"]).hostname, {"www.openstreetmap.org", "openstreetmap.org"})
+            self.assertIsNone(site["depth"]["minimum_m"])
+            self.assertIsNone(site["depth"]["maximum_m"])
+            self.assertIsNone(site["difficulty"])
+            self.assertNotIn("current", site)
+            self.assertNotIn("visibility", site)
+        supported_aliases = {
+            "site_gabr_el_bint": {"Gabr El Bint", "Gabr El-Bint"},
+            "site_el_shugurat": {"El Shugarat", "Shogharat", "Little Trees", "Many Trees"},
+            "site_north_ras_abu_galum": {"Ras Abu Galum North"},
+            "site_south_ras_abu_galum": {"Ras Abu Galum South"},
+        }
+        for site_id, aliases in supported_aliases.items():
+            self.assertEqual(set(sites[site_id]["aliases"]), aliases)
+        for site_id in ("site_north_ras_abu_galum", "site_south_ras_abu_galum"):
+            self.assertNotIn("protected area", sites[site_id]["content"]["en"]["summary"].casefold())
+            self.assertNotIn("охраняемой зоне", sites[site_id]["content"]["ru"]["summary"].casefold())
+        for candidate_key in unresolved:
+            self.assertEqual(resolutions[candidate_key]["resolution"], "unresolved")
+            self.assertIsNone(resolutions[candidate_key]["target_site_id"])
+        self.assertNotIn("site_triggerfish_alley", sites)
 
     def test_first_south_sinai_expansion_adds_five_grounded_sites(self):
         catalog = load_catalog(CATALOG)
