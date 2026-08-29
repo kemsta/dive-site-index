@@ -1,0 +1,45 @@
+schema_version: '1.1'
+id: site_dahab_blue_hole
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Blue Hole
+  ru: Голубая дыра
+aliases:
+- The Blue Hole
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 28.57284
+    longitude: 34.53754
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- wall
+- drop-off
+access:
+- shore
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A deep opening in the coastal reef north of Dahab, connected to the open Gulf of Aqaba. Recreational dives can remain on the reef and saddle; the deep arch is a separate technical objective rather than a normal continuation of the site.
+    access: Shore access from the Blue Hole area. The Bells-to-Blue-Hole drift is a related route, not treated here as proof that both names identify one site.
+    hazards: Extreme depth and the deep overhead arch have caused fatal accidents. The arch requires technical training, gases, equipment, and planning; it is not a recreational shortcut.
+    marine_life: Coral and reef fish occur around the outer wall and saddle; sightings vary with conditions.
+  ru:
+    summary: Глубокая впадина в прибрежном рифе к северу от Дахаба, соединённая с открытой частью залива Акаба. Рекреационное погружение может проходить по рифу и седловине; глубокая арка является отдельной технической целью, а не обычным продолжением маршрута.
+    access: Вход с берега в районе Голубой дыры. Дрифт Bells–Blue Hole считается связанным маршрутом, но не доказательством того, что оба названия обозначают один сайт.
+    hazards: Экстремальная глубина и глубокая арка под перекрытием становились причиной смертельных происшествий. Для арки необходимы техническая подготовка, газы, снаряжение и планирование; это не рекреационный короткий путь.
+    marine_life: На внешней стенке и седловине встречаются кораллы и рифовые рыбы; наблюдения зависят от условий.
+source_refs:
+- src-fab1a57a1d8c
+- src-f79f065f0394
+- src-28990d219403
+- src-d25a157b19f1
+observations: []

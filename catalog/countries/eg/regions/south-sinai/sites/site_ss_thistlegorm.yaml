@@ -1,0 +1,43 @@
+schema_version: '1.1'
+id: site_ss_thistlegorm
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: SS Thistlegorm
+  ru: SS Thistlegorm
+aliases:
+- Thistlegorm Wreck
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.8146
+    longitude: 33.9202
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- wreck
+access:
+- boat
+- liveaboard
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A British wartime freighter wreck in the Strait of Gubal, widely dived for its surviving structure and military cargo. This record represents the wreck as a site and does not imply that penetration is part of a standard dive.
+    access: Reached by dive boat or liveaboard; trip format and mooring arrangements vary by operator and conditions.
+    hazards: Wreck structure, cargo, depth, current, boat traffic, and any overhead route require an appropriate plan. Penetration requires suitable wreck training and equipment.
+    marine_life: The wreck supports established marine growth and reef life, while open-water encounters remain variable.
+  ru:
+    summary: Затонувший британский транспорт военного времени в проливе Губаль, известный сохранившимися конструкциями и военным грузом. Запись описывает судно как дайв-сайт и не подразумевает, что проникновение входит в стандартное погружение.
+    access: Доступ с дайв-бота или сафари-бота; формат поездки и организация швартовки зависят от оператора и условий.
+    hazards: Конструкции судна, груз, глубина, течение, движение лодок и любой маршрут под перекрытием требуют отдельного плана. Для проникновения необходимы соответствующая рэк-подготовка и снаряжение.
+    marine_life: На судне сформировались обрастания и сообщества рифовых организмов; встречи в открытой воде остаются переменными.
+source_refs:
+- src-dc8baba8a33b
+- src-fab1a57a1d8c
+- src-b7fe7e40c809
+observations: []
