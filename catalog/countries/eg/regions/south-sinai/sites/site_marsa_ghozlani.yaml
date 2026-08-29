@@ -1,0 +1,43 @@
+schema_version: '1.1'
+id: site_marsa_ghozlani
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Marsa Ghozlani
+  ru: Марса-Гозлани
+aliases:
+- Marsa Ghazlani
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.820833333333333
+    longitude: 34.2525
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- bay
+- reef
+access:
+- boat
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A CDWS-listed dive-site point at Marsa Ghozlani, north of the separately listed Ras Ghozlani headland.
+    access: Boat access; route and pickup arrangements follow the operator and national-park briefing.
+    hazards: Protected-area procedures, boat traffic, and the day's route and pickup plan require local briefing.
+    marine_life: Site-specific encounters vary with conditions; no particular species is guaranteed.
+  ru:
+    summary: Указанная CDWS точка дайв-сайта Марса-Гозлани находится севернее отдельно указанного мыса Рас-Гозлани.
+    access: Доступ с катера; маршрут и порядок подбора определяются брифингом оператора и национального парка.
+    hazards: Процедуры охраняемой зоны, движение катеров, маршрут и план подбора на конкретный день требуют местного брифинга.
+    marine_life: Наблюдения зависят от условий; встреча с конкретными видами не гарантируется.
+source_refs:
+- src-6b522d611dc4
+- src-9db3ce3b9e04
+- src-4cba2d32da79
+observations: []

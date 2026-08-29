@@ -1,0 +1,45 @@
+schema_version: '1.1'
+id: site_near_garden
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Near Garden
+  ru: Нир-Гарден
+aliases:
+- Near Gardens
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.906666666666666
+    longitude: 34.346944444444446
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- plateau
+- pinnacle
+- drift
+access:
+- boat
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: The Gardens site closest to Naama Bay, with an inclined plateau, pinnacles, gorgonians and a shallow coral garden.
+    access: Normally a guided boat drift, though local operations may use a mooring.
+    hazards: Current, depth where the plateau meets the drop-off, fragile gorgonians and boat pickup.
+    marine_life: Morays, glassfish, reef fish, table corals and occasional rays or turtles.
+  ru:
+    summary: Ближайший к Наама-Бей сайт Gardens с наклонным плато, башнями, горгонариями и мелководным коралловым садом.
+    access: Обычно дрифт с катера и гидом, хотя местные операторы могут использовать швартовку.
+    hazards: Течение, глубина у перехода плато в свал, хрупкие горгонарии и подбор катером.
+    marine_life: Мурены, стеклянные и другие рифовые рыбы, столовидные кораллы; возможны скаты и черепахи.
+source_refs:
+- src-9db3ce3b9e04
+- src-90e8f29fa9bd
+- src-476e59ca6e6e
+observations: []

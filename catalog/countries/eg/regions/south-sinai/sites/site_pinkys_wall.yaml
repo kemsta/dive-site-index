@@ -1,0 +1,45 @@
+schema_version: '1.1'
+id: site_pinkys_wall
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Pinky's Wall
+  ru: Пинкис-Уолл
+aliases:
+- Pinky Wall
+- Pinkies Wall
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.870555555555555
+    longitude: 34.323055555555555
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- wall
+- drift
+access:
+- boat
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A narrow local reef shelf that becomes a steep wall, noted for abundant pink soft coral.
+    access: Normally a shallow boat drift.
+    hazards: Very deep wall beyond recreational limits, current, buoyancy control and boat pickup.
+    marine_life: Pink soft corals, reef fish, morays and occasional rays or pelagic fish.
+  ru:
+    summary: Узкая полка местного рифа переходит в крутую стену, известную розовыми мягкими кораллами.
+    access: Обычно неглубокий дрифт с катера.
+    hazards: Очень глубокая стена за пределами рекреационных глубин, течение, контроль плавучести и подбор катером.
+    marine_life: Розовые мягкие кораллы, рифовые рыбы, мурены; возможны скаты и пелагические рыбы.
+source_refs:
+- src-9db3ce3b9e04
+- src-90e8f29fa9bd
+- src-c5411413bc8f
+observations: []

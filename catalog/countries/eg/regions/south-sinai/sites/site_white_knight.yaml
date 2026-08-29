@@ -1,0 +1,46 @@
+schema_version: '1.1'
+id: site_white_knight
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: White Knight
+  ru: Уайт-Найт
+aliases:
+- White Knights
+- Wichita Falls
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.960277777777776
+    longitude: 34.39805555555556
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- plateau
+- canyon
+- drift
+access:
+- boat
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A local reef beside Sharks Bay with a shallow sandy plateau and a deeper canyon; the historical name Wichita Falls refers to sand flowing down the canyon.
+    access: Mooring or boat drift toward Sharks Bay.
+    hazards: Canyon depth beyond recreational limits, current, debris, overhead-like recesses and boat traffic.
+    marine_life: Macro life, reef fish, morays and seasonal sightings of eagle rays or mantas.
+  ru:
+    summary: Местный риф рядом с Шаркс-Бей с мелким песчаным плато и более глубоким каньоном; историческое название Wichita Falls связано с потоком песка по каньону.
+    access: Погружение со швартовки или дрифт с катера в сторону Шаркс-Бей.
+    hazards: Глубина каньона за рекреационными пределами, течение, обломки, углубления с элементами надголовной среды и движение катеров.
+    marine_life: Макрофауна, рифовые рыбы, мурены; сезонно возможны орляки и манты.
+source_refs:
+- src-9db3ce3b9e04
+- src-90e8f29fa9bd
+- src-c5411413bc8f
+observations: []

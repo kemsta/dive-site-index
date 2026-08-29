@@ -368,28 +368,33 @@ resolutions:
 - candidate_key: anemone-city-ras-mohammed
   canonical_name: Anemone City
   area: Ras Mohammed
-  resolution: pending
-  target_site_id: null
+  resolution: site
+  target_site_id: site_anemone_city
+  target_candidate_key: null
 - candidate_key: eel-garden-ras-mohammed
   canonical_name: Eel Garden
   area: Ras Mohammed
-  resolution: pending
-  target_site_id: null
+  resolution: site
+  target_site_id: site_eel_garden_ras_mohammed
+  target_candidate_key: null
 - candidate_key: marsa-ghozlani-ras-mohammed
   canonical_name: Marsa Ghozlani
   area: Ras Mohammed
-  resolution: pending
-  target_site_id: null
+  resolution: site
+  target_site_id: site_marsa_ghozlani
+  target_candidate_key: null
 - candidate_key: ras-burg-ras-mohammed
   canonical_name: Ras Burg
   area: Ras Mohammed
-  resolution: pending
-  target_site_id: null
+  resolution: site
+  target_site_id: site_ras_burg
+  target_candidate_key: null
 - candidate_key: ras-za-atar-ras-mohammed
   canonical_name: Ras Za'atar
   area: Ras Mohammed
-  resolution: pending
-  target_site_id: null
+  resolution: site
+  target_site_id: site_ras_zaatar
+  target_candidate_key: null
 - candidate_key: chrisoula-k-sha-ab-abu-nuhas
   canonical_name: Chrisoula K
   area: Sha'ab Abu Nuhas
@@ -423,73 +428,87 @@ resolutions:
 - candidate_key: eagle-ray-bay-sharm-el-sheikh-local-coast
   canonical_name: Eagle Ray Bay
   area: Sharm el-Sheikh local coast
-  resolution: pending
-  target_site_id: null
+  resolution: site
+  target_site_id: site_eagle_ray_bay
+  target_candidate_key: null
 - candidate_key: paradise-sharm-el-sheikh-local-coast
   canonical_name: Paradise
   area: Sharm el-Sheikh local coast
-  resolution: pending
-  target_site_id: null
+  resolution: site
+  target_site_id: site_paradise
+  target_candidate_key: null
 - candidate_key: pinky-s-wall-sharm-el-sheikh-local-coast
   canonical_name: Pinky's Wall
   area: Sharm el-Sheikh local coast
-  resolution: pending
-  target_site_id: null
+  resolution: site
+  target_site_id: site_pinkys_wall
+  target_candidate_key: null
 - candidate_key: sharks-bay-sharm-el-sheikh-local-coast
   canonical_name: Sharks Bay
   area: Sharm el-Sheikh local coast
-  resolution: pending
-  target_site_id: null
+  resolution: site
+  target_site_id: site_sharks_bay
+  target_candidate_key: null
 - candidate_key: sodfa-sharm-el-sheikh-local-coast
   canonical_name: Sodfa
   area: Sharm el-Sheikh local coast
-  resolution: pending
-  target_site_id: null
+  resolution: site
+  target_site_id: site_sodfa
+  target_candidate_key: null
 - candidate_key: tower-sharm-el-sheikh-local-coast
   canonical_name: Tower
   area: Sharm el-Sheikh local coast
-  resolution: pending
-  target_site_id: null
+  resolution: site
+  target_site_id: site_tower
+  target_candidate_key: null
 - candidate_key: turtle-bay-sharm-el-sheikh-local-coast
   canonical_name: Turtle Bay
   area: Sharm el-Sheikh local coast
-  resolution: pending
-  target_site_id: null
+  resolution: site
+  target_site_id: site_turtle_bay
+  target_candidate_key: null
 - candidate_key: white-knight-sharm-el-sheikh-local-coast
   canonical_name: White Knight
   area: Sharm el-Sheikh local coast
-  resolution: pending
-  target_site_id: null
+  resolution: site
+  target_site_id: site_white_knight
+  target_candidate_key: null
 - candidate_key: ras-ghamila-sharm-el-sheikh-local-coast-southern-approach-to-tiran
   canonical_name: Ras Ghamila
   area: Sharm el-Sheikh local coast / southern approach to Tiran
-  resolution: pending
-  target_site_id: null
+  resolution: site
+  target_site_id: site_ras_ghamila
+  target_candidate_key: null
 - candidate_key: ras-nasrani-sharm-el-sheikh-local-coast-southern-approach-to-tiran
   canonical_name: Ras Nasrani
   area: Sharm el-Sheikh local coast / southern approach to Tiran
-  resolution: pending
-  target_site_id: null
+  resolution: site
+  target_site_id: site_ras_nasrani
+  target_candidate_key: null
 - candidate_key: far-garden-sharm-el-sheikh-local-coast-the-gardens
   canonical_name: Far Garden
   area: Sharm el-Sheikh local coast — The Gardens
-  resolution: pending
-  target_site_id: null
+  resolution: site
+  target_site_id: site_far_garden
+  target_candidate_key: null
 - candidate_key: fiddle-garden-sharm-el-sheikh-local-coast-the-gardens
   canonical_name: Fiddle Garden
   area: Sharm el-Sheikh local coast — The Gardens
-  resolution: pending
-  target_site_id: null
+  resolution: site
+  target_site_id: site_fiddle_garden
+  target_candidate_key: null
 - candidate_key: middle-garden-sharm-el-sheikh-local-coast-the-gardens
   canonical_name: Middle Garden
   area: Sharm el-Sheikh local coast — The Gardens
-  resolution: pending
-  target_site_id: null
+  resolution: site
+  target_site_id: site_middle_garden
+  target_candidate_key: null
 - candidate_key: near-garden-sharm-el-sheikh-local-coast-the-gardens
   canonical_name: Near Garden
   area: Sharm el-Sheikh local coast — The Gardens
-  resolution: pending
-  target_site_id: null
+  resolution: site
+  target_site_id: site_near_garden
+  target_candidate_key: null
 - candidate_key: sha-ab-abu-nuhas-strait-of-gubal-abu-nuhas
   canonical_name: Sha'ab Abu Nuhas
   area: Strait of Gubal / Abu Nuhas

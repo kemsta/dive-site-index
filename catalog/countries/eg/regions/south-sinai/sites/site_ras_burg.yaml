@@ -1,0 +1,46 @@
+schema_version: '1.1'
+id: site_ras_burg
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Ras Burg
+  ru: Рас-Бург
+aliases:
+- Ras Burgh
+- Tower Cape
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.75611111111111
+    longitude: 34.2525
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- wall
+- drift
+- cavern
+access:
+- boat
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A Ras Mohammed wall dive marked by a fossil coral tower and a light-filled chimney; it is distinct from the local-coast site Tower.
+    access: Boat drift within the national park, following a guide and a current check.
+    hazards: Current, wall depth, overhead-like chimney recesses, fragile gorgonians and boat pickup.
+    marine_life: Anthias, fusiliers, butterflyfish, gorgonians, sponges and occasional turtles or pelagic fish.
+  ru:
+    summary: Погружение вдоль стены в Рас-Мохаммеде, отмеченное ископаемой коралловой башней и освещённой трубой; это не местный сайт Тауэр.
+    access: Катерный дрифт в национальном парке после проверки течения и только с гидом.
+    hazards: Течение, глубина стены, углубления трубы с элементами надголовной среды, хрупкие горгонарии и подбор катером.
+    marine_life: Антиасы, фузилёры, рыбы-бабочки, горгонарии, губки; возможны черепахи и пелагические рыбы.
+source_refs:
+- src-6b522d611dc4
+- src-c9c045977dc1
+- src-cccf1fb2cdf3
+observations: []

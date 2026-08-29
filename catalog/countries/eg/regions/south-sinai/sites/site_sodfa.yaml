@@ -1,0 +1,44 @@
+schema_version: '1.1'
+id: site_sodfa
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Sodfa
+  ru: Содфа
+aliases: []
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.883333333333333
+    longitude: 34.328611111111115
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- plateau
+- drop-off
+- drift
+access:
+- boat
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A quieter local drift site with a sandy plateau, coral pinnacles and sea fans near the drop-off.
+    access: Boat drift; no shore-access claim is assumed.
+    hazards: Current, drop-off depth, separation, fragile sea fans and pickup traffic.
+    marine_life: Reef fish, anthias and life associated with pinnacles and gorgonians.
+  ru:
+    summary: Более тихий местный дрифт-сайт с песчаным плато, коралловыми башнями и горгонариями у свала.
+    access: Дрифт с катера; береговой доступ не предполагается.
+    hazards: Течение, глубина свала, разделение группы, хрупкие горгонарии и движение катеров при подборе.
+    marine_life: Рифовые рыбы, антиасы и обитатели коралловых башен и горгонарий.
+source_refs:
+- src-9db3ce3b9e04
+- src-90e8f29fa9bd
+- src-c5411413bc8f
+observations: []

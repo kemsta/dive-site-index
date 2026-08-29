@@ -1,0 +1,44 @@
+schema_version: '1.1'
+id: site_fiddle_garden
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Fiddle Garden
+  ru: Фидл-Гарден
+aliases:
+- Fiddle Gardens
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.915555555555553
+    longitude: 34.3575
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- plateau
+- pinnacle
+access:
+- boat
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A distinct Gardens subdivision between Middle and Far Garden, with a sandy plateau and two prominent coral pinnacles.
+    access: Usually a boat mooring dive; a gentle drift toward Far Garden is possible.
+    hazards: Fragile fire coral, amphora fragments that must not be touched, depth at the drop-off and occasional current.
+    marine_life: Sweepers, juvenile fusiliers, hatchetfish and varied soft and hard coral on the pinnacles.
+  ru:
+    summary: Отдельный участок Gardens между Middle и Far Garden с песчаным плато и двумя заметными коралловыми башнями.
+    access: Обычно погружение со швартовки; возможен лёгкий дрифт к Far Garden.
+    hazards: Хрупкий огненный коралл, фрагменты амфор, которых нельзя касаться, глубина у свала и периодическое течение.
+    marine_life: Стеклянные рыбки, молодые фузилёры, рыбы-топорики и разнообразные мягкие и твёрдые кораллы на башнях.
+source_refs:
+- src-9db3ce3b9e04
+- src-90e8f29fa9bd
+- src-476e59ca6e6e
+observations: []

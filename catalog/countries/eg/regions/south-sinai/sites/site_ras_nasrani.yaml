@@ -1,0 +1,44 @@
+schema_version: '1.1'
+id: site_ras_nasrani
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Ras Nasrani
+  ru: Рас-Насрани
+aliases: []
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.96333333333333
+    longitude: 34.41555555555556
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- plateau
+- wall
+- drift
+access:
+- boat
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A northern local-coast reef directly south of Ras Ghamila, with a sandy plateau, coral heads, sea fans and deeper wall sections.
+    access: Generally a guided boat drift; some profiles can return toward the entry only when current allows.
+    hazards: Potentially strong current around the corner, depth on deeper walls, separation and boat pickup.
+    marine_life: Coral heads, gorgonians, turtles, morays, rays and occasional large pelagic fish.
+  ru:
+    summary: Северный местный риф непосредственно к югу от Рас-Гамилы с песчаным плато, коралловыми головами, горгонариями и более глубокими стенами.
+    access: Обычно дрифт с катера и гидом; возврат к точке входа возможен только при подходящем течении.
+    hazards: Возможное сильное течение у поворота, глубина на стенах, разделение группы и подбор катером.
+    marine_life: Коралловые головы, горгонарии, черепахи, мурены, скаты и иногда крупные пелагические рыбы.
+source_refs:
+- src-9db3ce3b9e04
+- src-90e8f29fa9bd
+- src-476e59ca6e6e
+observations: []

@@ -1,0 +1,45 @@
+schema_version: '1.1'
+id: site_far_garden
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Far Garden
+  ru: Фар-Гарден
+aliases:
+- Far Gardens
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.915277777777778
+    longitude: 34.35861111111111
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- slope
+- pinnacle
+- drift
+access:
+- boat
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: The farthest of the four named Gardens from Naama Bay, with an inclined reef, many pinnacles and the deeper Cathedral overhang.
+    access: Boat mooring, semi-drift or drift depending on conditions.
+    hazards: Current may strengthen beyond the pickup point; depth and overhead risk at the Cathedral require appropriate training.
+    marine_life: Pinnacle reef fish, gorgonians, turtles and occasional rays or reef sharks.
+  ru:
+    summary: 'Самый дальний от Наама-Бей из четырёх именованных Gardens: наклонный риф, множество башен и глубокий навес Cathedral.'
+    access: Погружение со швартовки, полу-дрифт или дрифт с катера по условиям.
+    hazards: За точкой подбора течение может усилиться; глубина и надголовный риск в Cathedral требуют соответствующей подготовки.
+    marine_life: Рифовые рыбы у башен, горгонарии, черепахи; возможны скаты и рифовые акулы.
+source_refs:
+- src-9db3ce3b9e04
+- src-90e8f29fa9bd
+- src-17373a68f224
+observations: []
