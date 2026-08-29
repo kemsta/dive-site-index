@@ -1,0 +1,60 @@
+schema_version: '1.0'
+id: site_jackson_reef
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Jackson Reef
+aliases: []
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 28.005967
+    longitude: 34.472557
+  body_of_water_id: red-sea
+  water_type: salt
+classification:
+  types:
+  - reef
+  - wall
+  - coral garden
+  - drop-off
+  - drift dive
+  - boat dive
+depth:
+  minimum_m: 0
+  maximum_m: 30
+difficulty: advanced
+content:
+  en:
+    summary: The northernmost of Tiran's four principal reefs, combining a steep wall, coral gardens, and current-swept
+      corners. Recreational routes normally stay within about 0–30 m, although the wall and the remains of the Lara
+      continue deeper. The exact route depends strongly on wind, surface conditions, and current direction.
+    access: Boat dive from the sheltered south side or a planned drift around a corner; live pickup may be required.
+      The guide should perform both current and surface-condition checks.
+    hazards: Strong or changing current, surface chop, reef corners, blue-water separation, boat traffic, depth,
+      and the deeper Lara wreckage. Carry and know how to deploy an SMB.
+    marine_life: Dense schools of anthias, wrasses, and fusiliers, plus turtles and other reef life, are common
+      subjects. Large pelagic animals may pass through but sightings are never guaranteed.
+source_refs:
+- src-a4d6ea2fdd4b
+- src-96bfffa20ddf
+observations:
+- record_id: dive-12-2025-07-11
+  dive_number: 12
+  start_time_utc: '2025-07-11T11:47:21+00:00'
+  latitude: 28.011455
+  longitude: 34.474853
+  maximum_depth_m: 20.327
+  confidence: high
+  decision_note: GPS exit is about 0.65 km from the published Jackson Reef coordinate and lies on its northeastern
+    sector.
+- record_id: '23932777779'
+  dive_number: 16
+  start_time_utc: '2026-08-11T07:19:28+00:00'
+  latitude: 28.007305
+  longitude: 34.475641
+  maximum_depth_m: 25.036
+  confidence: high
+  decision_note: GPS exit is about 0.34 km from the mapped reef marker.

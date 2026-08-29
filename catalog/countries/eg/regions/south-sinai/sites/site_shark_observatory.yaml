@@ -1,0 +1,50 @@
+schema_version: '1.0'
+id: site_shark_observatory
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Shark Observatory
+aliases: []
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.731056
+    longitude: 34.259786
+  body_of_water_id: red-sea
+  water_type: salt
+classification:
+  types:
+  - wall
+  - reef
+  - drop-off
+  - drift dive
+  - boat dive
+depth:
+  minimum_m: 5
+  maximum_m: 30
+difficulty: advanced
+content:
+  en:
+    summary: A sheer wall beneath the Shark Observatory headland in Ras Mohammed National Park. Inlets, overhangs,
+      and small open recesses break up the wall, while sunlight enters through the shallow fringing reef above.
+      It is generally planned as a drift with close depth control rather than as a search specifically for sharks.
+    access: Boat drift with live pickup; descend with the group and maintain a clear wall reference while following
+      the guide's current plan.
+    hazards: Current, rapid depth gain beside the near-vertical wall, blue-water separation, overhangs, and boat
+      traffic. An SMB and reliable buoyancy control are important.
+    marine_life: Large schools of reef fish, turtles, and occasional larger visitors may be seen. The site's name
+      should not be treated as a guarantee of shark sightings.
+source_refs:
+- src-d7919862474f
+- src-ad3ddf231290
+observations:
+- record_id: '23960314919'
+  dive_number: 24
+  start_time_utc: '2026-08-13T09:36:31+00:00'
+  latitude: 27.731191
+  longitude: 34.26132
+  maximum_depth_m: 30.535
+  confidence: high
+  decision_note: GPS exit is about 0.15 km from Shark Observatory.

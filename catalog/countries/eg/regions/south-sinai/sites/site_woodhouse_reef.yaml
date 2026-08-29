@@ -1,0 +1,50 @@
+schema_version: '1.0'
+id: site_woodhouse_reef
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Woodhouse Reef
+aliases: []
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 28.001983
+    longitude: 34.466167
+  body_of_water_id: red-sea
+  water_type: salt
+classification:
+  types:
+  - reef
+  - wall
+  - drift dive
+  - drop-off
+  - deep canyon
+  - boat dive
+depth:
+  minimum_m: 5
+  maximum_m: 40
+difficulty: advanced
+content:
+  en:
+    summary: The longest and narrowest of the four principal Tiran reefs, positioned between Thomas and Jackson.
+      With no sheltered mooring area, it is normally dived as a one-way drift along a coral-covered wall. A deeper
+      canyon and the turbulent saddle toward Jackson make route selection dependent on current and sea state.
+    access: Boat drift with live pickup; the guide should select direction and endpoint after checking wind, current,
+      and the northern saddle.
+    hazards: Strong current, down-current or eddy risk near the saddle, surface chop, depth, open-water separation,
+      and no sheltered mooring. Carry and know how to deploy an SMB.
+    marine_life: Hard and soft corals, black coral colonies, morays, jacks, tuna, turtles, and eagle rays may be
+      encountered. Sharks can pass the outer wall but sightings are unpredictable.
+source_refs:
+- src-8ba0267b1a74
+observations:
+- record_id: dive-7-2025-07-09
+  dive_number: 7
+  start_time_utc: '2025-07-09T09:16:54+00:00'
+  latitude: 27.999134
+  longitude: 34.462752
+  maximum_depth_m: 28.429
+  confidence: high
+  decision_note: GPS track is closest to the southern Woodhouse Reef sector and clearly north of Thomas Reef.

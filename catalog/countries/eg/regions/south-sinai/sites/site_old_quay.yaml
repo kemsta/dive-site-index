@@ -1,0 +1,50 @@
+schema_version: '1.0'
+id: site_old_quay
+identity:
+  kind: canonical
+  confidence: probable
+names:
+  en: Old Quay
+aliases: []
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.724388
+    longitude: 34.241413
+  body_of_water_id: red-sea
+  water_type: salt
+classification:
+  types:
+  - reef
+  - coral blocks
+  - sheltered mooring
+  - old jetty
+  - boat dive
+depth:
+  minimum_m: 5
+  maximum_m: 30
+difficulty: intermediate
+content:
+  en:
+    summary: A sheltered site on the low western side of the Ras Mohammed peninsula, aligned with the remains of
+      an old jetty. Coral blocks and shallow reef structures rise from a gently deepening bottom. Water can be calmer
+      here than at the exposed eastern walls, although visibility may be lower.
+    access: Normally a boat dive from the sheltered western mooring, returning to the mooring or using a short live
+      pickup as briefed.
+    hazards: Reduced visibility, boat traffic near the mooring, entanglement or sharp material around old jetty
+      remains, depth away from the shallow reef, and fragile coral structures.
+    marine_life: Hard and soft corals and mixed reef fish occupy the blocks and shallow reef. Larger visitors may
+      occur in the wider Ras Mohammed area but are not dependable at this sheltered site.
+source_refs:
+- src-697e77ecab89
+observations:
+- record_id: dive-9-2025-07-10
+  dive_number: 9
+  start_time_utc: '2025-07-10T09:13:01+00:00'
+  latitude: 27.724388
+  longitude: 34.241413
+  maximum_depth_m: 25.584
+  confidence: probable
+  decision_note: GPS is on the sheltered western side of Ras Mohammed at the documented Old Quay area; no independent
+    exact site marker was found.

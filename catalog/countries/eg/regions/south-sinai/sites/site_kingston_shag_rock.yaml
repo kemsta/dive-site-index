@@ -1,0 +1,49 @@
+schema_version: '1.0'
+id: site_kingston_shag_rock
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Kingston Wreck (Shag Rock)
+aliases: []
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.773967
+    longitude: 33.870683
+  body_of_water_id: red-sea
+  water_type: salt
+classification:
+  types:
+  - historic wreck
+  - reef
+  - shallow wreck
+  - boat dive
+depth:
+  minimum_m: 4
+  maximum_m: 17
+difficulty: intermediate
+content:
+  en:
+    summary: The Kingston is a British cargo steamer wrecked at Shag Rock in 1881, with the surviving structure
+      extending approximately from 4 to 17 m. The stern, propeller, boilers, and open hull remain visible, while
+      the damaged bow merges into the shallow reef. Bright natural light and coral growth make the exterior accessible,
+      but the wreck still requires careful buoyancy and respect for fragile structure.
+    access: Boat or liveaboard dive at Shag Rock, using a mooring or zodiac/live pickup according to conditions.
+    hazards: Sharp and weakened wreck material, surge and current across the reef, shallow boat traffic, entanglement,
+      and overhead risk inside the hull. Penetration should not be assumed from the open appearance.
+    marine_life: Surgeonfish, rabbitfish, nudibranchs, groupers, snappers, turtles, and other reef life may be encountered;
+      dolphins are reported in the wider area but are not predictable.
+source_refs:
+- src-2f12bf2ee065
+- src-5033a204b23a
+observations:
+- record_id: '23948910555'
+  dive_number: 20
+  start_time_utc: '2026-08-12T11:28:25+00:00'
+  latitude: 27.776319
+  longitude: 33.876671
+  maximum_depth_m: 22.279
+  confidence: user-confirmed
+  decision_note: User selected Kingston Wreck; GPS is in the Shag Rock area.

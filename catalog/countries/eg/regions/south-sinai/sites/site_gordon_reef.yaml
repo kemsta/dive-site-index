@@ -1,0 +1,59 @@
+schema_version: '1.0'
+id: site_gordon_reef
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Gordon Reef
+aliases: []
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.98495
+    longitude: 34.454167
+  body_of_water_id: red-sea
+  water_type: salt
+classification:
+  types:
+  - reef
+  - sandy plateau
+  - coral garden
+  - drop-off
+  - mooring or drift dive
+  - boat dive
+depth:
+  minimum_m: 5
+  maximum_m: 30
+difficulty: intermediate
+content:
+  en:
+    summary: The southernmost and broadest of Tiran's four principal reefs. A sheltered sandy plateau and hard-coral
+      garden occupy the south and southwest, while the edges fall into deeper water. The stranded Loullia on the
+      northern side is a conspicuous surface landmark, not the focus of a conventional wreck penetration dive.
+    access: Usually entered from a boat on the sheltered southern side, either from a fixed mooring or as a controlled
+      drift according to the current.
+    hazards: Changing current around the reef corners, surface chop, depth at the drop-off, separation, boat traffic,
+      and sharp or unstable material near the stranded wreck. Carry an SMB for drift plans.
+    marine_life: Blue-spotted stingrays, goatfish, butterflyfish, parrotfish, and other reef fish use the sand and
+      coral plateau. Eagle rays, mantas, groupers, or reef sharks may pass the drop-off but are not guaranteed.
+source_refs:
+- src-8ba0267b1a74
+- src-341454f71591
+observations:
+- record_id: dive-6-2025-07-09
+  dive_number: 6
+  start_time_utc: '2025-07-09T06:50:20+00:00'
+  latitude: 27.984523
+  longitude: 34.45036
+  maximum_depth_m: 21.715
+  confidence: high
+  decision_note: GPS exit is on the southwestern Gordon Reef plateau, about 0.38 km from the published reef coordinate.
+- record_id: dive-11-2025-07-11
+  dive_number: 11
+  start_time_utc: '2025-07-11T08:53:42+00:00'
+  latitude: 27.988686
+  longitude: 34.450499
+  maximum_depth_m: 18.315
+  confidence: high
+  decision_note: GPS track follows the western and southern Gordon Reef sector.

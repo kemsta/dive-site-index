@@ -1,0 +1,52 @@
+schema_version: '1.0'
+id: site_ras_umm_sid
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Ras Umm Sid
+aliases: []
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.847261
+    longitude: 34.31648
+  body_of_water_id: red-sea
+  water_type: salt
+classification:
+  types:
+  - reef
+  - wall
+  - plateau
+  - drift dive
+  - shore or boat dive
+depth:
+  minimum_m: 5
+  maximum_m: 30
+difficulty: intermediate
+content:
+  en:
+    summary: A prominent Sharm headland dive combining a wall, a current-swept corner, a gorgonian-rich section,
+      and a shallower coral plateau. It can be entered from shore under local access arrangements or dived from
+      a boat, preferably as a semi-drift or drift when current is running. Recreational routes usually focus on
+      the upper 30 m even though the wall continues much deeper.
+    access: Possible from shore where access is permitted, or by boat. Current at the cape can make returning to
+      the original exit difficult, so agree on mooring return versus drift pickup before descent.
+    hazards: Strong current at the corner, rapid depth gain beside the wall, boat traffic, shore-entry conditions,
+      and separation. Carry an SMB for boat or semi-drift plans.
+    marine_life: Gorgonian fans, hard and soft corals, goatfish, jackfish, barracuda, tuna, Napoleon wrasse, and
+      eagle rays may be seen; rare larger visitors are possible but unpredictable.
+source_refs:
+- src-68ab4279117b
+- src-48fc8354e2f8
+- src-3b30d2a3f466
+observations:
+- record_id: '23974702510'
+  dive_number: 28
+  start_time_utc: '2026-08-14T12:27:44+00:00'
+  latitude: 27.846717
+  longitude: 34.315749
+  maximum_depth_m: 21.229
+  confidence: high
+  decision_note: GPS exit is about 0.09 km from Ras Umm Sid.

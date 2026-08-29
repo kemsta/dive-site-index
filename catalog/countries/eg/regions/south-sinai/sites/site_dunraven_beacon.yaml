@@ -1,0 +1,51 @@
+schema_version: '1.0'
+id: site_dunraven_beacon
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: SS Dunraven / Beacon Rock
+aliases: []
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.703333
+    longitude: 34.121667
+  body_of_water_id: red-sea
+  water_type: salt
+classification:
+  types:
+  - historic wreck
+  - reef
+  - boat dive
+  - optional penetration
+depth:
+  minimum_m: 17
+  maximum_m: 30
+difficulty: advanced
+content:
+  en:
+    summary: The Dunraven is an iron steamship lost in 1876 and now lying upside down beside the reef at Sha'ab
+      Mahmoud. The bow is around 17 m and the stern about 30 m; the broken midships area, keel, propeller, and coral-covered
+      hull provide a complete exterior route. A lit swim-through exists in the aft section, but any overhead route
+      should be treated as wreck penetration rather than an automatic part of the dive.
+    access: Boat dive near Beacon Rock/Sha'ab Mahmoud using an operator mooring or controlled drop and pickup. Follow
+      the guide's route because the Garmin point may reflect the boat position rather than the wreck's centre.
+    hazards: Overhead environment, sharp and corroded metal, entanglement, silt, depth, current, and boat traffic.
+      Avoid the front interior section identified as unsuitable for entry by the wreck source.
+    marine_life: Soft coral and other encrusting growth cover parts of the hull; lionfish and varied reef fish can
+      shelter around the structure.
+source_refs:
+- src-290e7749d86a
+- src-39e041c27e5e
+- src-9f3a57aaabbc
+observations:
+- record_id: '23946601683'
+  dive_number: 19
+  start_time_utc: '2026-08-12T07:58:22+00:00'
+  latitude: 27.704093
+  longitude: 34.128557
+  maximum_depth_m: 28.202
+  confidence: high
+  decision_note: GPS exit is about 0.11 km from Beacon Rock and 0.68 km from the Dunraven wreck.

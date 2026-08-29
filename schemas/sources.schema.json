@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kemsta.github.io/dive-site-index/schemas/sources.schema.json",
+  "title": "Source registry",
+  "type": "object",
+  "required": ["schema_version", "sources"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "url", "kind"],
+        "properties": {
+          "id": {"type": "string"},
+          "url": {"type": "string", "format": "uri"},
+          "kind": {"enum": ["reference", "official", "community", "dataset"]},
+          "license": {"type": ["string", "null"]},
+          "notes": {"type": ["string", "null"]}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

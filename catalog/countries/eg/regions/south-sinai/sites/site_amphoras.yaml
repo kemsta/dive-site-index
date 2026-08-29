@@ -1,0 +1,51 @@
+schema_version: '1.0'
+id: site_amphoras
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Amphoras
+aliases: []
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.865833
+    longitude: 34.323333
+  body_of_water_id: red-sea
+  water_type: salt
+classification:
+  types:
+  - reef
+  - coral garden
+  - slope
+  - boat dive
+  - drift or mooring dive
+depth:
+  minimum_m: 5
+  maximum_m: 30
+difficulty: beginner
+content:
+  en:
+    summary: A relaxed local reef dive south of Naama Bay, following a gently sloping coral garden. The site is
+      named for amphora fragments at about 28 m; long submersion has left them heavily encrusted and easy to overlook.
+      The shallower slope offers an uncomplicated reef route, while the artefacts sit near the deeper end of a recreational
+      profile.
+    access: Usually dived from a day boat, either from a mooring or as a gentle drift according to the guide's current
+      check.
+    hazards: Depth while searching for the amphora fragments; occasional current; fragile coral and protected archaeological
+      remains. Do not touch or remove artefacts.
+    marine_life: Typical Red Sea reef fish and coral-garden life may be encountered; pelagic sightings are possible
+      but not a defining feature.
+source_refs:
+- src-496a25bcd6a6
+- src-cc1a31db9a3f
+observations:
+- record_id: '23913136410'
+  dive_number: null
+  start_time_utc: '2026-08-09T14:28:28+00:00'
+  latitude: 27.864595
+  longitude: 34.322591
+  maximum_depth_m: 7.029
+  confidence: high
+  decision_note: GPS and CDWS/OSM-area match; shallow checkout profile is consistent.

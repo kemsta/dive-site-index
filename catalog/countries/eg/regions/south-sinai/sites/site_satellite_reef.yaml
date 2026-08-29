@@ -1,0 +1,50 @@
+schema_version: '1.0'
+id: site_satellite_reef
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Satellite Reef
+aliases: []
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.724454
+    longitude: 34.257522
+  body_of_water_id: red-sea
+  water_type: salt
+classification:
+  types:
+  - reef
+  - plateau
+  - drop-off
+  - drift dive
+  - boat dive
+depth:
+  minimum_m: 0.5
+  maximum_m: 30
+difficulty: advanced
+content:
+  en:
+    summary: A compact reef immediately west of Yolanda Reef in the Ras Mohammed complex. Its north and west sides
+      border a broad shallow plateau, while the south and east edges fall into deep water. It can be visited as
+      part of a wider Shark–Yolanda itinerary or treated as a separate current-dependent reef dive.
+    access: Boat drift or live pickup coordinated with the nearby Yolanda and Shark Reef traffic pattern. Route
+      selection must account for the current around the exposed reef complex.
+    hazards: Strong current, steep drop-off, depth, blue-water separation, and concentrated boat traffic near the
+      neighbouring major sites.
+    marine_life: Hard and soft coral communities and mixed reef fish occupy the plateau; larger schooling fish and
+      pelagic visitors may move through the wider Ras Mohammed reef system.
+source_refs:
+- src-ad3ddf231290
+- src-0daf29fce72a
+observations:
+- record_id: '23973097749'
+  dive_number: 27
+  start_time_utc: '2026-08-14T09:51:09+00:00'
+  latitude: 27.724152
+  longitude: 34.257538
+  maximum_depth_m: 18.663
+  confidence: high
+  decision_note: GPS exit is about 0.03 km from Satellite Reef.
