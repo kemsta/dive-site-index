@@ -1,0 +1,46 @@
+name: Correct catalog data
+description: Report wrong, outdated, incomplete, or mistranslated site information
+title: "[Data correction]: "
+labels: ["data", "correction"]
+body:
+  - type: input
+    id: site
+    attributes:
+      label: Site page or stable site ID
+      placeholder: https://kemsta.github.io/dive-site-index/sites/site_jackson_reef/
+    validations:
+      required: true
+  - type: dropdown
+    id: field
+    attributes:
+      label: Affected information
+      options:
+        - Name or translation
+        - Coordinates
+        - Depth or difficulty
+        - Description
+        - Access or hazards
+        - Marine life
+        - Source or attribution
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong?
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Proposed correction and supporting evidence
+      description: Include a source URL or explain first-hand knowledge. Mark uncertainty explicitly.
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety relevance
+      options:
+        - label: This error may affect diver safety or access planning.

@@ -1,6 +1,22 @@
 # Dive Site Index
 
-An open, source-grounded dive-site catalog with a canonical multilingual source model, deterministic UDDF exports, and a static map/card interface for GitHub Pages.
+An open, source-grounded dive-site catalog with a multilingual data model, deterministic UDDF exports, and a static map/card interface for GitHub Pages.
+
+[Browse the catalog](https://kemsta.github.io/dive-site-index/) · [Suggest or correct data](https://github.com/kemsta/dive-site-index/issues) · [Contribute](CONTRIBUTING.md) · [Data license](DATA_LICENSE.md)
+
+## What this is
+
+Dive Site Index is a community-editable catalog of dive sites. It gives sites stable identifiers, multilingual names and descriptions, coordinates, depth and difficulty fields, access and hazard notes, source references, and downloadable UDDF records. The same data can be browsed on the website or reused in other applications.
+
+The catalog is informational. It is not a dive briefing and does not replace training, a qualified local guide, current weather/current/tide checks, local regulations, or site-specific risk assessment.
+
+## Use, contribute, or report a problem
+
+- **Add a site or translation:** follow [`CONTRIBUTING.md`](CONTRIBUTING.md) or use the new-site issue template.
+- **Correct a record:** edit its YAML in a pull request or open [GitHub Issues](https://github.com/kemsta/dive-site-index/issues) with the site URL, proposed correction, and supporting source.
+- **Report a website/export bug:** use the bug-report issue template.
+- **Report a security problem privately:** follow [`SECURITY.md`](SECURITY.md).
+- **Reuse the data commercially:** allowed. Qualifying public use requires attribution under ODC-By 1.0; see [`DATA_LICENSE.md`](DATA_LICENSE.md) for suggested attribution, scope, and alternative licensing.
 
 ## Data flow
 
@@ -89,6 +105,6 @@ The initial catalog contains 21 reviewed records in Egypt / South Sinai reconstr
 
 ## Licensing
 
-- Code: MIT, see `LICENSE`.
-- Catalog compilation: ODbL 1.0. Individual source rights and attribution still apply; source references are retained in `catalog/sources.yaml` and each canonical site record.
-- OpenStreetMap tiles/data: © OpenStreetMap contributors, ODbL.
+- Catalog database: ODC-By 1.0. Commercial use is allowed; qualifying public use requires attribution. Alternative terms may be available by individual agreement. See [`DATA_LICENSE.md`](DATA_LICENSE.md) and [`LICENSE-DATA`](LICENSE-DATA).
+- Code and repository documentation: MIT, see [`LICENSE`](LICENSE).
+- Third-party sources, libraries, MapLibre, UDDF, and OpenStreetMap retain their own rights and terms. OpenStreetMap tiles/data are © OpenStreetMap contributors and subject to the applicable OpenStreetMap terms and ODbL.

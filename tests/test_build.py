@@ -140,6 +140,58 @@ class CanonicalCatalogTests(unittest.TestCase):
 
 
 class PublishingTests(unittest.TestCase):
+    def test_repository_explains_contribution_reporting_and_commercial_use(self):
+        expected = [
+            ROOT / "CONTRIBUTING.md",
+            ROOT / "DATA_LICENSE.md",
+            ROOT / "SECURITY.md",
+            ROOT / ".github" / "ISSUE_TEMPLATE" / "new-site.yml",
+            ROOT / ".github" / "ISSUE_TEMPLATE" / "data-correction.yml",
+            ROOT / ".github" / "ISSUE_TEMPLATE" / "bug-report.yml",
+        ]
+        for path in expected:
+            self.assertTrue(path.is_file(), path)
+
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        self.assertIn("CONTRIBUTING.md", readme)
+        self.assertIn("DATA_LICENSE.md", readme)
+        self.assertIn("GitHub Issues", readme)
+        self.assertIn("ODC-By 1.0", readme)
+
+        contributing = (ROOT / "CONTRIBUTING.md").read_text(encoding="utf-8")
+        self.assertIn("Add a dive site", contributing)
+        self.assertIn("Correct existing data", contributing)
+        self.assertIn("source_refs", contributing)
+        self.assertIn("uv run python -m unittest", contributing)
+
+        licensing = (ROOT / "DATA_LICENSE.md").read_text(encoding="utf-8").casefold()
+        self.assertIn("commercial", licensing)
+        self.assertIn("odc-by 1.0", licensing)
+        self.assertIn("attribution", licensing)
+        self.assertIn("does **not** impose the odbl share-alike", licensing)
+        self.assertIn("permission to publish without displaying the standard odc-by license notice", licensing)
+        self.assertIn("attribution requirements for that use are determined by the agreement", licensing)
+        self.assertIn("individual written agreement", licensing)
+        self.assertIn("does not withdraw or restrict odc-by 1.0 rights", licensing)
+
+        self.assertNotIn("commercial use with required attribution", readme.casefold())
+        self.assertIn("qualifying public use requires attribution", readme.casefold())
+        self.assertIn("suggested attribution", readme.casefold())
+
+        with tempfile.TemporaryDirectory() as tmp:
+            out = pathlib.Path(tmp)
+            build_all(CATALOG, out)
+            pages = sorted(out.rglob("*.html"))
+            self.assertEqual(len(pages), 24)
+            for page in pages:
+                html = page.read_text(encoding="utf-8")
+                self.assertIn("DATA_LICENSE.md", html, page)
+                self.assertIn("CONTRIBUTING.md", html, page)
+                self.assertIn('data-i18n="report_problem"', html, page)
+                self.assertIn('data-i18n-aria="project_information"', html, page)
+            app = (out / "assets" / "app.js").read_text(encoding="utf-8")
+            self.assertIn('data_license: "Лицензия данных"', app)
+
     def test_each_scope_has_its_own_uddf_download(self):
         with tempfile.TemporaryDirectory() as tmp:
             out = pathlib.Path(tmp)
@@ -195,6 +247,18 @@ class PublishingTests(unittest.TestCase):
         self.assertIn("types_en: site.types_en", source)
         self.assertIn('feature.properties[`types_${activeLanguage}`]', source)
         self.assertIn("difficulty_not_assigned", source)
+
+    def test_home_copy_describes_contributions_and_app_reuse(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            out = pathlib.Path(tmp)
+            build_all(CATALOG, out)
+            home = (out / "index.html").read_text(encoding="utf-8")
+            app = (out / "assets" / "app.js").read_text(encoding="utf-8")
+            public_copy = home + app
+            self.assertNotIn("переносим", public_copy.casefold())
+            self.assertIn("открытые для правок и интеграций.", public_copy)
+            self.assertIn("экспортом UDDF для использования в других приложениях", public_copy)
+            self.assertIn("open to contributions and reuse.", public_copy)
 
     @unittest.skipUnless(NODE, "Node.js is required for browser preference smoke testing")
     def test_browser_preferences_select_russian_and_auto_theme(self):
