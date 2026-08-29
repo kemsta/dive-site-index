@@ -1,0 +1,50 @@
+schema_version: '1.1'
+id: site_ss_carnatic
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: SS Carnatic
+  ru: SS «Карнатик»
+aliases:
+- Carnatic
+- Carnatic Wreck
+- Wine Wreck
+- Wine Ship
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.578889
+    longitude: 33.925556
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- wreck
+access:
+- boat
+- liveaboard
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A nineteenth-century steamship wreck on the northern face of Sha'ab Abu Nuhas, lying between Giannis D and the tile wreck. Its older iron framework and extensive marine
+      growth distinguish it from the neighboring modern freighters.
+    access: Reached by boat or liveaboard; access is subject to sea state on the exposed reef face.
+    hazards: Current, surge, fragile historic structure, sharp metal, entanglement, boat traffic, and overhead spaces require a conservative plan. Penetration requires appropriate training
+      and equipment.
+    marine_life: Dense encrusting growth and reef fish use the open framework; larger encounters are variable.
+  ru:
+    summary: Рэк парохода XIX века на северной стороне Шааб-Абу-Нухаса между «Яннис D» и рэком с плиткой. Старый железный каркас и обильные обрастания отличают его от соседних современных
+      грузовых судов.
+    access: Доступ с лодки или сафари-бота; возможность погружения зависит от состояния моря на открытой стороне рифа.
+    hazards: Течение, раскачка, хрупкие исторические конструкции, острый металл, риск запутывания, движение судов и надголовная среда требуют консервативного плана. Для проникновения
+      нужны соответствующая подготовка и снаряжение.
+    marine_life: Открытый каркас густо покрыт обрастаниями и населён рифовыми рыбами; встречи с крупными животными непредсказуемы.
+source_refs:
+- src-9db3ce3b9e04
+- src-42a0029a970e
+- src-e8352da67068
+observations: []

@@ -1,0 +1,46 @@
+schema_version: '1.1'
+id: site_ss_ulysses_gubal
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: SS Ulysses
+  ru: SS «Улисс»
+aliases:
+- Ulysses
+- Ulysses Wreck
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.686667
+    longitude: 33.802778
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- wreck
+- reef
+access:
+- boat
+- liveaboard
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: The broken remains of the nineteenth-century steamship Ulysses lie along the reef north of Bluff Point. It is a distinct wreck site and is not the Gubal Barge.
+    access: Reached by boat or liveaboard when sea state and current permit; the route commonly follows the reef and wreckage.
+    hazards: Current, surge, sharp or unstable wreckage, entanglement, depth variation, and boat traffic require a site-specific briefing. Penetration should not be assumed.
+    marine_life: Coral growth and reef fish use the scattered structure and adjacent reef; larger encounters are variable.
+  ru:
+    summary: Разрушенные остатки парохода XIX века «Улисс» лежат вдоль рифа к северу от Блафф-Пойнта. Это самостоятельный рэк-сайт, не являющийся баржей Губал.
+    access: Доступ с лодки или сафари-бота при подходящем состоянии моря и течении; маршрут обычно проходит вдоль рифа и обломков.
+    hazards: Течение, раскачка от волн, острые или неустойчивые обломки, риск запутывания, перепады глубины и движение судов требуют локального брифинга. Проникновение не следует считать
+      частью обычного маршрута.
+    marine_life: Обломки и соседний риф покрыты кораллами и населены рифовыми рыбами; встречи с крупными животными непредсказуемы.
+source_refs:
+- src-8414cabe8f8a
+- src-f6b01a98e53e
+- src-3e84ea8111bf
+observations: []

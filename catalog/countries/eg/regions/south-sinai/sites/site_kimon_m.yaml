@@ -1,0 +1,46 @@
+schema_version: '1.1'
+id: site_kimon_m
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Kimon M
+  ru: «Кимон M»
+aliases:
+- Kimon M Wreck
+- Lentil Wreck
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.581389
+    longitude: 33.93
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- wreck
+access:
+- boat
+- liveaboard
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: The easternmost of the four commonly dived wrecks on the northern face of Sha'ab Abu Nuhas, known for its lentil cargo. It is distinct from the adjacent tile wreck.
+    access: Reached by boat or liveaboard; the exposed position can make access weather-dependent.
+    hazards: Depth, current, surge, rapidly deteriorating structure, sharp metal, entanglement, and overhead spaces require an advanced wreck plan. Penetration may be unsafe and requires
+      qualified local judgment, training, and equipment.
+    marine_life: Coral growth and reef fish occupy the remaining stern and debris field; sightings vary.
+  ru:
+    summary: Самый восточный из четырёх обычно посещаемых рэков на северной стороне Шааб-Абу-Нухаса, известный грузом чечевицы. Он отличается от соседнего рэка с плиткой.
+    access: Доступ с лодки или сафари-бота; открытое положение делает погружение зависимым от погоды.
+    hazards: Глубина, течение, раскачка, быстро разрушающиеся конструкции, острый металл, риск запутывания и надголовная среда требуют продвинутого рэк-плана. Проникновение может быть
+      небезопасным и требует локальной профессиональной оценки, подготовки и снаряжения.
+    marine_life: Сохранившаяся корма и поле обломков покрыты кораллами и населены рифовыми рыбами; наблюдения меняются.
+source_refs:
+- src-9db3ce3b9e04
+- src-e6b77b7b26bb
+- src-e8352da67068
+observations: []

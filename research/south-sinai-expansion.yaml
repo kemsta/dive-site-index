@@ -114,23 +114,27 @@ resolutions:
 - candidate_key: rosalie-moller-gubal-gulf-of-suez
   canonical_name: Rosalie Moller
   area: Gubal / Gulf of Suez
-  resolution: pending
-  target_site_id: null
+  resolution: site
+  target_site_id: site_ss_rosalie_moller
+  target_candidate_key: null
 - candidate_key: bluff-point-gubal-seghir
   canonical_name: Bluff Point
   area: Gubal Seghir
-  resolution: pending
-  target_site_id: null
+  resolution: site
+  target_site_id: site_bluff_point_gubal
+  target_candidate_key: null
 - candidate_key: gubal-barge-gubal-seghir-bluff-point
   canonical_name: Gubal Barge
   area: Gubal Seghir / Bluff Point
-  resolution: pending
-  target_site_id: null
+  resolution: site
+  target_site_id: site_gubal_barge
+  target_candidate_key: null
 - candidate_key: ss-ulysses-gubal-seghir-bluff-point
   canonical_name: SS Ulysses
   area: Gubal Seghir / Bluff Point
-  resolution: pending
-  target_site_id: null
+  resolution: site
+  target_site_id: site_ss_ulysses_gubal
+  target_candidate_key: null
 - candidate_key: abu-lou-lou-nuweiba
   canonical_name: Abu Lou Lou
   area: Nuweiba
@@ -389,28 +393,33 @@ resolutions:
 - candidate_key: chrisoula-k-sha-ab-abu-nuhas
   canonical_name: Chrisoula K
   area: Sha'ab Abu Nuhas
-  resolution: pending
-  target_site_id: null
+  resolution: site
+  target_site_id: site_chrisoula_k
+  target_candidate_key: null
 - candidate_key: giannis-d-sha-ab-abu-nuhas
   canonical_name: Giannis D
   area: Sha'ab Abu Nuhas
-  resolution: pending
-  target_site_id: null
+  resolution: site
+  target_site_id: site_giannis_d
+  target_candidate_key: null
 - candidate_key: kimon-m-sha-ab-abu-nuhas
   canonical_name: Kimon M
   area: Sha'ab Abu Nuhas
-  resolution: pending
-  target_site_id: null
+  resolution: site
+  target_site_id: site_kimon_m
+  target_candidate_key: null
 - candidate_key: ss-carnatic-sha-ab-abu-nuhas
   canonical_name: SS Carnatic
   area: Sha'ab Abu Nuhas
-  resolution: pending
-  target_site_id: null
+  resolution: site
+  target_site_id: site_ss_carnatic
+  target_candidate_key: null
 - candidate_key: the-alternatives-sha-ab-mahmoud-eastern-approach-to-the-strait-of-gubal
   canonical_name: The Alternatives
   area: Sha'ab Mahmoud / eastern approach to the Strait of Gubal
-  resolution: pending
-  target_site_id: null
+  resolution: site
+  target_site_id: site_the_alternatives
+  target_candidate_key: null
 - candidate_key: eagle-ray-bay-sharm-el-sheikh-local-coast
   canonical_name: Eagle Ray Bay
   area: Sharm el-Sheikh local coast
@@ -484,23 +493,27 @@ resolutions:
 - candidate_key: sha-ab-abu-nuhas-strait-of-gubal-abu-nuhas
   canonical_name: Sha'ab Abu Nuhas
   area: Strait of Gubal / Abu Nuhas
-  resolution: pending
-  target_site_id: null
+  resolution: site
+  target_site_id: site_shaab_abu_nuhas
+  target_candidate_key: null
 - candidate_key: north-laguna-reef-straits-of-tiran
   canonical_name: North Laguna Reef
   area: Straits of Tiran
-  resolution: pending
-  target_site_id: null
+  resolution: site
+  target_site_id: site_north_laguna_reef
+  target_candidate_key: null
 - candidate_key: south-laguna-reef-straits-of-tiran
   canonical_name: South Laguna Reef
   area: Straits of Tiran
-  resolution: pending
-  target_site_id: null
+  resolution: site
+  target_site_id: site_south_laguna_reef
+  target_candidate_key: null
 - candidate_key: kormoran-wreck-straits-of-tiran-north-laguna-reef
   canonical_name: Kormoran Wreck
   area: Straits of Tiran — North Laguna Reef
-  resolution: pending
-  target_site_id: null
+  resolution: site
+  target_site_id: site_zingara_kormoran
+  target_candidate_key: null
 - candidate_key: baer-el-benet-taba
   canonical_name: Baer el Benet
   area: Taba
@@ -589,5 +602,6 @@ resolutions:
 - candidate_key: stingray-station-the-alternatives-sha-ab-mahmoud
   canonical_name: Stingray Station
   area: The Alternatives / Sha'ab Mahmoud
-  resolution: pending
-  target_site_id: null
+  resolution: site
+  target_site_id: site_stingray_station_alternatives
+  target_candidate_key: null

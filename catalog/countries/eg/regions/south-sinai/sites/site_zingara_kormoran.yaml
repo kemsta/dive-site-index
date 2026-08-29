@@ -1,0 +1,51 @@
+schema_version: '1.1'
+id: site_zingara_kormoran
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Zingara (Kormoran) Wreck
+  ru: Рэк «Зингара» («Корморан»)
+aliases:
+- Kormoran
+- Kormoran Wreck
+- Zingara
+- Kormoran/Zingara
+- Kormoran 2
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 28.0175
+    longitude: 34.487222
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- wreck
+- reef
+access:
+- boat
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: The broken cargo-ship wreck on the north side of Laguna Reef. Zingara was the vessel's name at the time of loss and Kormoran an earlier name still visible on the hull; they
+      refer to one wreck, not two sites.
+    access: Boat access from Sharm-area operations and normally only in calm weather because of the exposed shallow position.
+    hazards: Shallow reef, surge, sharp and scattered metal, entanglement, breaking water, current, and boat traffic require calm conditions and a locally planned route. The broken wreck
+      should not be treated as a safe penetration site.
+    marine_life: Hard coral and reef fish have colonized the scattered structure; the surrounding reef is a major part of the dive.
+  ru:
+    summary: Разрушенный рэк грузового судна на северной стороне рифа Лагуна. «Зингара» — название судна на момент гибели, а «Корморан» — прежнее имя, всё ещё видимое на корпусе; это
+      один рэк, а не два сайта.
+    access: Доступ с лодки операторов района Шарм-эль-Шейха, обычно только при спокойной погоде из-за открытого мелководного положения.
+    hazards: Мелководный риф, раскачка, острый разбросанный металл, риск запутывания, прибой, течение и движение судов требуют спокойных условий и локально спланированного маршрута.
+      Разрушенный рэк не следует считать безопасным объектом для проникновения.
+    marine_life: Разбросанные конструкции покрыты твёрдыми кораллами и населены рифовыми рыбами; окружающий риф составляет значительную часть погружения.
+source_refs:
+- src-9db3ce3b9e04
+- src-0b98e90237ce
+- src-0242edf94c6a
+observations: []

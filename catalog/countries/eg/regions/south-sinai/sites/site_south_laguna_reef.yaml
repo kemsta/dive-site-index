@@ -1,0 +1,48 @@
+schema_version: '1.1'
+id: site_south_laguna_reef
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: South Laguna Reef
+  ru: Южный риф Лагуна
+aliases:
+- South Laguna
+- Laguna Reef
+- Marsa Shabir
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.997222
+    longitude: 34.481667
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- wall
+- drift
+access:
+- boat
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: The southern lagoon and outer-wall sector off Tiran Island, commonly dived along the reef edge. The generic name Laguna Reef is retained here only as an alias and must not
+      be used to collapse North Laguna into this record.
+    access: Boat access, commonly using the more sheltered lagoon side or a controlled drift along the outer wall according to current.
+    hazards: Changing current, shallow coral, wall depth, surface traffic, separation, and wind or chop outside the lagoon require a locally planned entry and pickup.
+    marine_life: Coral heads, fans, glassfish, and common reef fish occupy the lagoon edge and wall; pelagic sightings are variable.
+  ru:
+    summary: Южный сектор лагуны и внешней стенки у острова Тиран, где обычно погружаются вдоль края рифа. Общее название Laguna Reef сохранено только как алиас и не должно использоваться
+      для объединения с Северной Лагуной.
+    access: Доступ с лодки, обычно с более защищённой стороны лагуны или в режиме контролируемого дрейфа вдоль внешней стенки по направлению течения.
+    hazards: Меняющееся течение, мелководные кораллы, глубина у стенки, движение судов, риск отделения и волнение вне лагуны требуют локально спланированных входа и подбора.
+    marine_life: На краю лагуны и стенке встречаются коралловые головы, горгонарии, стеклянные рыбки и обычные рифовые виды; пелагические встречи непредсказуемы.
+source_refs:
+- src-9db3ce3b9e04
+- src-fb8e9ebd66c1
+- src-7777dedbbedf
+observations: []

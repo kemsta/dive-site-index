@@ -1,0 +1,44 @@
+schema_version: '1.1'
+id: site_north_laguna_reef
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: North Laguna Reef
+  ru: Северный риф Лагуна
+aliases:
+- North Laguna
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 28.005833
+    longitude: 34.484722
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- wall
+- drift
+access:
+- boat
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: The northern lagoon-side reef sector off Tiran Island. It is separate from South Laguna and from the Kormoran/Zingara wreck lying farther north along the reef system.
+    access: Boat access from Sharm-area operations; the exposed side and wreck sector may only be usable in calm conditions.
+    hazards: Current, surface chop, boat traffic, separation, depth at the outer wall, and navigation near shallow coral require a locally selected route and surface signaling.
+    marine_life: Hard coral and reef fish occupy the wall and lagoon edge; larger passing animals are possible but not guaranteed.
+  ru:
+    summary: Северный сектор лагунного рифа у острова Тиран. Он отделён от Южной Лагуны и от рэка «Корморан»/«Зингара», лежащего севернее вдоль той же рифовой системы.
+    access: Доступ с лодки операторов района Шарм-эль-Шейха; открытая сторона и сектор рэка могут быть доступны только при спокойном море.
+    hazards: Течение, волнение, движение судов, риск отделения от группы, глубина у внешней стенки и навигация рядом с мелководными кораллами требуют локально выбранного маршрута и сигнализации
+      на поверхности.
+    marine_life: На стенке и краю лагуны растут твёрдые кораллы и обитают рифовые рыбы; крупные проходящие животные возможны, но не гарантированы.
+source_refs:
+- src-9db3ce3b9e04
+- src-7777dedbbedf
+observations: []

@@ -1,0 +1,48 @@
+schema_version: '1.1'
+id: site_ss_rosalie_moller
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: SS Rosalie Moller
+  ru: SS «Розали Моллер»
+aliases:
+- Rosalie Moller
+- Rosalie Möller
+- Rosalie Mueller
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.650833
+    longitude: 33.771111
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- wreck
+access:
+- boat
+- liveaboard
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A large Second World War cargo-ship wreck lying west of Gubal Seghir. It is a distinct, deep wreck site and should not be grouped with Bluff Point or the island's shallower
+      wrecks.
+    access: Reached by boat, most commonly on a northern-wreck liveaboard itinerary or a specially arranged trip; access is weather- and operator-dependent.
+    hazards: Depth, limited no-decompression time, current, boat traffic, entanglement, unstable wreck structure, and overhead spaces require an appropriate plan. Penetration requires
+      wreck training and suitable equipment.
+    marine_life: Established marine growth and reef fish occur around the hull; open-water encounters vary.
+  ru:
+    summary: Крупный рэк грузового судна времён Второй мировой войны к западу от Губаль-Сегир. Это самостоятельный глубокий сайт, который не следует объединять с Блафф-Пойнтом или более
+      мелководными рэками острова.
+    access: Доступ с лодки, чаще в рамках северного рэк-маршрута сафари или специально организованной поездки; возможность погружения зависит от погоды и оператора.
+    hazards: Глубина, короткое бездекомпрессионное время, течение, движение судов, риск запутывания, неустойчивые конструкции и надголовная среда требуют соответствующего плана. Для
+      проникновения нужны рэк-подготовка и подходящее снаряжение.
+    marine_life: На корпусе есть устойчивые обрастания и рифовая фауна; встречи в открытой воде непредсказуемы.
+source_refs:
+- src-9db3ce3b9e04
+- src-53cbf490ca35
+observations: []

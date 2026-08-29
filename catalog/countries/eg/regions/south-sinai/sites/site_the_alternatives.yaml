@@ -1,0 +1,51 @@
+schema_version: '1.1'
+id: site_the_alternatives
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: The Alternatives
+  ru: Альтернативы
+aliases:
+- Alternatives
+- Seven Pinnacles
+- Seven Pinnacles Reef
+- Saba Erg
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.728889
+    longitude: 34.198333
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- pinnacle
+- sand
+access:
+- boat
+- liveaboard
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A chain of coral pinnacles and sandy channels near the eastern approach to the Strait of Gubal. This is the parent site for the pinnacle group; Stingray Station at its western
+      extremity is retained separately because it has an independently published name and position.
+    access: Boat or liveaboard access; operators may use the site as a more sheltered alternative when exposed routes are unsuitable.
+    hazards: Variable current, reduced visibility over sand, separation among pinnacles, boat traffic, and navigation between coral heads require a guided route and appropriate surface
+      signaling.
+    marine_life: Small reef life, rays, groupers, and coral-associated fish may occur around the pinnacles; seasonal or uncommon encounters are not guaranteed.
+  ru:
+    summary: Цепочка коралловых башен и песчаных проходов у восточного подхода к проливу Губаль. Это родительский сайт всей группы; Стингрей-Стейшн на западной оконечности сохранён отдельно,
+      поскольку имеет самостоятельно опубликованные название и координаты.
+    access: Доступ с лодки или сафари-бота; операторы могут использовать сайт как более защищённую альтернативу при непригодности открытых маршрутов.
+    hazards: Переменное течение, ухудшение видимости над песком, риск разделения между башнями, движение судов и навигация среди коралловых голов требуют контролируемого маршрута и средств
+      сигнализации на поверхности.
+    marine_life: У башен встречаются мелкие рифовые организмы, скаты, груперы и коралловые рыбы; сезонные и редкие встречи не гарантированы.
+source_refs:
+- src-9db3ce3b9e04
+- src-1157a7619c96
+observations: []
