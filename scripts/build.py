@@ -24,6 +24,53 @@ UDDF_XSD = SCHEMA_DIR / "vendor" / "uddf-3.2.3.xsd"
 UDDF_NS = "http://www.streit.cc/uddf/3.2/"
 ET.register_namespace("", UDDF_NS)
 
+TYPE_RU: dict[str, str] = {
+    "Garmin observation": "наблюдение Garmin",
+    "bay": "бухта",
+    "boat dive": "погружение с лодки",
+    "boat or liveaboard dive": "погружение с лодки или сафари-бота",
+    "boat or shore dive": "погружение с лодки или берега",
+    "canyon": "каньон",
+    "coral blocks": "коралловые блоки",
+    "coral garden": "коралловый сад",
+    "coral pinnacles": "коралловые башни",
+    "coral slope": "коралловый склон",
+    "deep canyon": "глубокий каньон",
+    "drift dive": "дрейфовое погружение",
+    "drift or mooring dive": "дрейфовое погружение или погружение со швартовки",
+    "drop-off": "свальный склон",
+    "garden eels": "садовые угри",
+    "historic wreck": "исторический рэк",
+    "mooring dive": "погружение со швартовки",
+    "mooring or drift dive": "погружение со швартовки или по течению",
+    "night dive": "ночное погружение",
+    "old jetty": "старый причал",
+    "open-water boat entry": "вход с лодки в открытой воде",
+    "optional penetration": "возможное проникновение",
+    "optional swim-throughs": "необязательные сквозные проходы",
+    "plateau": "плато",
+    "reef": "риф",
+    "sand": "песок",
+    "sandy alley": "песчаная аллея",
+    "sandy area": "песчаный участок",
+    "sandy bay": "песчаная бухта",
+    "sandy plateau": "песчаное плато",
+    "sandy slope": "песчаный склон",
+    "shallow wreck": "мелководный рэк",
+    "sheltered mooring": "защищённая швартовка",
+    "shore or boat dive": "погружение с берега или лодки",
+    "slope": "склон",
+    "snorkelling site": "место для снорклинга",
+    "tidal passage": "приливный проход",
+    "unidentified dive": "неидентифицированное погружение",
+    "user-defined location": "пользовательская точка",
+    "wall": "стенка",
+    "wildlife encounter": "встреча с морскими животными",
+    "wreck": "рэк",
+    "wreck cargo": "груз рэка",
+}
+PUBLIC_EXCLUDED_TYPES = {"Garmin observation"}
+
 
 def schema_validator(name: str) -> jsonschema.Draft202012Validator:
     schema = json.loads((SCHEMA_DIR / name).read_text(encoding="utf-8"))
@@ -224,6 +271,10 @@ def all_sites(catalog: dict) -> list[dict]:
     return sorted(result, key=lambda item: localized_name(item).casefold())
 
 
+def public_types(site: dict) -> list[str]:
+    return [value for value in site["classification"]["types"] if value not in PUBLIC_EXCLUDED_TYPES]
+
+
 def add(parent: ET.Element, name: str, value: object) -> ET.Element:
     element = ET.SubElement(parent, f"{{{UDDF_NS}}}{name}")
     element.text = str(value)
@@ -233,7 +284,7 @@ def add(parent: ET.Element, name: str, value: object) -> ET.Element:
 def build_uddf(sites: list[dict], countries: dict, sources: dict, destination: pathlib.Path) -> None:
     root = ET.Element(f"{{{UDDF_NS}}}uddf", {"version": "3.2.3"})
     generator = ET.SubElement(root, f"{{{UDDF_NS}}}generator")
-    add(generator, "name", "Dive Site Index canonical publisher")
+    add(generator, "name", "Dive Site Index publisher")
     add(generator, "type", "converter")
     add(generator, "version", "0.1.0")
     divesite = ET.SubElement(root, f"{{{UDDF_NS}}}divesite")
@@ -274,10 +325,9 @@ def build_uddf(sites: list[dict], countries: dict, sources: dict, destination: p
             f"Access: {content['access']}",
             f"Hazards: {content['hazards']}",
             f"Marine life: {content['marine_life']}",
-            f"Canonical ID: {site['id']}",
-            f"Identity: {site['identity']['kind']} ({site['identity']['confidence']})",
+            f"Site ID: {site['id']}",
             f"Difficulty: {site['difficulty'] or 'not assigned'}",
-            "Site types: " + ", ".join(site["classification"]["types"]),
+            "Site types: " + ", ".join(public_types(site)),
         ]
         for other_locale in sorted(site["content"]):
             if other_locale == locale:
@@ -313,15 +363,15 @@ def escape_json_for_script(value: object) -> str:
 def site_map_payload(sites: list[dict]) -> list[dict]:
     result = []
     for site in sites:
-        locale = preferred_locale(site["content"])
         result.append({
             "id": site["id"],
-            "name": localized_name(site, locale),
+            "name_en": localized_name(site, "en"),
+            "name_ru": localized_name(site, "ru"),
             "latitude": site["geography"]["coordinates"]["latitude"],
             "longitude": site["geography"]["coordinates"]["longitude"],
-            "types": site["classification"]["types"],
+            "types_en": ", ".join(public_types(site)),
+            "types_ru": ", ".join(TYPE_RU.get(str(value), str(value)) for value in public_types(site)),
             "difficulty": site["difficulty"],
-            "confidence": site["identity"]["confidence"],
         })
     return result
 
@@ -333,41 +383,64 @@ def depth_label(site: dict) -> str:
     return f"{minimum:g}–{maximum:g} m"
 
 
+def en_ru(mapping: dict[str, str]) -> dict[str, str]:
+    english = mapping.get("en") or next(iter(mapping.values()))
+    return {"en": english, "ru": mapping.get("ru", english)}
+
+
+def l10n_attrs(mapping: dict[str, str]) -> str:
+    values = en_ru(mapping)
+    return f'data-l10n data-en="{html.escape(values["en"], quote=True)}" data-ru="{html.escape(values["ru"], quote=True)}"'
+
+
 def site_card(site: dict, prefix: str) -> str:
-    locale = preferred_locale(site["content"])
-    name = html.escape(localized_name(site, locale))
-    summary = html.escape(site["content"][locale]["summary"])
-    types = " ".join(html.escape(value) for value in site["classification"]["types"][:3])
-    tags = "".join(f'<span class="chip">{html.escape(value)}</span>' for value in site["classification"]["types"][:3])
-    return f'''<a class="site-card" href="{prefix}sites/{site['id']}/" data-site-id="{site['id']}" data-name="{name.casefold()}" data-types="{types.casefold()}" data-difficulty="{html.escape(site['difficulty'] or 'unassigned')}">
-  <div class="card-top"><span class="eyebrow">{html.escape(site['identity']['confidence'])}</span><span class="depth">{depth_label(site)}</span></div>
-  <h3>{name}</h3>
-  <p>{summary}</p>
+    names = en_ru({locale: localized_name(site, locale) for locale in site["content"]})
+    summaries = en_ru({locale: block["summary"] for locale, block in site["content"].items()})
+    visible_types = public_types(site)
+    types = " ".join(html.escape(value) for value in visible_types[:3])
+    tags = "".join(
+        f'<span class="chip" {l10n_attrs({"en": str(value), "ru": TYPE_RU.get(str(value), str(value))})}>{html.escape(value)}</span>'
+        for value in visible_types[:3]
+    )
+    search_text = " ".join([*names.values(), *summaries.values()]).casefold()
+    return f'''<a class="site-card" href="{prefix}sites/{site['id']}/" data-site-id="{site['id']}" data-name="{html.escape(search_text, quote=True)}" data-types="{types.casefold()}" data-difficulty="{html.escape(site['difficulty'] or 'unassigned')}">
+  <div class="card-top"><span class="depth" {l10n_attrs({"en": depth_label(site), "ru": "Не указана" if depth_label(site) == "Not assigned" else depth_label(site)})}>{depth_label(site)}</span></div>
+  <h3 {l10n_attrs(names)}>{html.escape(names['en'])}</h3>
+  <p {l10n_attrs(summaries)}>{html.escape(summaries['en'])}</p>
   <div class="chips">{tags}</div>
 </a>'''
 
 
-def layout(*, title: str, body: str, prefix: str, site_data: list[dict] | None = None, description: str = "Open canonical dive-site index", lang: str = "en") -> str:
+def layout(*, title: str | dict[str, str], body: str, prefix: str, uddf_href: str, site_data: list[dict] | None = None, description: str | dict[str, str] = "Open dive-site index", available_locales: list[str] | None = None) -> str:
     data = ""
     maplibre = ""
+    titles = en_ru(title if isinstance(title, dict) else {"en": title})
+    descriptions = en_ru(description if isinstance(description, dict) else {"en": description})
+    locales = list(dict.fromkeys(available_locales or ["en", "ru"]))
+    locale_labels = {"en": "English", "ru": "Русский"}
+    language_options = "".join(
+        f'<option value="{html.escape(locale, quote=True)}">{html.escape(locale_labels.get(locale, locale.upper()))}</option>'
+        for locale in locales
+    )
     if site_data is not None:
         data = f'<script id="site-data" type="application/json">{escape_json_for_script(site_data)}</script>'
         maplibre = '<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.6.1/dist/maplibre-gl.css" integrity="sha384-Nq6PQ+9vJPvw7U/VfDELyrWoGQMsy0gi6QShhaSrGzkpF5KkM40csg2leky+YMTd" crossorigin="anonymous"><script defer src="https://unpkg.com/maplibre-gl@5.6.1/dist/maplibre-gl.js" integrity="sha384-/L1njH4bbgNt9Uk3HwJ272N9fxJzRBQCxhtwGkZiqgl+Nxpq2ETUNZhNMNV1RgyW" crossorigin="anonymous"></script>'
     return f'''<!doctype html>
-<html lang="{html.escape(lang)}">
+<html lang="en" data-theme="auto">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="{html.escape(description)}">
-  <title>{html.escape(title)} · Dive Site Index</title>
+  <meta name="description" content="{html.escape(descriptions['en'])}" data-l10n-content data-en="{html.escape(descriptions['en'], quote=True)}" data-ru="{html.escape(descriptions['ru'], quote=True)}">
+  <title {l10n_attrs({'en': titles['en'] + ' · Dive Site Index', 'ru': titles['ru'] + ' · Индекс дайв-сайтов'})}>{html.escape(titles['en'])} · Dive Site Index</title>
+  <script>try{{document.documentElement.dataset.theme=localStorage.getItem("theme")||"auto"}}catch(_){{}}</script>
   {maplibre}
   <link rel="stylesheet" href="{prefix}assets/styles.css">
   <script defer src="{prefix}assets/app.js"></script>
 </head>
 <body>
-  <header class="topbar"><a class="brand" href="{prefix}"><span class="brand-mark">◉</span>Dive Site Index</a><nav><a href="{prefix}exports/uddf/all.uddf">UDDF</a><a href="https://github.com/kemsta/dive-site-index">GitHub</a></nav></header>
+  <header class="topbar"><a class="brand" href="{prefix}"><span class="brand-mark">◉</span><span data-i18n="brand">Dive Site Index</span></a><nav><a href="{uddf_href}" data-i18n="download_uddf">UDDF</a><a href="https://github.com/kemsta/dive-site-index">GitHub</a></nav><div class="preference-controls"><label><span data-i18n="language">Language</span><select id="language-select" aria-label="Language" data-i18n-aria="language">{language_options}</select></label><label><span data-i18n="theme">Theme</span><select id="theme-select" aria-label="Theme" data-i18n-aria="theme"><option value="auto" data-i18n="theme_auto">Auto</option><option value="light" data-i18n="theme_light">Light</option><option value="dark" data-i18n="theme_dark">Dark</option></select></label></div></header>
   {body}
-  <footer><span>Canonical data, explicit provenance, reviewable changes.</span><span>Map © OpenStreetMap contributors.</span></footer>
+  <footer><span data-i18n="footer_source">Open dive-site data with cited sources.</span><span data-i18n="footer_map">Map © OpenStreetMap contributors.</span></footer>
   {data}
 </body>
 </html>
@@ -376,57 +449,64 @@ def layout(*, title: str, body: str, prefix: str, site_data: list[dict] | None =
 
 def listing_controls(sites: list[dict]) -> str:
     difficulties = sorted({site["difficulty"] for site in sites if site["difficulty"]})
-    options = "".join(f'<option value="{html.escape(value)}">{html.escape(value.title())}</option>' for value in difficulties)
+    options = "".join(f'<option value="{html.escape(value)}" data-i18n="difficulty_{html.escape(value)}">{html.escape(value.title())}</option>' for value in difficulties)
     return f'''<div class="controls">
-  <label class="search"><span>Search</span><input id="search" type="search" placeholder="Name, description or type" autocomplete="off"></label>
-  <label><span>Difficulty</span><select id="difficulty-filter"><option value="">All levels</option>{options}</select></label>
-  <span id="result-count" class="result-count">{len(sites)} sites</span>
+  <label class="search"><span data-i18n="search">Search</span><input id="search" type="search" placeholder="Name, description or type" data-i18n-placeholder="search_placeholder" autocomplete="off"></label>
+  <label><span data-i18n="difficulty">Difficulty</span><select id="difficulty-filter"><option value="" data-i18n="all_levels">All levels</option>{options}</select></label>
+  <span id="result-count" class="result-count" data-count="{len(sites)}">{len(sites)} sites</span>
 </div>'''
 
 
 def map_panel() -> str:
-    return '''<section class="map-panel"><div class="map-heading"><div><span class="eyebrow">Geographic index</span><h2>Explore the map</h2></div><p>Canonical coordinates are distinct from personal observations.</p></div><div id="map" aria-label="Interactive dive-site map"></div></section>'''
+    return '''<section class="map-panel"><div class="map-heading"><div><span class="eyebrow" data-i18n="geographic_index">Geographic index</span><h2 data-i18n="explore_map">Explore the map</h2></div><p data-i18n="map_intro">Browse dive-site locations.</p></div><div id="map" aria-label="Interactive dive-site map" data-i18n-aria="map_aria"></div></section>'''
 
 
-def listing_page(title: str, eyebrow: str, intro: str, sites: list[dict], prefix: str, breadcrumbs: str, extra: str = "") -> str:
+def listing_page(title: dict[str, str], eyebrow_key: str, intro: dict[str, str], sites: list[dict], prefix: str, breadcrumbs: str, uddf_href: str, extra: str = "") -> str:
     cards = "\n".join(site_card(site, prefix) for site in sites)
+    type_count = len({site_type for site in sites for site_type in public_types(site)})
+    language_count = len({locale for site in sites for locale in site["content"]})
     body = f'''<main>
-  <section class="hero compact">{breadcrumbs}<span class="eyebrow">{html.escape(eyebrow)}</span><h1>{html.escape(title)}</h1><p>{html.escape(intro)}</p><div class="stat-row"><div><strong>{len(sites)}</strong><span>sites</span></div><div><strong>{len({s['identity']['confidence'] for s in sites})}</strong><span>confidence states</span></div><div><strong>{sum(len(s['observations']) for s in sites)}</strong><span>observations</span></div></div></section>
+  <section class="hero compact">{breadcrumbs}<span class="eyebrow" data-i18n="{eyebrow_key}">{html.escape(eyebrow_key.replace('_', ' ').title())}</span><h1 {l10n_attrs(title)}>{html.escape(en_ru(title)['en'])}</h1><p {l10n_attrs(intro)}>{html.escape(en_ru(intro)['en'])}</p><div class="stat-row"><div><strong>{len(sites)}</strong><span data-i18n="sites">sites</span></div><div><strong>{type_count}</strong><span data-i18n="site_types">site types</span></div><div><strong>{language_count}</strong><span data-i18n="languages">languages</span></div></div></section>
   {extra}
   {map_panel()}
-  <section class="directory"><div class="section-heading"><div><span class="eyebrow">Directory</span><h2>Site cards</h2></div></div>{listing_controls(sites)}<div id="site-list" class="site-grid">{cards}</div><p id="empty-state" class="empty" hidden>No sites match these filters.</p></section>
+  <section class="directory"><div class="section-heading"><div><span class="eyebrow" data-i18n="directory">Directory</span><h2 data-i18n="site_cards">Site cards</h2></div></div>{listing_controls(sites)}<div id="site-list" class="site-grid">{cards}</div><p id="empty-state" class="empty" data-i18n="no_matches" hidden>No sites match these filters.</p></section>
 </main>'''
-    return layout(title=title, body=body, prefix=prefix, site_data=site_map_payload(sites), description=intro)
+    return layout(title=title, body=body, prefix=prefix, uddf_href=uddf_href, site_data=site_map_payload(sites), description=intro)
 
 
 def build_site_page(site: dict, country: dict, region: dict, sources: dict, out: pathlib.Path) -> None:
-    initial_locale = preferred_locale(site["content"])
-    locales = [initial_locale, *sorted(locale for locale in site["content"] if locale != initial_locale)]
-    locale_buttons = "".join(
-        f'<button class="locale-button{" active" if i == 0 else ""}" data-locale-target="{html.escape(locale)}">{html.escape(locale.upper())}</button>'
-        for i, locale in enumerate(locales)
-    )
+    locales = [locale for locale in ("en", "ru") if locale in site["content"]]
+    locales.extend(sorted(locale for locale in site["content"] if locale not in locales))
     sections = []
     for i, locale in enumerate(locales):
         block = site["content"][locale]
         sections.append(f'''<section class="locale-content" data-locale="{html.escape(locale)}"{" hidden" if i else ""}>
   <h1>{html.escape(localized_name(site, locale))}</h1>
   <p class="lede">{html.escape(block['summary'])}</p>
-  <div class="detail-grid"><article><span class="eyebrow">Access</span><p>{html.escape(block['access'])}</p></article><article><span class="eyebrow">Hazards</span><p>{html.escape(block['hazards'])}</p></article><article><span class="eyebrow">Marine life</span><p>{html.escape(block['marine_life'])}</p></article></div>
+  <div class="detail-grid"><article><span class="eyebrow" data-i18n="access">Access</span><p>{html.escape(block['access'])}</p></article><article><span class="eyebrow" data-i18n="hazards">Hazards</span><p>{html.escape(block['hazards'])}</p></article><article><span class="eyebrow" data-i18n="marine_life">Marine life</span><p>{html.escape(block['marine_life'])}</p></article></div>
 </section>''')
     source_links = "".join(
         f'<li><a rel="noreferrer" href="{html.escape(sources[ref]["url"])}">{html.escape(sources[ref]["url"])}</a></li>'
         for ref in site["source_refs"] if ref in sources
-    ) or "<li>No external source identity is claimed.</li>"
-    types = "".join(f'<span class="chip">{html.escape(value)}</span>' for value in site["classification"]["types"])
+    ) or "<li>No external sources listed.</li>"
+    types = "".join(
+        f'<span class="chip" {l10n_attrs({"en": str(value), "ru": TYPE_RU.get(str(value), str(value))})}>{html.escape(value)}</span>'
+        for value in public_types(site)
+    )
     coordinates = site["geography"]["coordinates"]
+    country_names = en_ru(country["names"])
+    region_names = en_ru(region["names"])
+    difficulty_key = f"difficulty_{site['difficulty']}" if site["difficulty"] else "not_assigned"
+    site_uddf = f"../../exports/uddf/sites/{site['id']}.uddf"
     body = f'''<main>
-  <section class="detail-hero"><div class="breadcrumbs"><a href="../../">Index</a><span>/</span><a href="../../countries/{country['id']}/">{html.escape(localized_name(country))}</a><span>/</span><a href="../../countries/{country['id']}/regions/{region['id']}/">{html.escape(localized_name(region))}</a></div><div class="detail-head"><div><span class="eyebrow">{html.escape(site['identity']['kind'])} · {html.escape(site['identity']['confidence'])}</span><div class="locale-switch" aria-label="Content language">{locale_buttons}</div>{''.join(sections)}</div><aside class="facts"><div><span>Depth</span><strong>{depth_label(site)}</strong></div><div><span>Difficulty</span><strong>{html.escape((site['difficulty'] or 'Not assigned').title())}</strong></div><div><span>Coordinates</span><strong>{coordinates['latitude']:.6f}, {coordinates['longitude']:.6f}</strong></div><div><span>Observations</span><strong>{len(site['observations'])}</strong></div><div class="chips">{types}</div><a class="button" href="https://www.openstreetmap.org/?mlat={coordinates['latitude']}&mlon={coordinates['longitude']}#map=14/{coordinates['latitude']}/{coordinates['longitude']}">Open in OpenStreetMap</a></aside></div></section>
-  <section class="sources"><span class="eyebrow">Provenance</span><h2>Source references</h2><ul>{source_links}</ul></section>
+  <section class="detail-hero"><div class="breadcrumbs"><a href="../../" data-i18n="index">Index</a><span>/</span><a href="../../countries/{country['id']}/" {l10n_attrs(country_names)}>{html.escape(country_names['en'])}</a><span>/</span><a href="../../countries/{country['id']}/regions/{region['id']}/" {l10n_attrs(region_names)}>{html.escape(region_names['en'])}</a></div><div class="detail-head"><div><span class="eyebrow" data-i18n="dive_site">Dive site</span>{''.join(sections)}</div><aside class="facts"><div><span data-i18n="depth">Depth</span><strong>{depth_label(site)}</strong></div><div><span data-i18n="difficulty">Difficulty</span><strong data-i18n="{difficulty_key}">{html.escape((site['difficulty'] or 'Not assigned').title())}</strong></div><div><span data-i18n="coordinates">Coordinates</span><strong>{coordinates['latitude']:.6f}, {coordinates['longitude']:.6f}</strong></div><div class="chips">{types}</div><a class="button" href="{site_uddf}" data-i18n="download_site_uddf">Download site UDDF</a><a class="button" href="https://www.openstreetmap.org/?mlat={coordinates['latitude']}&mlon={coordinates['longitude']}#map=14/{coordinates['latitude']}/{coordinates['longitude']}" data-i18n="open_osm">Open in OpenStreetMap</a></aside></div></section>
+  <section class="sources"><span class="eyebrow" data-i18n="provenance">Provenance</span><h2 data-i18n="source_references">Source references</h2><ul>{source_links}</ul></section>
 </main>'''
     destination = out / "sites" / site["id"] / "index.html"
     destination.parent.mkdir(parents=True, exist_ok=True)
-    destination.write_text(layout(title=localized_name(site, initial_locale), body=body, prefix="../../", description=site["content"][initial_locale]["summary"], lang=initial_locale), encoding="utf-8")
+    titles = en_ru({locale: localized_name(site, locale) for locale in locales})
+    descriptions = en_ru({locale: site["content"][locale]["summary"] for locale in locales})
+    destination.write_text(layout(title=titles, body=body, prefix="../../", uddf_href=site_uddf, description=descriptions, available_locales=locales), encoding="utf-8")
 
 
 def build_all(catalog_dir: pathlib.Path, out_dir: pathlib.Path) -> dict:
@@ -446,40 +526,51 @@ def build_all(catalog_dir: pathlib.Path, out_dir: pathlib.Path) -> dict:
 
     country_cards = []
     for country_id, country in sorted(catalog["countries"].items()):
+        country_names = en_ru(country["names"])
         country_sites = sorted(
             [site for region in country["regions"].values() for site in region["sites"]],
             key=lambda item: localized_name(item).casefold(),
         )
         build_uddf(country_sites, catalog["countries"], catalog["sources"], out / "exports" / "uddf" / "countries" / f"{country_id}.uddf")
         region_links = "".join(
-            f'<a class="region-link" href="regions/{region_id}/"><span>{html.escape(localized_name(region))}</span><strong>{len(region["sites"])}</strong></a>'
+            f'<a class="region-link" href="regions/{region_id}/"><span {l10n_attrs(region["names"])}>{html.escape(en_ru(region["names"])["en"])}</span><strong>{len(region["sites"])}</strong></a>'
             for region_id, region in sorted(country["regions"].items())
         )
         country_page = listing_page(
-            localized_name(country), "Country index", f"Canonical dive sites grouped across {len(country['regions'])} region(s).",
-            country_sites, "../../", '<div class="breadcrumbs"><a href="../../">Index</a><span>/</span><span>Country</span></div>',
-            f'<section class="region-strip"><div class="section-heading"><div><span class="eyebrow">Regions</span><h2>Browse subdivisions</h2></div></div><div class="region-links">{region_links}</div></section>',
+            country_names, "country_index", {
+                "en": f"Dive sites grouped across {len(country['regions'])} region(s).",
+                "ru": f"Дайв-сайты, сгруппированные по регионам: {len(country['regions'])}.",
+            }, country_sites, "../../", '<div class="breadcrumbs"><a href="../../" data-i18n="index">Index</a><span>/</span><span data-i18n="country">Country</span></div>',
+            f"../../exports/uddf/countries/{country_id}.uddf",
+            f'<section class="region-strip"><div class="section-heading"><div><span class="eyebrow" data-i18n="regions">Regions</span><h2 data-i18n="browse_subdivisions">Browse subdivisions</h2></div></div><div class="region-links">{region_links}</div></section>',
         )
         country_destination = out / "countries" / country_id / "index.html"
         country_destination.parent.mkdir(parents=True, exist_ok=True)
         country_destination.write_text(country_page, encoding="utf-8")
-        country_cards.append(f'<a class="country-card" href="countries/{country_id}/"><span class="eyebrow">{html.escape(country.get("iso_alpha2", country_id).upper())}</span><h2>{html.escape(localized_name(country))}</h2><p>{len(country_sites)} canonical sites · {len(country["regions"])} region</p><span class="arrow">↗</span></a>')
+        country_cards.append(f'<a class="country-card" href="countries/{country_id}/"><span class="eyebrow">{html.escape(country.get("iso_alpha2", country_id).upper())}</span><h2 {l10n_attrs(country_names)}>{html.escape(country_names["en"])}</h2><p>{len(country_sites)} <span data-i18n="sites">sites</span> · {len(country["regions"])} <span data-i18n="region">region</span></p><span class="arrow">↗</span></a>')
 
         for region_id, region in sorted(country["regions"].items()):
+            region_names = en_ru(region["names"])
             region_sites = sorted(region["sites"], key=lambda item: localized_name(item).casefold())
             build_uddf(region_sites, catalog["countries"], catalog["sources"], out / "exports" / "uddf" / "countries" / country_id / "regions" / f"{region_id}.uddf")
             region_page = listing_page(
-                localized_name(region), localized_name(country), f"Canonical dive-site index for {localized_name(region)}, {localized_name(country)}.",
-                region_sites, "../../../../", f'<div class="breadcrumbs"><a href="../../../../">Index</a><span>/</span><a href="../../">{html.escape(localized_name(country))}</a><span>/</span><span>Region</span></div>',
+                region_names, "region_index", {
+                    "en": f"Dive-site index for {region_names['en']}, {country_names['en']}.",
+                    "ru": f"Индекс дайв-сайтов: {region_names['ru']}, {country_names['ru']}.",
+                }, region_sites, "../../../../", f'<div class="breadcrumbs"><a href="../../../../" data-i18n="index">Index</a><span>/</span><a href="../../" {l10n_attrs(country_names)}>{html.escape(country_names["en"])}</a><span>/</span><span data-i18n="region">Region</span></div>',
+                f"../../../../exports/uddf/countries/{country_id}/regions/{region_id}.uddf",
             )
             region_destination = out / "countries" / country_id / "regions" / region_id / "index.html"
             region_destination.parent.mkdir(parents=True, exist_ok=True)
             region_destination.write_text(region_page, encoding="utf-8")
             for site in region_sites:
+                build_uddf([site], catalog["countries"], catalog["sources"], out / "exports" / "uddf" / "sites" / f"{site['id']}.uddf")
                 build_site_page(site, country, region, catalog["sources"], out)
 
-    home_body = f'''<main><section class="hero"><span class="eyebrow">Open canonical registry</span><h1>Dive sites,<br><em>grounded and reviewable.</em></h1><p>A multilingual source model for hand-edited canonical records, mined claims and reproducible UDDF/HTML publication.</p><div class="stat-row"><div><strong>{len(sites)}</strong><span>canonical sites</span></div><div><strong>{len(catalog['countries'])}</strong><span>country</span></div><div><strong>{sum(len(c['regions']) for c in catalog['countries'].values())}</strong><span>region</span></div></div></section><section class="country-section"><div class="section-heading"><div><span class="eyebrow">Geography</span><h2>Browse by country</h2></div><a class="button" href="exports/uddf/all.uddf">Download global UDDF</a></div><div class="country-grid">{''.join(country_cards)}</div></section>{map_panel()}<section class="directory"><div class="section-heading"><div><span class="eyebrow">All records</span><h2>Canonical site cards</h2></div></div>{listing_controls(sites)}<div id="site-list" class="site-grid">{''.join(site_card(site, '') for site in sites)}</div><p id="empty-state" class="empty" hidden>No sites match these filters.</p></section></main>'''
-    (out / "index.html").write_text(layout(title="Open canonical registry", body=home_body, prefix="", site_data=site_map_payload(sites)), encoding="utf-8")
+    home_body = f'''<main><section class="hero"><span class="eyebrow" data-i18n="home_eyebrow">Open dive-site index</span><h1><span data-i18n="hero_title">Dive sites,</span><br><em data-i18n="hero_tagline">open and portable.</em></h1><p data-i18n="hero_intro">A multilingual, source-backed directory with maps, regional browsing and portable UDDF exports.</p><div class="stat-row"><div><strong>{len(sites)}</strong><span data-i18n="sites">sites</span></div><div><strong>{len(catalog['countries'])}</strong><span data-i18n="country">country</span></div><div><strong>{sum(len(c['regions']) for c in catalog['countries'].values())}</strong><span data-i18n="region">region</span></div></div></section><section class="country-section"><div class="section-heading"><div><span class="eyebrow" data-i18n="geography">Geography</span><h2 data-i18n="browse_country">Browse by country</h2></div><a class="button" href="exports/uddf/all.uddf" data-i18n="download_global_uddf">Download global UDDF</a></div><div class="country-grid">{''.join(country_cards)}</div></section>{map_panel()}<section class="directory"><div class="section-heading"><div><span class="eyebrow" data-i18n="all_sites">All sites</span><h2 data-i18n="site_cards">Dive site cards</h2></div></div>{listing_controls(sites)}<div id="site-list" class="site-grid">{''.join(site_card(site, '') for site in sites)}</div><p id="empty-state" class="empty" data-i18n="no_matches" hidden>No sites match these filters.</p></section></main>'''
+    home_titles = {"en": "Open dive-site index", "ru": "Открытый индекс дайв-сайтов"}
+    home_descriptions = {"en": "A multilingual, source-backed dive-site directory.", "ru": "Многоязычный каталог дайв-сайтов с указанием источников."}
+    (out / "index.html").write_text(layout(title=home_titles, body=home_body, prefix="", uddf_href="exports/uddf/all.uddf", site_data=site_map_payload(sites), description=home_descriptions), encoding="utf-8")
     return {
         "site_count": len(sites),
         "country_count": len(catalog["countries"]),

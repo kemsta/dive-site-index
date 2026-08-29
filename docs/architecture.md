@@ -27,14 +27,18 @@ Canonical coordinates and observation coordinates are different concepts. User-d
 
 Initial public adapters are:
 
-- UDDF 3.2.3: global, country, and region files, validated against the vendored official schema;
+- UDDF 3.2.3: global, country, region, and individual-site files, validated against the vendored official schema;
 - HTML: global map, country pages, region pages, and multilingual site cards.
+
+Review-only metadata such as identity confidence and observation counts remains available to maintainers in `catalog/` but is intentionally omitted from public HTML, map payloads, and UDDF exports. Public pages use neutral directory language rather than review workflow terminology.
 
 Other formats can be added as adapters after the canonical schema stabilizes. They should never become parallel editable sources.
 
 ## Language fallback
 
-A record may contain any valid BCP-47 locale. `en` is preferred when available; otherwise the lexically first available locale is the deterministic fallback. Each localized content block is complete (`summary`, `access`, `hazards`, and `marine_life`) so the UI never assembles a partially translated paragraph from unrelated languages.
+A record may contain any valid BCP-47 locale. `en` is the deterministic no-JavaScript fallback. In the browser, the first supported locale from the reader's ordered language preferences is selected unless an explicit choice has been stored. English and Russian are currently supported by the complete interface and every catalog record. Each localized content block is complete (`summary`, `access`, `hazards`, and `marine_life`) so the UI never assembles a partially translated paragraph from unrelated languages.
+
+The theme defaults to `auto`, which follows `prefers-color-scheme`; an explicit light or dark choice is stored locally. Language and theme controls are present in the top bar on every page.
 
 UDDF has no general field-level localization mechanism. The publisher writes the preferred locale to the standard site fields and preserves additional locales as explicitly labeled `notes/para` entries.
 

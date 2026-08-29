@@ -3,8 +3,10 @@ id: south-sinai
 country_id: eg
 names:
   en: South Sinai
+  ru: Южный Синай
 default_locale: en
 body_of_water:
   id: red-sea
   names:
     en: Red Sea
+    ru: Красное море

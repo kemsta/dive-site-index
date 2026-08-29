@@ -5,6 +5,7 @@ identity:
   confidence: confirmed
 names:
   en: Ras Katy
+  ru: Рас-Кати
 aliases: []
 geography:
   country_id: eg
@@ -28,7 +29,7 @@ difficulty: beginner
 content:
   en:
     summary: A sheltered local reef close to Sharm's main marina, centred on a sandy area and a line of coral pinnacles
-      rising toward the surface. The protected inner section is suitable for an easy reef route and macro observation,
+      rising toward the surface. The protected inner section is suitable for an easy reef route and macro viewing,
       while current can increase toward the corner in the direction of Temple. It is also popular with snorkellers,
       so surface awareness matters.
     access: Usually from a moored day boat between the fringing reef and the main pinnacle; a drift exit may be
@@ -37,6 +38,18 @@ content:
       whether the plan is a return to the mooring or a drift pickup.
     marine_life: Goby–shrimp pairs inhabit the sand, while hard and soft corals and small reef fish cover the pinnacles.
       Larger animals may pass but are not the site's dependable feature.
+  ru:
+    summary: Укрытый местный риф рядом с главной мариной Шарм-эш-Шейха, в центре которого находятся песчаный участок
+      и ряд коралловых башен, поднимающихся к поверхности. Защищённая внутренняя часть подходит для несложного маршрута
+      по рифу и наблюдения за макрообъектами, однако ближе к мысу в направлении Темпла течение может усиливаться.
+      Это место также популярно у любителей снорклинга, поэтому важно следить за обстановкой на поверхности.
+    access: Обычно погружение начинается с пришвартованного дей-бота между окаймляющим рифом и главной коралловой
+      башней; если ближе к мысу течение усиливается, возможен выход в дрейфе.
+    hazards: Местное течение у мыса, движение любителей снорклинга и катеров, прибойное течение на мелководье и
+      хрупкие коралловые башни. Уточните, предусматривает ли план возвращение к швартовке или подбор после дрейфа.
+    marine_life: В песке обитают пары бычок–креветка, а коралловые башни покрыты твёрдыми и мягкими кораллами и
+      населены мелкими рифовыми рыбами. Крупные животные могут проходить мимо, но не являются постоянной особенностью
+      этого дайв-сайта.
 source_refs:
 - src-5e615f5f8305
 observations:

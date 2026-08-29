@@ -7,7 +7,7 @@ An open, source-grounded dive-site catalog with a canonical multilingual source 
 ```text
 external sources → normalized claims → human reconciliation → canonical catalog
                                                         ↓
-                                      global/country/region UDDF + HTML
+                                  global/country/region/site UDDF + HTML
 ```
 
 - `claims/` stores mined, source-specific assertions. The publisher never treats them as canonical automatically.
@@ -75,10 +75,11 @@ public/
 ├── sites/<site-id>/index.html
 ├── exports/uddf/all.uddf
 ├── exports/uddf/countries/<country>.uddf
-└── exports/uddf/countries/<country>/regions/<region>.uddf
+├── exports/uddf/countries/<country>/regions/<region>.uddf
+└── exports/uddf/sites/<site-id>.uddf
 ```
 
-The HTML includes an OpenStreetMap-backed MapLibre map, search, filters, country and region pages, and multilingual site cards. No media model or media URLs are included in this MVP.
+The HTML includes an OpenStreetMap-backed MapLibre map, search, filters, country and region pages, and multilingual site cards. Every catalog level links to its own UDDF export. English and Russian interface/content are available throughout; the initial language follows the browser's ordered language preferences until the reader chooses one explicitly. The top theme control defaults to `auto` and can be changed to light or dark. No media model or media URLs are included in this MVP.
 
 Every build applies the repository JSON Schemas, validates BCP-47 locale tags, rejects unsafe IDs and non-HTTP(S) source URLs, and validates each generated UDDF document against the vendored UDDF 3.2.3 XSD.
 

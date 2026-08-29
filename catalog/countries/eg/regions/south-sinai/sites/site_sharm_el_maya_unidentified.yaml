@@ -5,6 +5,7 @@ identity:
   confidence: user-confirmed
 names:
   en: Sharm el-Maya — Unidentified Dive
+  ru: Шарм-эль-Майя — неопознанное место погружения
 aliases: []
 geography:
   country_id: eg
@@ -28,11 +29,21 @@ content:
     summary: A user-defined record for Garmin dive 5 rather than a formally identified dive site. The watch recorded
       a point southwest of Sharm el-Maya, but that point does not match a documented named site closely enough for
       a reliable assignment. The user does not remember the original site name.
-    access: Unknown. Preserve the Garmin point as an observation only and do not infer boat, shore, mooring, or
+    access: Unknown. Preserve the Garmin point as a location only and do not infer boat, shore, mooring, or
       drift procedures from it.
     hazards: Site-specific hazards are unknown. Apply the original operator briefing and normal Red Sea boat-diving
       precautions if further records become available.
-    marine_life: No site-specific marine-life observation was supplied.
+    marine_life: No site-specific marine-life information was supplied.
+  ru:
+    summary: Пользовательская запись о погружении Garmin № 5, а не официально опознанный дайв-сайт. Часы зафиксировали
+      точку к юго-западу от Шарм-эль-Майи, однако она расположена недостаточно близко к документированному именованному
+      месту для надежного определения. Пользователь не помнит исходное название места.
+    access: Неизвестен. Следует сохранять точку Garmin только как местоположение и не делать по ней выводов о погружении с
+      катера или берега, использовании швартовки либо дрейфовой процедуре.
+    hazards: Опасности, характерные именно для этого места, неизвестны. Если появятся дополнительные записи, следует
+      руководствоваться исходным брифингом оператора и обычными мерами предосторожности при погружениях с катера в
+      Красном море.
+    marine_life: Сведения о морской жизни, относящиеся именно к этому месту, не предоставлены.
 source_refs: []
 observations:
 - record_id: dive-5-2025-07-08
