@@ -17,6 +17,8 @@ from scripts.build import TYPE_RU, build_all, load_catalog, validate_catalog, va
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 CATALOG = ROOT / "catalog"
+EXPECTED_SITE_COUNT = 26
+EXPECTED_HTML_COUNT = EXPECTED_SITE_COUNT + 3
 UDDF_XSD = ROOT / "schemas" / "vendor" / "uddf-3.2.3.xsd"
 NODE = shutil.which("node")
 
@@ -38,6 +40,38 @@ class LinkCollector(HTMLParser):
 
 
 class CanonicalCatalogTests(unittest.TestCase):
+    def test_first_south_sinai_expansion_adds_five_grounded_sites(self):
+        catalog = load_catalog(CATALOG)
+        sites = {
+            site["id"]: site
+            for country in catalog["countries"].values()
+            for region in country["regions"].values()
+            for site in region["sites"]
+        }
+        expected = {
+            "site_thomas_reef": ("Thomas Reef", 27.9906167, 34.4607333, "src-8ba0267b1a74"),
+            "site_ss_thistlegorm": ("SS Thistlegorm", 27.8146, 33.9202, "src-b7fe7e40c809"),
+            "site_dahab_blue_hole": ("Blue Hole", 28.57284, 34.53754, "src-d25a157b19f1"),
+            "site_dahab_canyon": ("The Canyon", 28.5548333, 34.521, "src-4336d93f5ce3"),
+            "site_dahab_lighthouse": ("Lighthouse", 28.4990167, 34.5198833, "src-3fb65c77fda4"),
+        }
+        source_documents = yaml.safe_load((CATALOG / "sources.yaml").read_text(encoding="utf-8"))
+        sources = {source["id"]: source for source in source_documents["sources"]}
+        self.assertEqual(set(expected), set(expected) & set(sites))
+        for site_id, (name, latitude, longitude, coordinate_source_ref) in expected.items():
+            site = sites[site_id]
+            self.assertEqual(site["names"]["en"], name)
+            self.assertEqual(site["identity"], {"kind": "canonical", "confidence": "confirmed"})
+            self.assertGreaterEqual(len(site["source_refs"]), 2)
+            self.assertIn(coordinate_source_ref, site["source_refs"])
+            self.assertAlmostEqual(site["geography"]["coordinates"]["latitude"], latitude, places=6)
+            self.assertAlmostEqual(site["geography"]["coordinates"]["longitude"], longitude, places=6)
+            for source_ref in site["source_refs"]:
+                self.assertNotEqual(urlsplit(sources[source_ref]["url"]).hostname, "www.openstreetmap.org")
+            self.assertNotIn("current", site)
+            self.assertNotIn("visibility", site)
+            self.assertEqual(site["observations"], [])
+
     def test_every_site_uses_compact_public_classification(self):
         catalog = load_catalog(CATALOG)
         allowed_types = {
@@ -98,8 +132,8 @@ class CanonicalCatalogTests(unittest.TestCase):
         self.assertEqual(set(catalog["countries"]), {"eg"})
         self.assertEqual(set(catalog["countries"]["eg"]["regions"]), {"south-sinai"})
         sites = catalog["countries"]["eg"]["regions"]["south-sinai"]["sites"]
-        self.assertEqual(len(sites), 21)
-        self.assertEqual(len({site["id"] for site in sites}), 21)
+        self.assertEqual(len(sites), EXPECTED_SITE_COUNT)
+        self.assertEqual(len({site["id"] for site in sites}), EXPECTED_SITE_COUNT)
 
     def test_site_descriptions_are_locale_keyed_and_extensible(self):
         catalog = load_catalog(CATALOG)
@@ -259,7 +293,7 @@ class PublishingTests(unittest.TestCase):
             out = pathlib.Path(tmp)
             build_all(CATALOG, out)
             pages = sorted(out.rglob("*.html"))
-            self.assertEqual(len(pages), 24)
+            self.assertEqual(len(pages), EXPECTED_HTML_COUNT)
             for page in pages:
                 html = page.read_text(encoding="utf-8")
                 self.assertIn("DATA_LICENSE.md", html, page)
@@ -300,7 +334,7 @@ class PublishingTests(unittest.TestCase):
             out = pathlib.Path(tmp)
             build_all(CATALOG, out)
             pages = list(out.rglob("*.html"))
-            self.assertEqual(len(pages), 24)
+            self.assertEqual(len(pages), EXPECTED_HTML_COUNT)
             for page in pages:
                 document = page.read_text(encoding="utf-8")
                 self.assertIn('id="language-select"', document, page)
@@ -465,7 +499,7 @@ class PublishingTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             out = pathlib.Path(tmp)
             summary = build_all(CATALOG, out)
-            self.assertEqual(summary["site_count"], 21)
+            self.assertEqual(summary["site_count"], EXPECTED_SITE_COUNT)
             paths = [
                 out / "exports" / "uddf" / "all.uddf",
                 out / "exports" / "uddf" / "countries" / "eg.uddf",
@@ -479,7 +513,7 @@ class PublishingTests(unittest.TestCase):
                 namespace = {"u": "http://www.streit.cc/uddf/3.2/"}
                 root = document.getroot()
                 self.assertEqual(root.attrib["version"], "3.2.3")
-                self.assertEqual(len(root.findall("./u:divesite/u:site", namespace)), 21)
+                self.assertEqual(len(root.findall("./u:divesite/u:site", namespace)), EXPECTED_SITE_COUNT)
 
     def test_build_emits_browsable_html_hierarchy_and_site_cards(self):
         with tempfile.TemporaryDirectory() as tmp:

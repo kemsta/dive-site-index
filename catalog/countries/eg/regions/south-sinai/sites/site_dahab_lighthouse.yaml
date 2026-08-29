@@ -1,0 +1,45 @@
+schema_version: '1.1'
+id: site_dahab_lighthouse
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Lighthouse
+  ru: Лайтхаус
+aliases:
+- Light House
+- Lighthouse and Masbat Bay
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 28.4990167
+    longitude: 34.5198833
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- training
+- night
+access:
+- shore
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: beginner
+content:
+  en:
+    summary: A shore-accessible house reef in central Dahab used for training, refresher dives, ordinary reef dives, and night dives. The wider Masbat Bay includes sand and seagrass as well as reef features.
+    access: Shore entry from the Lighthouse area in Dahab; exact entry arrangements depend on the operating dive centre and local waterfront access.
+    hazards: Training use does not remove the need to assess entry conditions, local traffic, visibility, and the planned depth.
+    marine_life: The reef, sand, and seagrass habitats support a range of small reef animals; individual sightings are not guaranteed.
+  ru:
+    summary: Доступный с берега домашний риф в центре Дахаба, используемый для обучения, восстановительных и обычных рифовых погружений, а также ночных дайвов. В более широкой бухте Масбат встречаются песок и морская трава наряду с рифовыми образованиями.
+    access: Вход с берега в районе Лайтхауса в Дахабе; конкретная организация входа зависит от дайв-центра и местного доступа к берегу.
+    hazards: Использование для обучения не отменяет необходимости оценить условия входа, местное движение, видимость и запланированную глубину.
+    marine_life: Риф, песок и морская трава образуют среду для разнообразных небольших рифовых животных; конкретные встречи не гарантированы.
+source_refs:
+- src-fab1a57a1d8c
+- src-f79f065f0394
+- src-3fb65c77fda4
+observations: []

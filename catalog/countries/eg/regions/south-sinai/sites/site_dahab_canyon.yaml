@@ -1,0 +1,44 @@
+schema_version: '1.1'
+id: site_dahab_canyon
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: The Canyon
+  ru: Каньон
+aliases:
+- Canyon
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 28.5548333
+    longitude: 34.521
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- canyon
+- cavern
+access:
+- shore
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A fractured reef formation north of Dahab with a lagoon approach and a canyon containing several openings at different depths. A visit to the outer formation and a route inside the canyon are not equivalent dive plans.
+    access: Shore entry through a shallow lagoon, followed by a swim across the reef slope to the canyon area.
+    hazards: Depth, enclosed sections, narrow openings, and overhead routes require precise route selection. Divers should not enter sections beyond their training and equipment.
+    marine_life: Coral heads and reef fish occur along the lagoon, slope, and canyon openings; conditions and encounters vary.
+  ru:
+    summary: Разлом в рифе к северу от Дахаба, к которому подходят через лагуну; в каньоне есть несколько отверстий на разных глубинах. Осмотр внешней части и маршрут внутри каньона являются разными планами погружения.
+    access: Вход с берега через мелководную лагуну, затем переход по склону рифа к району каньона.
+    hazards: Глубина, закрытые участки, узкие отверстия и маршруты под перекрытием требуют точного выбора пути. Не следует входить в участки, выходящие за пределы подготовки и снаряжения дайвера.
+    marine_life: Коралловые образования и рифовые рыбы встречаются в лагуне, на склоне и у отверстий каньона; условия и наблюдения меняются.
+source_refs:
+- src-dc8baba8a33b
+- src-fab1a57a1d8c
+- src-f79f065f0394
+- src-4336d93f5ce3
+observations: []

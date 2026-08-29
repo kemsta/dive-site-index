@@ -96,3 +96,35 @@ sources:
 - id: src-aa1842459fb6
   url: https://www.redseamarinesharm.net/ras-mohamed-national-park
   kind: reference
+- id: src-dc8baba8a33b
+  url: https://www.reefoasisdiveclub.com/diving-sharm-el-sheikh/dive-sites/
+  kind: reference
+- id: src-5e6a25aa53dd
+  url: http://www.redseadiversintl.com/sites/diving-site-maps.php
+  kind: reference
+- id: src-fab1a57a1d8c
+  url: https://desert-divers.com/dahab-diving/dahab-dive-sites
+  kind: reference
+- id: src-f79f065f0394
+  url: https://www.bedawi.com/Dahab_Divesites_EN.html
+  kind: reference
+- id: src-b7fe7e40c809
+  url: https://www.padi.com/dive-site/egypt/ss-thistlegorm/
+  kind: reference
+  notes: Site identity, coordinates, wreck type, boat entry, and salt water.
+- id: src-28990d219403
+  url: https://redsea-diving.com/blue-hole-dahab/
+  kind: reference
+  notes: Site identity, shore location, route context, and safety context; not used for the catalog coordinate pair.
+- id: src-d25a157b19f1
+  url: https://www.padi.com/dive-site/egypt/blue-hole-17
+  kind: reference
+  notes: Independent site identity and catalog coordinates, wall type, shore entry, and salt water.
+- id: src-4336d93f5ce3
+  url: https://www.redsea-diving.com/the-canyon/
+  kind: reference
+  notes: Site identity, coordinates, lagoon shore entry, canyon formation, and route context.
+- id: src-3fb65c77fda4
+  url: https://redsea-diving.com/dahab-shore-diving/
+  kind: reference
+  notes: Site identity, coordinates, shore entry, beginner use, reef route, and seagrass habitat.

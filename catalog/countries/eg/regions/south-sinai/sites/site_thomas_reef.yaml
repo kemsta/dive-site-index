@@ -1,0 +1,42 @@
+schema_version: '1.1'
+id: site_thomas_reef
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Thomas Reef
+  ru: Риф Томас
+aliases: []
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 27.9906167
+    longitude: 34.4607333
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- canyon
+access:
+- boat
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: One of the four principal reefs in the Strait of Tiran. Thomas Reef is known for reef diving and a deep canyon feature, but the catalog does not assign a single depth or difficulty to every possible route.
+    access: Reached by dive boat in the Strait of Tiran; the route is selected for the day's sea and current conditions.
+    hazards: The canyon extends beyond ordinary recreational profiles. Any deep or overhead route requires training and planning appropriate to that route.
+    marine_life: Reef and open-water marine life vary with season and conditions; no particular encounter is guaranteed.
+  ru:
+    summary: Один из четырёх основных рифов Тиранского пролива. Риф Томас известен рифовыми погружениями и глубоким каньоном, однако каталог не назначает единую глубину или сложность для всех возможных маршрутов.
+    access: Доступ с дайв-бота в Тиранском проливе; маршрут выбирают с учётом состояния моря и течения в день погружения.
+    hazards: Каньон продолжается за пределы обычных рекреационных профилей. Для любого глубокого маршрута или маршрута под перекрытием необходимы соответствующие подготовка и планирование.
+    marine_life: Рифовая и пелагическая жизнь зависит от сезона и условий; конкретные встречи не гарантированы.
+source_refs:
+- src-dc8baba8a33b
+- src-5e6a25aa53dd
+- src-8ba0267b1a74
+observations: []
