@@ -16,6 +16,8 @@ const language = element({ i18nAria: "language" });
 language.options = [{ value: "en" }, { value: "ru" }, { value: "ar" }, { value: "zh-Hant" }];
 const theme = element({ i18nAria: "theme" });
 const hero = element({ i18n: "hero_title" });
+const about = element({ i18n: "about_body" });
+const catalogActions = element({ i18nAria: "catalog_actions" });
 const localized = element({ en: "English summary", ru: "Русское описание", ar: "وصف عربي", "zh-Hant": "繁體中文說明" });
 const localeEn = element({ locale: "en" });
 const localeRu = element({ locale: "ru" });
@@ -54,9 +56,9 @@ global.document = {
   documentElement: { lang: "en", dataset: { theme: "auto" } },
   querySelector(selector) { return selectors[selector] ?? null; },
   querySelectorAll(selector) {
-    if (selector === "[data-i18n]") return [hero];
+    if (selector === "[data-i18n]") return [hero, about];
     if (selector === "[data-l10n]") return [localized];
-    if (selector === "[data-i18n-aria]") return [language, theme];
+    if (selector === "[data-i18n-aria]") return [language, theme, catalogActions];
     if (selector === "[data-locale]") return [localeEn, localeRu, localeAr, localeZhHant];
     return [];
   },
@@ -86,7 +88,9 @@ vm.runInThisContext(fs.readFileSync(process.argv[2], "utf8"), { filename: proces
 listeners.DOMContentLoaded();
 assert.equal(document.documentElement.lang, expectedLanguage);
 assert.equal(language.value, expectedLanguage);
-assert.equal(hero.textContent, expectedLanguage === "ru" ? "Дайв-сайты," : "Dive sites,");
+assert.equal(hero.textContent, expectedLanguage === "ru" ? "Каталог дайв-сайтов," : "Dive-site catalog,");
+assert.equal(about.textContent, expectedLanguage === "ru" ? "Dive Site Index — многоязычный каталог дайв-сайтов. Предлагайте новые дайв-сайты или исправления либо используйте данные в своём приложении." : "Dive Site Index is a multilingual catalog of dive sites. Suggest new dive sites or corrections, or reuse the data in another application.");
+assert.equal(catalogActions["aria-label"], expectedLanguage === "ru" ? "Действия с каталогом" : "Catalog actions");
 assert.equal(localized.textContent, expectedLanguage === "ru" ? "Русское описание" : expectedLanguage === "ar" ? "وصف عربي" : expectedLanguage === "zh-Hant" ? "繁體中文說明" : "English summary");
 assert.equal(localeEn.hidden, expectedLanguage !== "en");
 assert.equal(localeRu.hidden, expectedLanguage !== "ru");

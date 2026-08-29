@@ -146,6 +146,11 @@ main > section { max-width: var(--max); margin-inline: auto; padding-inline: 24p
 .stat-row strong { display: block; font: 500 25px/1.15 "JetBrains Mono", monospace; }
 .stat-row span { color: var(--muted); font-size: 12px; }
 
+.about-panel { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 40px; padding-top: 42px; padding-bottom: 42px; border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft); }
+.about-panel h2 { margin: 8px 0 12px; font-size: 30px; font-weight: 500; letter-spacing: -.035em; }
+.about-panel p { max-width: 760px; margin: 0; color: var(--body); font-size: 16px; line-height: 1.65; }
+.about-panel nav { display: flex; flex-wrap: wrap; justify-content: end; gap: 8px; }
+
 .country-section, .region-strip, .directory, .sources { padding-top: 84px; padding-bottom: 84px; border-top: 1px solid var(--line-soft); }
 .section-heading, .map-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 28px; }
 .section-heading h2, .map-heading h2, .sources h2 { margin: 8px 0 0; font-size: 28px; font-weight: 500; letter-spacing: -.035em; }
@@ -281,6 +286,8 @@ footer a:hover { color: var(--cyan); }
   .map-panel { padding: 56px 17px; }
   #map { min-height: 390px; }
   .map-heading, .section-heading { align-items: start; flex-direction: column; }
+  .about-panel { grid-template-columns: 1fr; align-items: start; gap: 24px; }
+  .about-panel nav { justify-content: start; }
   .controls { grid-template-columns: 1fr; }
   .result-count { padding: 0; text-align: left; }
   .site-grid { grid-template-columns: 1fr; }
