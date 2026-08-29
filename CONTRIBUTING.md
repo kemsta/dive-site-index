@@ -10,10 +10,18 @@ For a pull request:
 
 1. Find or add the country and region under `catalog/countries/<country-id>/regions/<region-id>/`.
 2. Copy a nearby record from `sites/` and give the new file a stable ID such as `site_blue_hole.yaml`. IDs must not depend on a translated name or operator branding.
-3. Provide coordinates, depth when known, classification, access, hazards, marine life, and at least one name and content locale. BCP-47 language tags such as `en`, `ru`, or `zh-Hant` are supported.
+3. Provide coordinates, compact `types` and `access` arrays, depth when known, difficulty, access notes, hazards, marine life, and at least one name and content locale. BCP-47 language tags such as `en`, `ru`, or `zh-Hant` are supported.
 4. Cite reliable sources. Add each new source to `catalog/sources.yaml`, then reference its ID in `source_refs`.
 5. Preserve uncertainty. Do not invent missing depth, difficulty, identity, access, or safety details.
 6. Run the checks below and submit a focused pull request.
+
+### Compact site fields
+
+- `types`: zero or more controlled values from `reef`, `wall`, `wreck`, `drift`, `cave`, `cavern`, `pinnacle`, `drop-off`, `slope`, `plateau`, `canyon`, `channel`, `sand`, `bay`, `swim-through`, `jetty`, `artificial`, `training`, `night`, `snorkeling`, or `other`.
+- `access`: zero or more of `boat`, `shore`, `pier`, or `liveaboard`.
+- `current` and `visibility` are optional. Add them only from reliable general site information, not from a single dive report or a current forecast.
+- Keep details such as mooring procedures, live pickup, optional penetration, seasonal encounters, and route-specific conditions in the localized text unless the schema gains a demonstrated need for a new filter.
+- Do not put provenance or review states such as Garmin observations, unidentified records, or confidence labels in `types`.
 
 ## Correct existing data
 

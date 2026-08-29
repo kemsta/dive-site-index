@@ -1,4 +1,4 @@
-schema_version: '1.0'
+schema_version: '1.1'
 id: site_shark_observatory
 identity:
   kind: canonical
@@ -15,13 +15,13 @@ geography:
     longitude: 34.259786
   body_of_water_id: red-sea
   water_type: salt
-classification:
-  types:
-  - wall
-  - reef
-  - drop-off
-  - drift dive
-  - boat dive
+types:
+- wall
+- reef
+- drop-off
+- drift
+access:
+- boat
 depth:
   minimum_m: 5
   maximum_m: 30

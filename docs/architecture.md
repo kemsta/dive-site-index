@@ -15,7 +15,7 @@ Reviewed files under `catalog/` are hand-editable YAML and the sole publishing s
 - canonical coordinates;
 - localized names and content keyed by BCP-47 tags;
 - identity kind and confidence;
-- depth and classification;
+- compact controlled types, access methods, depth and difficulty;
 - normal source references;
 - separately recorded observations.
 

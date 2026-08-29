@@ -1,4 +1,4 @@
-schema_version: '1.0'
+schema_version: '1.1'
 id: site_small_crack
 identity:
   kind: canonical
@@ -15,13 +15,14 @@ geography:
     longitude: 34.097496
   body_of_water_id: red-sea
   water_type: salt
-classification:
-  types:
-  - reef
-  - tidal passage
-  - drift dive
-  - coral slope
-  - boat or liveaboard dive
+types:
+- reef
+- channel
+- drift
+- slope
+access:
+- boat
+- liveaboard
 depth:
   minimum_m: 2
   maximum_m: 30

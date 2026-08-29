@@ -25,51 +25,28 @@ UDDF_NS = "http://www.streit.cc/uddf/3.2/"
 ET.register_namespace("", UDDF_NS)
 
 TYPE_RU: dict[str, str] = {
-    "Garmin observation": "наблюдение Garmin",
+    "artificial": "искусственный объект",
     "bay": "бухта",
-    "boat dive": "погружение с лодки",
-    "boat or liveaboard dive": "погружение с лодки или сафари-бота",
-    "boat or shore dive": "погружение с лодки или берега",
     "canyon": "каньон",
-    "coral blocks": "коралловые блоки",
-    "coral garden": "коралловый сад",
-    "coral pinnacles": "коралловые башни",
-    "coral slope": "коралловый склон",
-    "deep canyon": "глубокий каньон",
-    "drift dive": "дрейфовое погружение",
-    "drift or mooring dive": "дрейфовое погружение или погружение со швартовки",
+    "cave": "пещера",
+    "cavern": "каверна",
+    "channel": "проход",
+    "drift": "дрейф",
     "drop-off": "свальный склон",
-    "garden eels": "садовые угри",
-    "historic wreck": "исторический рэк",
-    "mooring dive": "погружение со швартовки",
-    "mooring or drift dive": "погружение со швартовки или по течению",
-    "night dive": "ночное погружение",
-    "old jetty": "старый причал",
-    "open-water boat entry": "вход с лодки в открытой воде",
-    "optional penetration": "возможное проникновение",
-    "optional swim-throughs": "необязательные сквозные проходы",
+    "jetty": "причал",
+    "night": "ночное погружение",
+    "other": "другое",
+    "pinnacle": "коралловая башня",
     "plateau": "плато",
     "reef": "риф",
     "sand": "песок",
-    "sandy alley": "песчаная аллея",
-    "sandy area": "песчаный участок",
-    "sandy bay": "песчаная бухта",
-    "sandy plateau": "песчаное плато",
-    "sandy slope": "песчаный склон",
-    "shallow wreck": "мелководный рэк",
-    "sheltered mooring": "защищённая швартовка",
-    "shore or boat dive": "погружение с берега или лодки",
+    "snorkeling": "снорклинг",
     "slope": "склон",
-    "snorkelling site": "место для снорклинга",
-    "tidal passage": "приливный проход",
-    "unidentified dive": "неидентифицированное погружение",
-    "user-defined location": "пользовательская точка",
+    "swim-through": "сквозной проход",
+    "training": "учебный сайт",
     "wall": "стенка",
-    "wildlife encounter": "встреча с морскими животными",
     "wreck": "рэк",
-    "wreck cargo": "груз рэка",
 }
-PUBLIC_EXCLUDED_TYPES = {"Garmin observation"}
 
 
 def schema_validator(name: str) -> jsonschema.Draft202012Validator:
@@ -223,6 +200,9 @@ def validate_site(site: dict, country_id: str, region_id: str, source_ids: set[s
         raise ValueError(f"{site['id']}: invalid maximum depth")
     if minimum is not None and maximum is not None and minimum > maximum:
         raise ValueError(f"{site['id']}: minimum depth exceeds maximum")
+    visibility = site.get("visibility")
+    if visibility is not None and visibility["minimum_m"] > visibility["maximum_m"]:
+        raise ValueError(f"{site['id']}: visibility minimum exceeds maximum")
     if source_ids is not None:
         unknown = set(site["source_refs"]) - source_ids
         if unknown:
@@ -272,7 +252,7 @@ def all_sites(catalog: dict) -> list[dict]:
 
 
 def public_types(site: dict) -> list[str]:
-    return [value for value in site["classification"]["types"] if value not in PUBLIC_EXCLUDED_TYPES]
+    return list(site["types"])
 
 
 def add(parent: ET.Element, name: str, value: object) -> ET.Element:
@@ -315,11 +295,15 @@ def build_uddf(sites: list[dict], countries: dict, sources: dict, destination: p
         difficulty_values = {"beginner": 3, "intermediate": 5, "advanced": 7}
         if site["difficulty"]:
             add(sitedata, "difficulty", difficulty_values[site["difficulty"]])
+        visibility = site.get("visibility")
         if site["depth"]["maximum_m"] is not None:
             add(sitedata, "maximumdepth", site["depth"]["maximum_m"])
+        if visibility is not None:
+            add(sitedata, "maximumvisibility", visibility["maximum_m"])
         if site["depth"]["minimum_m"] is not None:
             add(sitedata, "minimumdepth", site["depth"]["minimum_m"])
-
+        if visibility is not None:
+            add(sitedata, "minimumvisibility", visibility["minimum_m"])
         paragraphs = [
             content["summary"],
             f"Access: {content['access']}",
@@ -327,8 +311,13 @@ def build_uddf(sites: list[dict], countries: dict, sources: dict, destination: p
             f"Marine life: {content['marine_life']}",
             f"Site ID: {site['id']}",
             f"Difficulty: {site['difficulty'] or 'not assigned'}",
-            "Site types: " + ", ".join(public_types(site)),
+            "Site types: " + (", ".join(public_types(site)) or "not assigned"),
+            "Access methods: " + (", ".join(site["access"]) or "not assigned"),
         ]
+        current = site.get("current")
+        if current is not None:
+            variability = "; variable" if current["variable"] else ""
+            paragraphs.append(f"Typical current: {current['typical']}{variability}")
         for other_locale in sorted(site["content"]):
             if other_locale == locale:
                 continue
@@ -397,13 +386,14 @@ def site_card(site: dict, prefix: str) -> str:
     names = en_ru({locale: localized_name(site, locale) for locale in site["content"]})
     summaries = en_ru({locale: block["summary"] for locale, block in site["content"].items()})
     visible_types = public_types(site)
-    types = " ".join(html.escape(value) for value in visible_types[:3])
+    types = " ".join(html.escape(value) for value in visible_types)
+    access = " ".join(html.escape(value) for value in site["access"])
     tags = "".join(
         f'<span class="chip" {l10n_attrs({"en": str(value), "ru": TYPE_RU.get(str(value), str(value))})}>{html.escape(value)}</span>'
         for value in visible_types[:3]
     )
     search_text = " ".join([*names.values(), *summaries.values()]).casefold()
-    return f'''<a class="site-card" href="{prefix}sites/{site['id']}/" data-site-id="{site['id']}" data-name="{html.escape(search_text, quote=True)}" data-types="{types.casefold()}" data-difficulty="{html.escape(site['difficulty'] or 'unassigned')}">
+    return f'''<a class="site-card" href="{prefix}sites/{site['id']}/" data-site-id="{site['id']}" data-name="{html.escape(search_text, quote=True)}" data-types="{types.casefold()}" data-access="{access.casefold()}" data-difficulty="{html.escape(site['difficulty'] or 'unassigned')}">
   <div class="card-top"><span class="depth" {l10n_attrs({"en": depth_label(site), "ru": "Не указана" if depth_label(site) == "Not assigned" else depth_label(site)})}>{depth_label(site)}</span></div>
   <h3 {l10n_attrs(names)}>{html.escape(names['en'])}</h3>
   <p {l10n_attrs(summaries)}>{html.escape(summaries['en'])}</p>
@@ -499,7 +489,7 @@ def build_site_page(site: dict, country: dict, region: dict, sources: dict, out:
     difficulty_key = f"difficulty_{site['difficulty']}" if site["difficulty"] else "not_assigned"
     site_uddf = f"../../exports/uddf/sites/{site['id']}.uddf"
     body = f'''<main>
-  <section class="detail-hero"><div class="breadcrumbs"><a href="../../" data-i18n="index">Index</a><span>/</span><a href="../../countries/{country['id']}/" {l10n_attrs(country_names)}>{html.escape(country_names['en'])}</a><span>/</span><a href="../../countries/{country['id']}/regions/{region['id']}/" {l10n_attrs(region_names)}>{html.escape(region_names['en'])}</a></div><div class="detail-head"><div><span class="eyebrow" data-i18n="dive_site">Dive site</span>{''.join(sections)}</div><aside class="facts"><div><span data-i18n="depth">Depth</span><strong>{depth_label(site)}</strong></div><div><span data-i18n="difficulty">Difficulty</span><strong data-i18n="{difficulty_key}">{html.escape((site['difficulty'] or 'Not assigned').title())}</strong></div><div><span data-i18n="coordinates">Coordinates</span><strong>{coordinates['latitude']:.6f}, {coordinates['longitude']:.6f}</strong></div><div class="chips">{types}</div><a class="button" href="{site_uddf}" data-i18n="download_site_uddf">Download site UDDF</a><a class="button" href="https://www.openstreetmap.org/?mlat={coordinates['latitude']}&mlon={coordinates['longitude']}#map=14/{coordinates['latitude']}/{coordinates['longitude']}" data-i18n="open_osm">Open in OpenStreetMap</a></aside></div></section>
+  <section class="detail-hero" data-site-types="{html.escape(','.join(public_types(site)), quote=True)}" data-site-access="{html.escape(','.join(site['access']), quote=True)}"><div class="breadcrumbs"><a href="../../" data-i18n="index">Index</a><span>/</span><a href="../../countries/{country['id']}/" {l10n_attrs(country_names)}>{html.escape(country_names['en'])}</a><span>/</span><a href="../../countries/{country['id']}/regions/{region['id']}/" {l10n_attrs(region_names)}>{html.escape(region_names['en'])}</a></div><div class="detail-head"><div><span class="eyebrow" data-i18n="dive_site">Dive site</span>{''.join(sections)}</div><aside class="facts"><div><span data-i18n="depth">Depth</span><strong>{depth_label(site)}</strong></div><div><span data-i18n="difficulty">Difficulty</span><strong data-i18n="{difficulty_key}">{html.escape((site['difficulty'] or 'Not assigned').title())}</strong></div><div><span data-i18n="coordinates">Coordinates</span><strong>{coordinates['latitude']:.6f}, {coordinates['longitude']:.6f}</strong></div><div class="chips">{types}</div><a class="button" href="{site_uddf}" data-i18n="download_site_uddf">Download site UDDF</a><a class="button" href="https://www.openstreetmap.org/?mlat={coordinates['latitude']}&mlon={coordinates['longitude']}#map=14/{coordinates['latitude']}/{coordinates['longitude']}" data-i18n="open_osm">Open in OpenStreetMap</a></aside></div></section>
   <section class="sources"><span class="eyebrow" data-i18n="provenance">Provenance</span><h2 data-i18n="source_references">Source references</h2><ul>{source_links}</ul></section>
 </main>'''
     destination = out / "sites" / site["id"] / "index.html"

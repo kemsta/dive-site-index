@@ -1,4 +1,4 @@
-schema_version: '1.0'
+schema_version: '1.1'
 id: site_woodhouse_reef
 identity:
   kind: canonical
@@ -15,14 +15,14 @@ geography:
     longitude: 34.466167
   body_of_water_id: red-sea
   water_type: salt
-classification:
-  types:
-  - reef
-  - wall
-  - drift dive
-  - drop-off
-  - deep canyon
-  - boat dive
+types:
+- reef
+- wall
+- drift
+- drop-off
+- canyon
+access:
+- boat
 depth:
   minimum_m: 5
   maximum_m: 40
