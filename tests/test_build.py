@@ -21,9 +21,13 @@ class LinkCollector(HTMLParser):
     def __init__(self):
         super().__init__()
         self.references = []
+        self.site_cards = []
 
     def handle_starttag(self, tag, attrs):
         attributes = dict(attrs)
+        classes = (attributes.get("class") or "").split()
+        if "site-card" in classes:
+            self.site_cards.append((tag, attributes))
         for key in ("href", "src"):
             if key in attributes:
                 self.references.append(attributes[key])
@@ -116,6 +120,26 @@ class CanonicalCatalogTests(unittest.TestCase):
 
 
 class PublishingTests(unittest.TestCase):
+    def test_entire_site_card_is_a_stable_link(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            out = pathlib.Path(tmp)
+            catalog = load_catalog(CATALOG)
+            build_all(CATALOG, out)
+            collector = LinkCollector()
+            collector.feed((out / "index.html").read_text(encoding="utf-8"))
+            expected_ids = {
+                site["id"]
+                for country in catalog["countries"].values()
+                for region in country["regions"].values()
+                for site in region["sites"]
+            }
+            self.assertEqual(len(collector.site_cards), len(expected_ids))
+            for tag, attributes in collector.site_cards:
+                site_id = attributes.get("data-site-id")
+                self.assertEqual(tag, "a")
+                self.assertIn(site_id, expected_ids)
+                self.assertEqual(attributes.get("href"), f"sites/{site_id}/")
+
     def test_build_emits_global_country_and_region_uddf(self):
         with tempfile.TemporaryDirectory() as tmp:
             out = pathlib.Path(tmp)
