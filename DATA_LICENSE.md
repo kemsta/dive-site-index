@@ -16,6 +16,14 @@ A suitable notice is:
 
 Place the notice somewhere users can reasonably find it—for example in an About, Credits, Data sources, or Legal screen. When distributing the database or a derivative database, retain its license and notices as required by ODC-By 1.0.
 
+## Alternative terms by individual agreement
+
+The database rightsholder reserves the right to offer separate terms, including permission to publish without displaying the standard ODC-By license notice, under an individual written agreement. Any attribution requirements for that use are determined by the agreement.
+
+An alternative agreement applies only to the parties, data, uses, and rights it expressly identifies. It does not withdraw or restrict ODC-By 1.0 rights already granted to other users, and it cannot grant rights in third-party material that the project does not own or control.
+
+To request alternative terms, open a licensing request in [GitHub Issues](https://github.com/kemsta/dive-site-index/issues) without including confidential terms; a private contact channel can then be established if needed.
+
 ## Scope
 
 ODC-By 1.0 covers the **Dive Site Index database as a database**: its selection, arrangement, catalog records, and published database exports to the extent the project controls the applicable rights.

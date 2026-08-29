@@ -16,7 +16,7 @@ The catalog is informational. It is not a dive briefing and does not replace tra
 - **Correct a record:** edit its YAML in a pull request or open [GitHub Issues](https://github.com/kemsta/dive-site-index/issues) with the site URL, proposed correction, and supporting source.
 - **Report a website/export bug:** use the bug-report issue template.
 - **Report a security problem privately:** follow [`SECURITY.md`](SECURITY.md).
-- **Reuse the data commercially:** allowed under ODC-By 1.0 with attribution; see [`DATA_LICENSE.md`](DATA_LICENSE.md) for required wording and scope.
+- **Reuse the data commercially:** allowed. Qualifying public use requires attribution under ODC-By 1.0; see [`DATA_LICENSE.md`](DATA_LICENSE.md) for suggested attribution, scope, and alternative licensing.
 
 ## Data flow
 
@@ -105,6 +105,6 @@ The initial catalog contains 21 reviewed records in Egypt / South Sinai reconstr
 
 ## Licensing
 
-- Catalog database: ODC-By 1.0, including commercial use with required attribution; see [`DATA_LICENSE.md`](DATA_LICENSE.md) and [`LICENSE-DATA`](LICENSE-DATA).
+- Catalog database: ODC-By 1.0. Commercial use is allowed; qualifying public use requires attribution. Alternative terms may be available by individual agreement. See [`DATA_LICENSE.md`](DATA_LICENSE.md) and [`LICENSE-DATA`](LICENSE-DATA).
 - Code and repository documentation: MIT, see [`LICENSE`](LICENSE).
 - Third-party sources, libraries, MapLibre, UDDF, and OpenStreetMap retain their own rights and terms. OpenStreetMap tiles/data are © OpenStreetMap contributors and subject to the applicable OpenStreetMap terms and ODbL.

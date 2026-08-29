@@ -169,6 +169,14 @@ class PublishingTests(unittest.TestCase):
         self.assertIn("odc-by 1.0", licensing)
         self.assertIn("attribution", licensing)
         self.assertIn("does **not** impose the odbl share-alike", licensing)
+        self.assertIn("permission to publish without displaying the standard odc-by license notice", licensing)
+        self.assertIn("attribution requirements for that use are determined by the agreement", licensing)
+        self.assertIn("individual written agreement", licensing)
+        self.assertIn("does not withdraw or restrict odc-by 1.0 rights", licensing)
+
+        self.assertNotIn("commercial use with required attribution", readme.casefold())
+        self.assertIn("qualifying public use requires attribution", readme.casefold())
+        self.assertIn("suggested attribution", readme.casefold())
 
         with tempfile.TemporaryDirectory() as tmp:
             out = pathlib.Path(tmp)
