@@ -1,0 +1,46 @@
+schema_version: '1.1'
+id: site_marsa_el_muqabila
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Marsa El Muqabila
+  ru: Марса-эль-Мукабила
+aliases:
+- Muqabila
+- El Muqabila
+- Marsa El Mugabila
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 29.36916666666667
+    longitude: 34.78583333333333
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- plateau
+access:
+- boat
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A coral-rich plateau dive south of Taba Heights, shared in Taba and Taba Heights itineraries under several transliterations.
+    access: Boat access; use the route, descent and pickup procedure specified by the local operator.
+    hazards: Surface traffic, possible water movement, depth and navigation across the plateau require a locally briefed plan.
+    marine_life: Coral-associated fish and rays may occur, but encounters are not assured.
+  ru:
+    summary: Дайв-сайт на коралловом плато к югу от Taba Heights, входящий в маршруты Табы и Taba Heights под несколькими
+      вариантами транслитерации.
+    access: Доступ с лодки; используйте маршрут, спуск и порядок подбора, указанные местным оператором.
+    hazards: Движение судов, возможное движение воды, глубина и навигация по плато требуют локального плана.
+    marine_life: Возможны рифовые рыбы и скаты, но конкретные встречи не гарантированы.
+source_refs:
+- src-9db3ce3b9e04
+- src-3c92f9a35564
+- src-7e1d439898a8
+observations: []

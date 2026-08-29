@@ -536,88 +536,88 @@ resolutions:
 - candidate_key: baer-el-benet-taba
   canonical_name: Baer el Benet
   area: Taba
-  resolution: pending
-  target_site_id: null
+  resolution: site
+  target_site_id: site_baer_el_benet
 - candidate_key: black-corals-taba
   canonical_name: Black Corals
   area: Taba
-  resolution: pending
+  resolution: unresolved
   target_site_id: null
 - candidate_key: coral-city-taba
   canonical_name: Coral City
   area: Taba
-  resolution: pending
+  resolution: unresolved
   target_site_id: null
 - candidate_key: fjord-taba
   canonical_name: Fjord
   area: Taba
-  resolution: pending
-  target_site_id: null
+  resolution: site
+  target_site_id: site_fjord_taba
 - candidate_key: morgana-house-reef-taba
   canonical_name: Morgana House Reef
   area: Taba
-  resolution: pending
-  target_site_id: null
+  resolution: site
+  target_site_id: site_morgana_house_reef
 - candidate_key: pharaoh-s-island-taba
   canonical_name: Pharaoh's Island
   area: Taba
-  resolution: pending
-  target_site_id: null
+  resolution: site
+  target_site_id: site_pharaohs_island_taba
 - candidate_key: the-canyons-taba
   canonical_name: The Canyons
   area: Taba
-  resolution: pending
+  resolution: unresolved
   target_site_id: null
 - candidate_key: topaz-gardens-taba
   canonical_name: Topaz Gardens
   area: Taba
-  resolution: pending
-  target_site_id: null
+  resolution: site
+  target_site_id: site_topaz_gardens
 - candidate_key: marsa-el-muqabila-taba-taba-heights
   canonical_name: Marsa El Muqabila
   area: Taba / Taba Heights
-  resolution: pending
-  target_site_id: null
+  resolution: site
+  target_site_id: site_marsa_el_muqabila
 - candidate_key: angel-s-net-taba-heights
   canonical_name: Angel's Net
   area: Taba Heights
-  resolution: pending
-  target_site_id: null
+  resolution: site
+  target_site_id: site_angels_net_taba_heights
 - candidate_key: aquarium-taba-heights
   canonical_name: Aquarium
   area: Taba Heights
-  resolution: pending
-  target_site_id: null
+  resolution: site
+  target_site_id: site_aquarium_taba_heights
 - candidate_key: marina-bay-taba-heights
   canonical_name: Marina Bay
   area: Taba Heights
-  resolution: pending
+  resolution: unresolved
   target_site_id: null
 - candidate_key: maxwell-s-reef-taba-heights
   canonical_name: Maxwell's Reef
   area: Taba Heights
-  resolution: pending
-  target_site_id: null
+  resolution: site
+  target_site_id: site_maxwells_reef_taba_heights
 - candidate_key: ras-amira-taba-heights
   canonical_name: Ras Amira
   area: Taba Heights
-  resolution: pending
-  target_site_id: null
+  resolution: site
+  target_site_id: site_ras_amira_taba_heights
 - candidate_key: sha-ab-ghamila-taba-heights
   canonical_name: Sha'ab Ghamila
   area: Taba Heights
-  resolution: pending
-  target_site_id: null
+  resolution: site
+  target_site_id: site_shaab_ghamila_taba_heights
 - candidate_key: waterworld-house-reef-taba-heights
   canonical_name: Waterworld House Reef
   area: Taba Heights
-  resolution: pending
+  resolution: unresolved
   target_site_id: null
 - candidate_key: zak-s-tables-taba-heights
   canonical_name: Zak's Tables
   area: Taba Heights
-  resolution: pending
-  target_site_id: null
+  resolution: site
+  target_site_id: site_zaks_tables_taba_heights
 - candidate_key: stingray-station-the-alternatives-sha-ab-mahmoud
   canonical_name: Stingray Station
   area: The Alternatives / Sha'ab Mahmoud

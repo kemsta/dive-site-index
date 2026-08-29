@@ -1,0 +1,46 @@
+schema_version: '1.1'
+id: site_maxwells_reef_taba_heights
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Maxwell's Reef
+  ru: Риф Максвелла
+aliases:
+- Maxwell's
+- Maxwell
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 29.41722222222222
+    longitude: 34.82361111111111
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- pinnacle
+- drop-off
+access:
+- boat
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: An offshore Taba Heights reef, also shortened to Maxwell or Maxwell's, with an island-like reef profile.
+    access: Boat access; descent and pickup should follow the operator plan for the offshore site.
+    hazards: Open-water descent, depth, possible water movement and boat separation require appropriate gas and surface procedures.
+    marine_life: Reef fish and larger passing animals may occur, but sightings vary.
+  ru:
+    summary: Морской риф Taba Heights с островным подводным профилем; название также сокращают до Maxwell или Maxwell’s.
+    access: Доступ с лодки; спуск и подбор должны выполняться по плану оператора для морского сайта.
+    hazards: Спуск в открытой воде, глубина, возможное движение воды и риск отделения от лодки требуют подходящего газового
+      и поверхностного плана.
+    marine_life: Возможны рифовые рыбы и проходящие крупные животные, но наблюдения различаются.
+source_refs:
+- src-9db3ce3b9e04
+- src-3c92f9a35564
+- src-7e1d439898a8
+observations: []

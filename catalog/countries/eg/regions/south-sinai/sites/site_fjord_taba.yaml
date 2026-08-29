@@ -1,0 +1,45 @@
+schema_version: '1.1'
+id: site_fjord_taba
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Fjord
+  ru: Фьорд
+aliases:
+- The Fjord
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 29.42361111111111
+    longitude: 34.82555555555556
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- bay
+- drop-off
+access:
+- boat
+- shore
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A named Taba dive at the coastal fjord, where reef terrain continues toward a deeper circular depression.
+    access: Local sources describe both shore and boat approaches; use the entry and route selected in the local briefing.
+    hazards: Depth changes, the depression, surface traffic and conditions near the bay mouth require conservative planning.
+    marine_life: Reef fish and small coral-associated animals may occur around the coral and rocky terrain.
+  ru:
+    summary: Именованный дайв-сайт Табы у прибрежного фьорда, где рифовый рельеф ведёт к более глубокой округлой впадине.
+    access: Местные источники описывают доступ с берега и с лодки; используйте вход и маршрут из локального брифинга.
+    hazards: Перепады глубины, впадина, движение судов и условия у выхода из бухты требуют консервативного планирования.
+    marine_life: На коралловом и скальном рельефе возможны рифовые рыбы и мелкая донная фауна.
+source_refs:
+- src-9db3ce3b9e04
+- src-3c92f9a35564
+- src-7e1d439898a8
+observations: []

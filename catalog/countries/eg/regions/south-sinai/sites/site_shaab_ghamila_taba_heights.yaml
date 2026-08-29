@@ -1,0 +1,46 @@
+schema_version: '1.1'
+id: site_shaab_ghamila_taba_heights
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Sha'ab Ghamila
+  ru: Шааб-Гамила
+aliases:
+- Shab Ghamila
+- Radisson Reef
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 29.3835
+    longitude: 34.8055
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- sand
+access:
+- boat
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A reef south of Taba Heights also known as Radisson Reef; the exact point is kept separate from nearby resort
+      and house-reef locations.
+    access: Boat access is reported; use the current operator briefing for entry and route.
+    hazards: Boat traffic, altered seabed sections, depth and navigation require a conservative site-specific plan.
+    marine_life: Reef fish and small coral-associated animals may occur; individual sightings vary.
+  ru:
+    summary: Риф к югу от Taba Heights, также известный как Radisson Reef; его точка не объединяется с соседними курортными
+      и хаус-рифовыми объектами.
+    access: Описан доступ с лодки; используйте актуальный брифинг оператора для входа и маршрута.
+    hazards: Движение судов, изменённые участки дна, глубина и навигация требуют консервативного плана для этого сайта.
+    marine_life: Возможны рифовые рыбы и мелкая коралловая фауна; конкретные наблюдения различаются.
+source_refs:
+- src-74e53f99c8df
+- src-7e1d439898a8
+- src-8a77413adda2
+observations: []

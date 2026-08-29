@@ -1,0 +1,45 @@
+schema_version: '1.1'
+id: site_aquarium_taba_heights
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Aquarium
+  ru: Аквариум
+aliases:
+- The Aquarium
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 29.399
+    longitude: 34.811
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- pinnacle
+- sand
+- training
+access:
+- boat
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A Taba Heights site with coral pinnacles over sand, represented separately from neighbouring Angel's Net.
+    access: Boat access; follow the local mooring, entry and pickup procedure.
+    hazards: Boat traffic, shallow overhead activity, navigation among pinnacles and fragile coral require care.
+    marine_life: Reef fish may gather around the pinnacles; particular encounters are variable.
+  ru:
+    summary: Сайт Taba Heights с коралловыми башнями над песчаным дном, представленный отдельно от соседнего Angel’s Net.
+    access: Доступ с лодки; следуйте местным правилам швартовки, входа и подбора.
+    hazards: Движение судов, активность у поверхности, навигация между башнями и хрупкие кораллы требуют осторожности.
+    marine_life: У коралловых башен возможны скопления рифовых рыб; конкретные встречи непредсказуемы.
+source_refs:
+- src-48fd9c37251e
+- src-3c92f9a35564
+- src-7e1d439898a8
+observations: []

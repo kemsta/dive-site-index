@@ -1,0 +1,46 @@
+schema_version: '1.1'
+id: site_angels_net_taba_heights
+identity:
+  kind: canonical
+  confidence: confirmed
+names:
+  en: Angel's Net
+  ru: Энджелс-Нет
+aliases:
+- Angels Net
+- Angel net
+geography:
+  country_id: eg
+  region_id: south-sinai
+  coordinates:
+    latitude: 29.4015
+    longitude: 34.812
+  body_of_water_id: red-sea
+  water_type: salt
+types:
+- reef
+- pinnacle
+- sand
+access:
+- boat
+depth:
+  minimum_m: null
+  maximum_m: null
+difficulty: null
+content:
+  en:
+    summary: A Taba Heights reef of coral heads and sandy sections, named for remains of a fishing net and distinct from Aquarium.
+    access: Boat access; use the operator-designated entry, route and pickup procedure.
+    hazards: Boat traffic, fishing-line or net remnants, depth and fragile coral require careful route control.
+    marine_life: Reef fish and small animals may shelter around coral heads; sightings vary.
+  ru:
+    summary: Риф Taba Heights с коралловыми головами и песчаными участками, названный по остаткам рыболовной сети и отличающийся
+      от Aquarium.
+    access: Доступ с лодки; используйте назначенные оператором вход, маршрут и порядок подбора.
+    hazards: Движение судов, остатки лески или сети, глубина и хрупкие кораллы требуют внимательного контроля маршрута.
+    marine_life: У коралловых голов возможны рифовые рыбы и мелкая фауна; наблюдения различаются.
+source_refs:
+- src-f86b08437f12
+- src-9db3ce3b9e04
+- src-7e1d439898a8
+observations: []
